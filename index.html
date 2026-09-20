@@ -232,7 +232,7 @@
       <div class="source-card">
         <h3>Acerca de</h3>
         <p class="source-meta" style="margin-top: 6px;">
-          War_ning v1.2 (MVP) · PanaMentorLabs.<br>
+          War_ning v1.2.1 (MVP) · PanaMentorLabs.<br>
           Visor de datos agregados. No genera alertas ni niveles propios y no usa geolocalización.<br>
           Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel.
         </p>
@@ -388,7 +388,7 @@
       var top = topSource(pais);
       var n = (pais.niveles || []).length;
       var sub = n + (n === 1 ? ' fuente' : ' fuentes');
-      if (top) sub += ' · mayor: ' + levelText(top.n) + ' (' + top.n.fuente + ')';
+      if (top) sub += ' · mayor: ' + levelText(top.n) + ' · ' + top.n.fuente;
 
       var li = document.createElement('li');
       li.className = 'country-item';
