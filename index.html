@@ -232,9 +232,9 @@
       <div class="source-card">
         <h3>Acerca de</h3>
         <p class="source-meta" style="margin-top: 6px;">
-          War_ning v1.2.1 (MVP) · PanaMentorLabs.<br>
+          War_ning v1.3 (MVP) · PanaMentorLabs.<br>
           Visor de datos agregados. No genera alertas ni niveles propios y no usa geolocalización.<br>
-          Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel.
+          Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel. «Sin revisión reciente» aparece cuando la fuente supera su propio ciclo de revisión (para el Departamento de Estado: 12 meses en niveles 1-2 y 6 meses en niveles 3-4).
         </p>
         <p id="sources-list" class="source-meta" style="margin-top: 10px;"></p>
       </div>
@@ -447,7 +447,7 @@
         var age = ageDays(n.fecha);
         var badge = '';
         if (age === null) badge = '<span class="outdated-badge">Fecha no válida</span>';
-        else if (age > 90) badge = '<span class="outdated-badge">Desactualizado (' + age + ' días)</span>';
+        else if (age > (typeof n.vigencia_dias === 'number' ? n.vigencia_dias : 90)) badge = '<span class="outdated-badge">Sin revisión reciente (' + age + ' días)</span>';
         var url = safeUrl(n.url);
         html +=
           '<div class="source-card">' +
