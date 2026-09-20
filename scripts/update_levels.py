@@ -32,11 +32,14 @@ import pycountry
 FEED_URL = "https://travel.state.gov/_res/rss/TAsTWs.xml"
 ALLOWED_HOST = "travel.state.gov"
 USER_AGENT = "War_ning-data-bot/1.0 (proyecto educativo PanaMentorLabs)"
+API_URL = "https://cadataapi.state.gov/api/TravelAdvisory"
+API_HOST = "cadataapi.state.gov"
 SOURCE_ID = "us-state"
 SOURCE_NAME = "Departamento de Estado (EE.UU.)"
 SOURCE_URL = "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html"
 MAX_BYTES = 50 * 1024 * 1024
 DEFAULT_MIN_ITEMS = 150        # el feed real trae ~200; por debajo de esto algo va mal
+RETAIN_DAYS = 30             # cuánto se conserva un país de nivel 3-4 que desaparece del feed
 MAX_DROP_RATIO = 0.15          # no se acepta perder >15 % de países respecto a la corrida anterior
 
 # Ciclo oficial de revisión del Departamento de Estado: niveles 1-2 al menos cada 12 meses,
@@ -46,7 +49,7 @@ REVIEW_DAYS = {1: 365, 2: 365, 3: 183, 4: 183}
 # Motivos: se buscan SOLO en la frase principal del aviso ("... due to <motivos>"), con un vocabulario
 # cerrado. Lo que no reconoce se ignora: nunca se inventa un motivo.
 MOTIVOS = [
-    ("conflicto_armado", r"armed conflict|\bwar\b|hostilities"),
+    ("conflicto_armado", r"armed conflict|\bwar\b|hostilities|\binvasion\b"),
     ("terrorismo", r"terroris"),
     ("crimen", r"\bcrimes?\b|\bcriminal"),
     ("disturbios", r"\bunrest\b"),
@@ -58,7 +61,10 @@ MOTIVOS = [
     ("eventos_limitados", r"time-limited event|limited-time event"),
 ]
 MOTIVOS_RE = [(k, re.compile(p, re.I)) for k, p in MOTIVOS]
-HEADLINE_START_RE = re.compile(r"^\s*(do not travel|reconsider travel|exercise (increased caution|normal precautions|caution))", re.I)
+HEAD_RE = re.compile(
+    r"(?:do not travel|reconsider travel|exercise increased caution|exercise normal precautions|exercise caution)\b"
+    r"([^.]{0,140}?)\bdue to\b\s*(:?)\s*", re.I)
+END_LIST_RE = re.compile(r"read the entire|advisory summary|country summary|reissued|\blevel [1-4]\b", re.I)
 
 # Traducción de los 4 niveles estándar (el texto original se conserva en etiqueta_original)
 LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsiderar el viaje", 4: "No viajar"}
@@ -67,12 +73,13 @@ LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsidera
 ALIASES = {
     "burma": "MM", "turkey": "TR", "russia": "RU", "brunei": "BN", "micronesia": "FM",
     "democratic republic of the congo": "CD", "kosovo": "XK", "macau": "MO", "cape verde": "CV",
-    "vatican city": "VA", "holy see": "VA", "kyrgyz republic": "KG", "slovak republic": "SK",
+    "sint maarten": "SX", "vatican city": "VA", "holy see": "VA", "kyrgyz republic": "KG", "slovak republic": "SK",
 }
 
 
 # ---------------------------------------------------------------- utilidades
 def norm_name(s: str) -> str:
+    s = s.replace("\u2019", "'").replace("\u2018", "'").replace("\u02bc", "'")   # apóstrofos tipográficos
     s = unicodedata.normalize("NFKD", s)
     s = "".join(c for c in s if not unicodedata.combining(c)).lower().replace("&", "and")
     s = re.sub(r"[^a-z0-9' ]+", " ", s)
@@ -134,32 +141,36 @@ def analyze_description(desc: str, name: str):
     """Extrae motivos y mención de conflicto del texto del aviso. Devuelve None si no hay texto."""
     if not desc or not desc.strip():
         return None
-    paras = [t for t in (_clean_text(r) for r in re.findall(r"<p[^>]*>(.*?)</p>", desc, flags=re.S | re.I)) if t]
-    # Algunos avisos (p. ej. Ucrania) anteponen el rótulo "Advisory summary" a la frase principal
-    paras = [re.sub(r"^\s*advisory summary\s*:?\s*", "", t, flags=re.I) for t in paras]
-    full = _clean_text(desc)
+    full = _clean_text(desc).replace("U.S.", "US")
 
-    cands = [p for p in paras if HEADLINE_START_RE.search(p) and re.search(r"\bdue to\b", p, re.I)]
+    # La frase principal ("Do not travel ... due to <motivos>") puede venir partida en varios bloques HTML
+    # (p. ej. "Do not travel" en un bloque y "to Uganda due to ..." en otro), por eso se busca en el texto unido.
+    matches = list(HEAD_RE.finditer(full[:6000]))
     headline = None
-    if cands:
+    if matches:
         nn = norm_name(name)
-        named = [p for p in cands if nn and nn in norm_name(p)]
-        headline = (named or cands)[0]
-
-    motivos = []
-    if headline:
-        tail = re.split(r"\bdue to\b", headline, maxsplit=1, flags=re.I)[1]
+        pick = next((m for m in matches if nn and nn in norm_name(m.group(0))), matches[0])
+        rest = full[pick.end():pick.end() + 800]
+        if pick.group(2) == ":" or not rest.strip():            # "due to:" seguido de una lista
+            cut = END_LIST_RE.search(rest)
+            tail = rest[:cut.start()] if cut else rest[:700]
+        else:
+            m_end = re.search(r"\.(?:\s|$)", rest)
+            tail = rest[:m_end.start()] if m_end else rest[:500]
+        tail = tail.strip()[:700]
+        headline = re.sub(r"\s+", " ", full[pick.start():pick.end()] + tail).strip()
         motivos = [k for k, rx in MOTIVOS_RE if rx.search(tail)]
+    else:
+        motivos = []
 
-    # "Menciona": el aviso usa la expresión "armed conflict" en cualquier parte, o "war"/"hostilities"
-    # en su frase principal. No afirma que haya guerra en todo el país.
-    menciona = bool(re.search(r"armed conflict", full, re.I)) or bool(
-        headline and re.search(r"\bwar\b|hostilities", headline, re.I))
+    # "Menciona": el aviso usa la expresión "armed conflict" en cualquier parte, o la frase principal
+    # cita guerra/hostilidades/invasión. No afirma que haya guerra en todo el país.
+    menciona = bool(re.search(r"armed conflict", full, re.I)) or "conflicto_armado" in motivos
     return {"motivos": motivos, "menciona_conflicto": menciona,
             "motivo_original": headline[:400] if headline else None}
 
 
-def fetch(url: str, retries: int = 3) -> bytes:
+def fetch(url: str, retries: int = 3, host: str = ALLOWED_HOST) -> bytes:
     last = None
     for attempt in range(1, retries + 1):
         try:
@@ -167,7 +178,7 @@ def fetch(url: str, retries: int = 3) -> bytes:
                                                        "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.5"})
             with urllib.request.urlopen(req, timeout=30) as r:
                 final_host = urllib.parse.urlparse(r.geturl()).hostname
-                if final_host != ALLOWED_HOST:
+                if final_host != host:
                     raise RuntimeError(f"Redirección a un dominio no permitido: {final_host}")
                 data = r.read(MAX_BYTES + 1)
                 if len(data) > MAX_BYTES:
@@ -221,6 +232,7 @@ def parse_feed(xml_bytes: bytes, iso_idx: dict):
         slug = slug_from_link(link)
         composite = bool(re.search(r"see (individual )?summar", title, re.I))
         name = name_from_slug(slug) if composite else title.split(" - ")[0].strip()
+        name = re.sub(r"\s+travel advisory$", "", name, flags=re.I)
         if not name:
             anomalies.append(f"Sin nombre, omitido: {link}")
             continue
@@ -303,6 +315,74 @@ def audit_report(paises: dict):
     return conflicto, sin_motivos, tabla
 
 
+def retain_missing(prev: dict, paises: dict, today: str):
+    """Conserva (hasta RETAIN_DAYS) los países de nivel 3-4 que dejaron de aparecer en el feed.
+    Un país de riesgo alto no debe desaparecer en silencio porque el feed falle o cambie de formato."""
+    kept = []
+    if not prev or prev.get("ejemplo", False):
+        return kept
+    names = {p["nombre"].casefold() for p in paises.values()}
+    t = dt.date.fromisoformat(today)
+    for old in prev.get("paises", []):
+        oid = old.get("id") or old.get("iso")
+        if not oid or oid in paises or old.get("nombre", "").casefold() in names:   # sigue en el feed o solo cambió de id
+            continue
+        niveles = old.get("niveles") or []
+        if not any((n.get("nivel") or 0) >= 3 for n in niveles):
+            continue
+        first = next((n["retirado"] for n in niveles if n.get("retirado")), today)
+        try:
+            if (t - dt.date.fromisoformat(first)).days > RETAIN_DAYS:
+                continue
+        except ValueError:
+            first = today
+        copy = json.loads(json.dumps(old))
+        for n in copy["niveles"]:
+            n["retirado"] = first
+        paises[oid] = copy
+        kept.append((old.get("nombre", oid), first))
+    return kept
+
+
+def diagnose_api(rss_names, summary_path=None):
+    """Solo informativo: consulta el API oficial del Departamento de Estado y compara con el feed RSS.
+    Nunca modifica datos ni hace fallar el flujo."""
+    out = []
+    try:
+        raw = fetch(API_URL, retries=1, host=API_HOST)
+        out.append(f"API oficial respondió: {len(raw)} bytes")
+        data = json.loads(raw.decode("utf-8", "replace"))
+        if isinstance(data, dict):
+            recs = next((v for v in data.values() if isinstance(v, list)), [])
+        else:
+            recs = data if isinstance(data, list) else []
+        out.append(f"registros: {len(recs)}")
+        if recs and isinstance(recs[0], dict):
+            out.append("campos del primer registro: " + ", ".join(list(recs[0].keys())[:25]))
+            out.append("muestra: " + json.dumps(recs[0], ensure_ascii=False)[:400])
+        def rec_name(r):
+            for k in ("country_name", "countryName", "CountryName", "name", "Name", "title", "Title"):
+                if isinstance(r, dict) and isinstance(r.get(k), str):
+                    return re.split(r"\s+-\s+", r[k])[0]
+            return None
+        api_names = {norm_name(x): x for x in (rec_name(r) for r in recs) if x}
+        rss = {norm_name(x): x for x in rss_names}
+        solo_api = sorted(v for k, v in api_names.items() if k not in rss)
+        solo_rss = sorted(v for k, v in rss.items() if k not in api_names)
+        out.append(f"En el API y no en el RSS ({len(solo_api)}): {', '.join(solo_api[:40])}")
+        out.append(f"En el RSS y no en el API ({len(solo_rss)}): {', '.join(solo_rss[:40])}")
+        for buscado in ("mali", "north korea", "korea"):
+            hits = [v for k, v in api_names.items() if buscado in k]
+            out.append(f"'{buscado}' en API: {hits or 'no'} | en RSS: {[v for k, v in rss.items() if buscado in k] or 'no'}")
+    except Exception as e:                          # noqa: BLE001
+        out.append(f"API oficial no accesible o con formato inesperado: {e}")
+    for line in out:
+        print("DIAGNÓSTICO API:", line)
+    if summary_path:
+        with open(summary_path, "a", encoding="utf-8") as f:
+            f.write("\n## Diagnóstico del API oficial (solo informativo)\n\n" + "\n".join(f"- {l}" for l in out) + "\n")
+
+
 def write_atomic(path: Path, data: dict):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
@@ -364,6 +444,11 @@ def main() -> int:
             return 1
 
     today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    retained = retain_missing(prev, paises, today)
+    for nombre, desde in retained:
+        print(f"RETENIDO (ya no figura en el feed desde {desde}; se conserva hasta {RETAIN_DAYS} días): {nombre}", file=sys.stderr)
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" or os.environ.get("DIAGNOSE_API") == "1":
+        diagnose_api([p["nombre"] for p in paises.values()], os.environ.get("GITHUB_STEP_SUMMARY"))
     new = {
         "generado": today,
         "ejemplo": False,
