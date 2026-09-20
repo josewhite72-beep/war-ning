@@ -1,144 +1,3866 @@
 {
-  "generado": "2026-09-20",
-  "ejemplo": true,
-  "paises": [
+ "generado": "2026-09-20",
+ "ejemplo": false,
+ "fuentes": [
+  {
+   "id": "us-state",
+   "nombre": "Departamento de Estado (EE.UU.)",
+   "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html",
+   "nota": "Contenido oficial publicado por el Departamento de Estado de EE.UU. (travel.state.gov)."
+  }
+ ],
+ "paises": [
+  {
+   "id": "af",
+   "iso": "AF",
+   "nombre": "Afghanistan",
+   "niveles": [
     {
-      "iso": "EX1",
-      "nombre": "República de Ejemplia",
-      "niveles": [
-        {
-          "fuente": "Departamento de Estado (EE.UU.)",
-          "escala": "1-4",
-          "min": 1,
-          "max": 4,
-          "nivel": 2,
-          "etiqueta": "Reconsiderar viajar",
-          "fecha": "2026-09-15",
-          "url": "https://example.com/ex1-us"
-        },
-        {
-          "fuente": "FCDO (Reino Unido)",
-          "escala": "1-4",
-          "min": 1,
-          "max": 4,
-          "nivel": 4,
-          "etiqueta": "No viajar, alto riesgo",
-          "fecha": "2026-09-18",
-          "url": "https://example.com/ex1-uk"
-        }
-      ]
-    },
-    {
-      "iso": "EX2",
-      "nombre": "Estado de Prueba",
-      "niveles": [
-        {
-          "fuente": "INFORM Risk (UE-ONU)",
-          "escala": "0-10",
-          "min": 0,
-          "max": 10,
-          "nivel": 6,
-          "etiqueta": "Riesgo Alto",
-          "fecha": "2025-12-01",
-          "url": "https://example.com/ex2-inform"
-        }
-      ]
-    },
-    {
-      "iso": "EX3",
-      "nombre": "Territorio Beta",
-      "niveles": [
-        {
-          "fuente": "Ministerio de Exteriores (España)",
-          "escala": "No recomendar",
-          "min": 0,
-          "max": 1,
-          "nivel": 1,
-          "etiqueta": "No viajar",
-          "fecha": "2026-08-10",
-          "url": "https://example.com/ex3-es"
-        }
-      ]
-    },
-    {
-      "iso": "EX4",
-      "nombre": "Nación Gamma",
-      "niveles": [
-        {
-          "fuente": "ACLED (Pendiente de licencia)",
-          "escala": "1-5",
-          "min": 1,
-          "max": 5,
-          "nivel": 3,
-          "etiqueta": "Conflicto activo",
-          "fecha": "2026-09-01",
-          "url": "https://example.com/ex4-acled"
-        }
-      ]
-    },
-    {
-      "iso": "EX5",
-      "nombre": "Unión de Delta",
-      "niveles": [
-        {
-          "fuente": "Gobierno de Canadá",
-          "escala": "A-E",
-          "min": 1,
-          "max": 5,
-          "nivel": 2,
-          "etiqueta": "Ejercer alta precaución",
-          "fecha": "2026-09-19",
-          "url": "https://example.com/ex5-ca"
-        }
-      ]
-    },
-    {
-      "iso": "EX6",
-      "nombre": "Confederación Épsilon",
-      "niveles": [
-        {
-          "fuente": "UCDP",
-          "escala": "1-3",
-          "min": 1,
-          "max": 3,
-          "nivel": 1,
-          "etiqueta": "Menor",
-          "fecha": "2026-09-10",
-          "url": "https://example.com/ex6-ucdp"
-        }
-      ]
-    },
-    {
-      "iso": "EX7",
-      "nombre": "República de Zeta",
-      "niveles": [
-        {
-          "fuente": "Departamento de Estado (EE.UU.)",
-          "escala": "1-4",
-          "min": 1,
-          "max": 4,
-          "nivel": 1,
-          "etiqueta": "Ejercer precaución normal",
-          "fecha": "2026-09-12",
-          "url": "https://example.com/ex7-us"
-        }
-      ]
-    },
-    {
-      "iso": "EX8",
-      "nombre": "Territorio Eta",
-      "niveles": [
-        {
-          "fuente": "FCDO (Reino Unido)",
-          "escala": "1-4",
-          "min": 1,
-          "max": 4,
-          "nivel": 3,
-          "etiqueta": "Riesgo significativo",
-          "fecha": "2026-09-05",
-          "url": "https://example.com/ex8-uk"
-        }
-      ]
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-02-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/afghanistan-advisory.html"
     }
-  ]
+   ]
+  },
+  {
+   "id": "al",
+   "iso": "AL",
+   "nombre": "Albania",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-08-26",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/albania-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "dz",
+   "iso": "DZ",
+   "nombre": "Algeria",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-08-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/algeria-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ad",
+   "iso": "AD",
+   "nombre": "Andorra",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/andorra-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ao",
+   "iso": "AO",
+   "nombre": "Angola",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-09-23",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/angola-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ai",
+   "iso": "AI",
+   "nombre": "Anguilla",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/anguilla-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "aq",
+   "iso": "AQ",
+   "nombre": "Antarctica",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-09-23",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/antarctica-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ag",
+   "iso": "AG",
+   "nombre": "Antigua and Barbuda",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/antigua-and-barbuda-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ar",
+   "iso": "AR",
+   "nombre": "Argentina",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-10",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.arg.html"
+    }
+   ]
+  },
+  {
+   "id": "am",
+   "iso": "AM",
+   "nombre": "Armenia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-09-05",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/armenia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "aw",
+   "iso": "AW",
+   "nombre": "Aruba",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-08-19",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/aruba-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "au",
+   "iso": "AU",
+   "nombre": "Australia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-05-30",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/australia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "at",
+   "iso": "AT",
+   "nombre": "Austria",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/austria-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "az",
+   "iso": "AZ",
+   "nombre": "Azerbaijan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-04-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/azerbajian-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bh",
+   "iso": "BH",
+   "nombre": "Bahrain",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-03-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bahrain-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bd",
+   "iso": "BD",
+   "nombre": "Bangladesh",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-01-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bangladesh-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bb",
+   "iso": "BB",
+   "nombre": "Barbados",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/barbados-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "by",
+   "iso": "BY",
+   "nombre": "Belarus",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-12-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/belarus-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "be",
+   "iso": "BE",
+   "nombre": "Belgium",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-23",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/belgium-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bz",
+   "iso": "BZ",
+   "nombre": "Belize",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-03-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/belizetravel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bj",
+   "iso": "BJ",
+   "nombre": "Benin",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-01-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/benin-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bm",
+   "iso": "BM",
+   "nombre": "Bermuda",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bermuda-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bt",
+   "iso": "BT",
+   "nombre": "Bhutan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-10-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bhutan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bo",
+   "iso": "BO",
+   "nombre": "Bolivia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-04-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bolivia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bonaire",
+   "iso": null,
+   "nombre": "Bonaire",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bonaire-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ba",
+   "iso": "BA",
+   "nombre": "Bosnia and Herzegovina",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-08-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bosinia-and-herzegovina-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bw",
+   "iso": "BW",
+   "nombre": "Botswana",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-06-17",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/botswana-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "br",
+   "iso": "BR",
+   "nombre": "Brazil",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/brazil-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "vg",
+   "iso": "VG",
+   "nombre": "British Virgin Islands",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/british-virgin-islands-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bn",
+   "iso": "BN",
+   "nombre": "Brunei",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-14",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/brunei-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bg",
+   "iso": "BG",
+   "nombre": "Bulgaria",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-10-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bulgaria-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bf",
+   "iso": "BF",
+   "nombre": "Burkina Faso",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-05-04",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/burkina-faso-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mm",
+   "iso": "MM",
+   "nombre": "Burma",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-05-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/burma-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bi",
+   "iso": "BI",
+   "nombre": "Burundi",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2025-04-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/burundi-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cv",
+   "iso": "CV",
+   "nombre": "Cabo Verde",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-12-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cabo-verde-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kh",
+   "iso": "KH",
+   "nombre": "Cambodia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-07-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cambodia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cm",
+   "iso": "CM",
+   "nombre": "Cameroon",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cameroon-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ca",
+   "iso": "CA",
+   "nombre": "Canada",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-06-11",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/canada-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ky",
+   "iso": "KY",
+   "nombre": "Cayman Islands",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cayman-islands-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cf",
+   "iso": "CF",
+   "nombre": "Central African Republic",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-11-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/central-african-republic-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "td",
+   "iso": "TD",
+   "nombre": "Chad",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-04-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/chad-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cl",
+   "iso": "CL",
+   "nombre": "Chile",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/chile-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cn",
+   "iso": "CN",
+   "nombre": "China",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-11-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/china-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "co",
+   "iso": "CO",
+   "nombre": "Colombia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2025-04-17",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/colombia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "km",
+   "iso": "KM",
+   "nombre": "Comoros",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-01-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/comoros-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cr",
+   "iso": "CR",
+   "nombre": "Costa Rica",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-04-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/costa-rica-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cote-d-ivoire",
+   "iso": null,
+   "nombre": "Cote d Ivoire",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-02-18",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cote-d-ivoire-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "hr",
+   "iso": "HR",
+   "nombre": "Croatia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-18",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/croatia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cu",
+   "iso": "CU",
+   "nombre": "Cuba",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cuba-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cw",
+   "iso": "CW",
+   "nombre": "Curaçao",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/curacao-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cy",
+   "iso": "CY",
+   "nombre": "Cyprus",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-06-01",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cyprus-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cz",
+   "iso": "CZ",
+   "nombre": "Czechia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-04-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/czechia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cd",
+   "iso": "CD",
+   "nombre": "Democratic Republic of the Congo",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-07-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/democratic-republic-of-the-congo-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "dj",
+   "iso": "DJ",
+   "nombre": "Djibouti",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-03-06",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/djibouti-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "dm",
+   "iso": "DM",
+   "nombre": "Dominica",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/dominica-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "do",
+   "iso": "DO",
+   "nombre": "Dominican Republic",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-06-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/dominican-republic-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ec",
+   "iso": "EC",
+   "nombre": "Ecuador",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-10-14",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ecuador-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "eg",
+   "iso": "EG",
+   "nombre": "Egypt",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-07-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/egypt-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sv",
+   "iso": "SV",
+   "nombre": "El Salvador",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-06-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/el-salvador-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gq",
+   "iso": "GQ",
+   "nombre": "Equatorial Guinea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-10-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/equatorial-guinea-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "er",
+   "iso": "ER",
+   "nombre": "Eritrea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2023-07-31",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/eritrea-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ee",
+   "iso": "EE",
+   "nombre": "Estonia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-03-31",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/estonia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sz",
+   "iso": "SZ",
+   "nombre": "Eswatini",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/eswatini-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "et",
+   "iso": "ET",
+   "nombre": "Ethiopia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ethiopia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "fm",
+   "iso": "FM",
+   "nombre": "Federated States of Micronesia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-09-20",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fsm.html"
+    }
+   ]
+  },
+  {
+   "id": "fj",
+   "iso": "FJ",
+   "nombre": "Fiji",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-12-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/fiji-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "fi",
+   "iso": "FI",
+   "nombre": "Finland",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-03-13",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/finland-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "fr",
+   "iso": "FR",
+   "nombre": "France",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/france-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gf",
+   "iso": "GF",
+   "nombre": "French Guiana",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/french-guiana-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pf",
+   "iso": "PF",
+   "nombre": "French Polynesia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-12-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/french-polynesia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "french-west-indies",
+   "iso": null,
+   "nombre": "French West Indies",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-08-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/french-west-indies-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ga",
+   "iso": "GA",
+   "nombre": "Gabon",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-03-30",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/gabon-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gaza",
+   "iso": null,
+   "nombre": "Gaza",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-08-26",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/Gaza.html"
+    }
+   ]
+  },
+  {
+   "id": "ge",
+   "iso": "GE",
+   "nombre": "Georgia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-03-13",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/georgia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "de",
+   "iso": "DE",
+   "nombre": "Germany",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-13",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/germany-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gh",
+   "iso": "GH",
+   "nombre": "Ghana",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ghana-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gr",
+   "iso": "GR",
+   "nombre": "Greece",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-10-23",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/greece-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gl",
+   "iso": "GL",
+   "nombre": "Greenland",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-10-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/greenland-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gd",
+   "iso": "GD",
+   "nombre": "Grenada",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-01-05",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/grenada-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gt",
+   "iso": "GT",
+   "nombre": "Guatemala",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-03-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guatemala-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gn",
+   "iso": "GN",
+   "nombre": "Guinea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-02-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guinea-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gw",
+   "iso": "GW",
+   "nombre": "Guinea-Bissau",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2025-12-11",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guinea-bissau-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gy",
+   "iso": "GY",
+   "nombre": "Guyana",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2025-05-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/guyana-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ht",
+   "iso": "HT",
+   "nombre": "Haiti",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-07-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/haiti-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "hn",
+   "iso": "HN",
+   "nombre": "Honduras",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2024-12-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/honduras-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "hk",
+   "iso": "HK",
+   "nombre": "Hong Kong",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-11-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/hong-kong-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "hu",
+   "iso": "HU",
+   "nombre": "Hungary",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/hungary-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "is",
+   "iso": "IS",
+   "nombre": "Iceland",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-05",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iceland-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "in",
+   "iso": "IN",
+   "nombre": "India",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-06-16",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/india-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "id",
+   "iso": "ID",
+   "nombre": "Indonesia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/indonesia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ir",
+   "iso": "IR",
+   "nombre": "Iran",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-12-05",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iran-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "iq",
+   "iso": "IQ",
+   "nombre": "Iraq",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-08-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iraq-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ie",
+   "iso": "IE",
+   "nombre": "Ireland",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-03-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ireland-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "il",
+   "iso": "IL",
+   "nombre": "Israel",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-26",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/israel-west-bank-and-gaza-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "it",
+   "iso": "IT",
+   "nombre": "Italy",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-23",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/italy-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "jm",
+   "iso": "JM",
+   "nombre": "Jamaica",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-06-23",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/jamaica-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "jp",
+   "iso": "JP",
+   "nombre": "Japan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-05-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/japan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "jo",
+   "iso": "JO",
+   "nombre": "Jordan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-05-04",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/jordan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kz",
+   "iso": "KZ",
+   "nombre": "Kazakhstan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-18",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kazakhstan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ke",
+   "iso": "KE",
+   "nombre": "Kenya",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "dk",
+   "iso": "DK",
+   "nombre": "Kingdom of Denmark",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-09-17",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/denmark-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ki",
+   "iso": "KI",
+   "nombre": "Kiribati",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-12-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kiribati-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "xk",
+   "iso": "XK",
+   "nombre": "Kosovo",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-08-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kosovo-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kw",
+   "iso": "KW",
+   "nombre": "Kuwait",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kuwait-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "la",
+   "iso": "LA",
+   "nombre": "Laos",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/laos-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lv",
+   "iso": "LV",
+   "nombre": "Latvia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-01",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/latvia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lb",
+   "iso": "LB",
+   "nombre": "Lebanon",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-05-06",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lebanon-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ls",
+   "iso": "LS",
+   "nombre": "Lesotho",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-06-17",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lesotho-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lr",
+   "iso": "LR",
+   "nombre": "Liberia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-12-11",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/liberia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ly",
+   "iso": "LY",
+   "nombre": "Libya",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-07-16",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/libya-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "li",
+   "iso": "LI",
+   "nombre": "Liechtenstein",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-05-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/Liechtenstein-Travel-Advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lt",
+   "iso": "LT",
+   "nombre": "Lithuania",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lithuania-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lu",
+   "iso": "LU",
+   "nombre": "Luxembourg",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/luxembourg-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mo",
+   "iso": "MO",
+   "nombre": "Macau",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-09-04",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/macau-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mg",
+   "iso": "MG",
+   "nombre": "Madagascar",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-12-04",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/madagascar-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mw",
+   "iso": "MW",
+   "nombre": "Malawi",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-02-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/malawi-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "my",
+   "iso": "MY",
+   "nombre": "Malaysia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-02-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/malaysia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mv",
+   "iso": "MV",
+   "nombre": "Maldives",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-10-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/maldives-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ml",
+   "iso": "ML",
+   "nombre": "Mali",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-06-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mali-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mt",
+   "iso": "MT",
+   "nombre": "Malta",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/malta-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mh",
+   "iso": "MH",
+   "nombre": "Marshall Islands",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/marshall-islands-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mr",
+   "iso": "MR",
+   "nombre": "Mauritania",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-18",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mauritania-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mu",
+   "iso": "MU",
+   "nombre": "Mauritius",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-12-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mauritius-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mexico",
+   "iso": null,
+   "nombre": "Mexico Travel Advisory",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-08-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "md",
+   "iso": "MD",
+   "nombre": "Moldova",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/moldova-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mn",
+   "iso": "MN",
+   "nombre": "Mongolia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mongolia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "me",
+   "iso": "ME",
+   "nombre": "Montenegro",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/montenegro-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ms",
+   "iso": "MS",
+   "nombre": "Montserrat",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/montserrat-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ma",
+   "iso": "MA",
+   "nombre": "Morocco",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-04-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/morocco-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mz",
+   "iso": "MZ",
+   "nombre": "Mozambique",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-06-16",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mozambique-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "na",
+   "iso": "NA",
+   "nombre": "Namibia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/namibia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "nr",
+   "iso": "NR",
+   "nombre": "Nauru",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-12-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nauru-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "np",
+   "iso": "NP",
+   "nombre": "Nepal",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-03-31",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nepal-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "nl",
+   "iso": "NL",
+   "nombre": "Netherlands",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-08-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/netherlands-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "nc",
+   "iso": "NC",
+   "nombre": "New Caledonia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/new-caledonia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "nz",
+   "iso": "NZ",
+   "nombre": "New Zealand",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-04-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/new-zealand-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ni",
+   "iso": "NI",
+   "nombre": "Nicaragua",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-05-14",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nicaragua-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ne",
+   "iso": "NE",
+   "nombre": "Niger",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-10-31",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/niger-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ng",
+   "iso": "NG",
+   "nombre": "Nigeria",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-06-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kp",
+   "iso": "KP",
+   "nombre": "North Korea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-04-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/north-korea-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "mk",
+   "iso": "MK",
+   "nombre": "North Macedonia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-01-14",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/north-macedonia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "no",
+   "iso": "NO",
+   "nombre": "Norway",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-06",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/norway-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "om",
+   "iso": "OM",
+   "nombre": "Oman",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-04-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/oman-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pk",
+   "iso": "PK",
+   "nombre": "Pakistan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-03-03",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/pakistan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pw",
+   "iso": "PW",
+   "nombre": "Palau",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-08-06",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/palau-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pa",
+   "iso": "PA",
+   "nombre": "Panama",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-08-19",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pg",
+   "iso": "PG",
+   "nombre": "Papua New Guinea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2025-04-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/papua-new-guinea-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "py",
+   "iso": "PY",
+   "nombre": "Paraguay",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-19",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/paraguay-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pe",
+   "iso": "PE",
+   "nombre": "Peru",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-16",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/peru-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ph",
+   "iso": "PH",
+   "nombre": "Philippines",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/philippines-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pl",
+   "iso": "PL",
+   "nombre": "Poland",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-06-05",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/poland-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "pt",
+   "iso": "PT",
+   "nombre": "Portugal",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-03-03",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/portugal-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "qa",
+   "iso": "QA",
+   "nombre": "Qatar",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/qatar-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "cg",
+   "iso": "CG",
+   "nombre": "Republic of the Congo",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2024-10-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/republic-of-the-congo-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ro",
+   "iso": "RO",
+   "nombre": "Romania",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-10-14",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/romania-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ru",
+   "iso": "RU",
+   "nombre": "Russia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-12-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/russia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "rw",
+   "iso": "RW",
+   "nombre": "Rwanda",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-05-11",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/rwanda-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "saba",
+   "iso": null,
+   "nombre": "Saba",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saba-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kn",
+   "iso": "KN",
+   "nombre": "Saint Kitts and Nevis",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-kitts-and-nevis-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lc",
+   "iso": "LC",
+   "nombre": "Saint Lucia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-lucia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "vc",
+   "iso": "VC",
+   "nombre": "Saint Vincent and the Grenadines",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-vincent-and-the-grenadines.html"
+    }
+   ]
+  },
+  {
+   "id": "ws",
+   "iso": "WS",
+   "nombre": "Samoa",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/samoa-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "st",
+   "iso": "ST",
+   "nombre": "Sao Tome and Principe",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-10-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sao-tome-and-principe-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sa",
+   "iso": "SA",
+   "nombre": "Saudi Arabia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-03-13",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saudi-arabia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sn",
+   "iso": "SN",
+   "nombre": "Senegal",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-12-01",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/senegal-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "rs",
+   "iso": "RS",
+   "nombre": "Serbia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-08-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/serbia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sc",
+   "iso": "SC",
+   "nombre": "Seychelles",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-12-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/seychelles-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sl",
+   "iso": "SL",
+   "nombre": "Sierra Leone",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-09-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sierra-leone-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sg",
+   "iso": "SG",
+   "nombre": "Singapore",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-03-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/singapore-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sint-eustatius",
+   "iso": null,
+   "nombre": "Sint Eustatius",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sint-eustatius-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sint-maarten",
+   "iso": null,
+   "nombre": "Sint Maarten",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-08-19",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sint-maarten-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sk",
+   "iso": "SK",
+   "nombre": "Slovakia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-02-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/slovakia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "si",
+   "iso": "SI",
+   "nombre": "Slovenia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-05-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/slovenia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sb",
+   "iso": "SB",
+   "nombre": "Solomon Islands",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-04-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/solomon-island-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "so",
+   "iso": "SO",
+   "nombre": "Somalia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/somalia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "za",
+   "iso": "ZA",
+   "nombre": "South Africa",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-africa-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kr",
+   "iso": "KR",
+   "nombre": "South Korea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-05-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-korea-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ss",
+   "iso": "SS",
+   "nombre": "South Sudan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-11-13",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-sudan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "es",
+   "iso": "ES",
+   "nombre": "Spain",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-12",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/spain-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "lk",
+   "iso": "LK",
+   "nombre": "Sri Lanka",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-10-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sri-lanka-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sd",
+   "iso": "SD",
+   "nombre": "Sudan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-05-15",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sudan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sr",
+   "iso": "SR",
+   "nombre": "Suriname",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-09-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/suriname-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "se",
+   "iso": "SE",
+   "nombre": "Sweden",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-18",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sweden-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ch",
+   "iso": "CH",
+   "nombre": "Switzerland",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-05-20",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/switzerland-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "sy",
+   "iso": "SY",
+   "nombre": "Syria",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-12-11",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/syria-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tw",
+   "iso": "TW",
+   "nombre": "Taiwan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-11-25",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/taiwan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tj",
+   "iso": "TJ",
+   "nombre": "Tajikistan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-16",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tajikistan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tz",
+   "iso": "TZ",
+   "nombre": "Tanzania",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2025-10-31",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tanzania-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "th",
+   "iso": "TH",
+   "nombre": "Thailand",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/thailand-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "bs",
+   "iso": "BS",
+   "nombre": "The Bahamas",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/the-bahamas-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gm",
+   "iso": "GM",
+   "nombre": "The Gambia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-01-16",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/the-gambia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "kg",
+   "iso": "KG",
+   "nombre": "The Kyrgyz Republic",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-02-10",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/the-kyrgyz-republic-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tl",
+   "iso": "TL",
+   "nombre": "Timor-Leste",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/timor-leste-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tg",
+   "iso": "TG",
+   "nombre": "Togo",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-03-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/togo-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "to",
+   "iso": "TO",
+   "nombre": "Tonga",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-12-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tonga-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tt",
+   "iso": "TT",
+   "nombre": "Trinidad and Tobago",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-04-13",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/trinidad-and-tobago-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tn",
+   "iso": "TN",
+   "nombre": "Tunisia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-05-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tunisia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tr",
+   "iso": "TR",
+   "nombre": "Turkey",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-06-09",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turkey-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tm",
+   "iso": "TM",
+   "nombre": "Turkmenistan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-21",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turkmenistan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tc",
+   "iso": "TC",
+   "nombre": "Turks and Caicos Islands",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-07",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turks-and-caicos-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "tv",
+   "iso": "TV",
+   "nombre": "Tuvalu",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2024-12-02",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tuvalu-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ug",
+   "iso": "UG",
+   "nombre": "Uganda",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-12-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uganda-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ua",
+   "iso": "UA",
+   "nombre": "Ukraine",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-08-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ukraine-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ae",
+   "iso": "AE",
+   "nombre": "United Arab Emirates",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-29",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-arab-emirates-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "gb",
+   "iso": "GB",
+   "nombre": "United Kingdom",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2025-05-08",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/united-kingdom-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "uy",
+   "iso": "UY",
+   "nombre": "Uruguay",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-28",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uruguay-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "uz",
+   "iso": "UZ",
+   "nombre": "Uzbekistan",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-01-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uzbekistan-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "vu",
+   "iso": "VU",
+   "nombre": "Vanuatu",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2025-05-22",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/vanuatu-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "ve",
+   "iso": "VE",
+   "nombre": "Venezuela",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-03-19",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/venezuela-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "vn",
+   "iso": "VN",
+   "nombre": "Vietnam",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-06-24",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/vietnam-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "west-bank",
+   "iso": null,
+   "nombre": "West Bank",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 3,
+     "etiqueta": "Reconsiderar el viaje",
+     "etiqueta_original": "Reconsider Travel",
+     "fecha": "2026-08-26",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/west-bank.html"
+    }
+   ]
+  },
+  {
+   "id": "ye",
+   "iso": "YE",
+   "nombre": "Yemen",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-12-19",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/yemen-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "zm",
+   "iso": "ZM",
+   "nombre": "Zambia",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2023-07-31",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zambia-travel-advisory.html"
+    }
+   ]
+  },
+  {
+   "id": "zw",
+   "iso": "ZW",
+   "nombre": "Zimbabwe",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2023-06-27",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zimbabwe-travel-advisory.html"
+    }
+   ]
+  }
+ ]
 }
