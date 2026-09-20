@@ -37,6 +37,8 @@ SOURCE_NAME = "Departamento de Estado (EE.UU.)"
 SOURCE_URL = "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html"
 MAX_BYTES = 50 * 1024 * 1024
 DEFAULT_MIN_ITEMS = 150        # el feed real trae ~200; por debajo de esto algo va mal
+FETCH_ROUNDS = 4              # el feed devuelve conjuntos distintos entre peticiones: se pide varias veces y se unen
+FETCH_PAUSE_S = 4
 RETAIN_DAYS = 30             # cuánto se conserva un país de nivel 3-4 que desaparece del feed
 MAX_DROP_RATIO = 0.15          # no se acepta perder >15 % de países respecto a la corrida anterior
 
@@ -73,6 +75,8 @@ CANARIOS = {"ML": "Mali", "KP": "North Korea", "IR": "Iran", "IQ": "Iraq", "UA":
 
 # Traducción de los 4 niveles estándar (el texto original se conserva en etiqueta_original)
 LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsiderar el viaje", 4: "No viajar"}
+
+SNIPPETS = {}   # id -> primeros caracteres del texto del aviso (solo para el registro)
 
 # Nombres que pycountry no reconoce tal cual (se comparan ya normalizados)
 ALIASES = {
@@ -185,7 +189,7 @@ def analyze_description(desc: str, name: str):
     # cita guerra/hostilidades/invasión. No afirma que haya guerra en todo el país.
     menciona = bool(re.search(r"armed conflict", full, re.I)) or "conflicto_armado" in motivos
     return {"motivos": motivos, "menciona_conflicto": menciona,
-            "motivo_original": headline[:400] if headline else None}
+            "motivo_original": headline[:400] if headline else None, "_texto": full[:450]}
 
 
 def fetch(url: str, retries: int = 3, host: str = ALLOWED_HOST) -> bytes:
@@ -279,6 +283,7 @@ def parse_feed(xml_bytes: bytes, iso_idx: dict):
             }],
         }
         if analysis is not None:
+            SNIPPETS[cid] = analysis.pop("_texto", "")
             n0 = entry["niveles"][0]
             n0["motivos"] = analysis["motivos"]
             n0["menciona_conflicto"] = analysis["menciona_conflicto"]
@@ -329,12 +334,15 @@ def audit_report(paises: dict):
         if n["nivel"] >= 3:
             tabla.append((p["nombre"], n["nivel"], ", ".join(n["motivos"]) or "—", "sí" if n["menciona_conflicto"] else "no"))
             if not n["motivos"]:
-                sin_motivos.append((p["nombre"], (n.get("motivo_original") or "sin frase principal")[:90]))
+                frase = n.get("motivo_original")
+                if not frase:
+                    frase = "sin frase principal | texto: " + SNIPPETS.get(p["id"], "")[:400]
+                sin_motivos.append((p["nombre"], frase[:90] if n.get("motivo_original") else frase))
     return conflicto, sin_motivos, tabla
 
 
 def retain_missing(prev: dict, paises: dict, today: str):
-    """Conserva (hasta RETAIN_DAYS) los países de nivel 3-4 que dejaron de aparecer en el feed.
+    """Conserva (hasta RETAIN_DAYS) los países de nivel 3-4, o con código ISO, que dejaron de aparecer en el feed.
     Un país de riesgo alto no debe desaparecer en silencio porque el feed falle o cambie de formato."""
     kept = []
     if not prev or prev.get("ejemplo", False):
@@ -346,7 +354,7 @@ def retain_missing(prev: dict, paises: dict, today: str):
         if not oid or oid in paises or old.get("nombre", "").casefold() in names:   # sigue en el feed o solo cambió de id
             continue
         niveles = old.get("niveles") or []
-        if not any((n.get("nivel") or 0) >= 3 for n in niveles):
+        if not (any((n.get("nivel") or 0) >= 3 for n in niveles) or old.get("iso")):
             continue
         first = next((n["retirado"] for n in niveles if n.get("retirado")), today)
         try:
@@ -379,23 +387,46 @@ def write_atomic(path: Path, data: dict):
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", help="Leer el feed de un archivo local (pruebas) en vez de descargarlo")
+    ap.add_argument("--input", nargs="+", help="Leer el feed de uno o más archivos locales (pruebas) en vez de descargarlo")
     ap.add_argument("--output", default=str(root / "data" / "levels.json"))
     ap.add_argument("--min-items", type=int, default=DEFAULT_MIN_ITEMS)
     args = ap.parse_args()
     out_path = Path(args.output)
 
-    try:
-        xml_bytes = Path(args.input).read_bytes() if args.input else fetch(FEED_URL)
-    except Exception as e:                          # noqa: BLE001
-        print(f"ERROR de descarga: {e}", file=sys.stderr)
-        return 2
+    if args.input:
+        xml_list = [Path(f).read_bytes() for f in args.input]
+    else:
+        xml_list, last_err = [], None
+        for i in range(FETCH_ROUNDS):
+            try:
+                xml_list.append(fetch(FEED_URL, retries=3 if i == 0 else 1))
+            except Exception as e:                  # noqa: BLE001
+                last_err = e
+            if i < FETCH_ROUNDS - 1:
+                time.sleep(FETCH_PAUSE_S)
+        if not xml_list:
+            print(f"ERROR de descarga: {last_err}", file=sys.stderr)
+            return 2
 
-    try:
-        paises, anomalies, skipped, no_iso = parse_feed(xml_bytes, build_iso_index())
-    except Exception as e:                          # noqa: BLE001
-        print(f"ERROR: feed inválido, no se escribió nada: {e}", file=sys.stderr)
+    iso_idx = build_iso_index()
+    paises, anomalies, skipped, no_iso, counts = {}, [], [], [], []
+    for xml_bytes in xml_list:
+        try:
+            p_i, a_i, s_i, n_i = parse_feed(xml_bytes, iso_idx)
+        except Exception as e:                      # noqa: BLE001
+            print(f"AVISO: una descarga del feed no se pudo leer y se ignora: {e}", file=sys.stderr)
+            continue
+        counts.append(len(p_i))
+        anomalies += [x for x in a_i if x not in anomalies]
+        skipped += [x for x in s_i if x not in skipped]
+        no_iso += n_i
+        for cid, entry in p_i.items():              # unión: se conserva la versión con fecha más reciente
+            if cid not in paises or entry["niveles"][0]["fecha"] > paises[cid]["niveles"][0]["fecha"]:
+                paises[cid] = entry
+    if not counts:
+        print("ERROR: feed inválido en todas las descargas, no se escribió nada.", file=sys.stderr)
         return 1
+    print(f"Descargas del feed: {len(counts)} · avisos por descarga: {counts} · unión: {len(paises)}")
 
     for line in anomalies:
         print("ANOMALÍA:", line, file=sys.stderr)
