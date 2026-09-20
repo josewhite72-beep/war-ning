@@ -38,6 +38,10 @@ MAX_BYTES = 50 * 1024 * 1024
 DEFAULT_MIN_ITEMS = 150        # el feed real trae ~200; por debajo de esto algo va mal
 MAX_DROP_RATIO = 0.15          # no se acepta perder >15 % de países respecto a la corrida anterior
 
+# Ciclo oficial de revisión del Departamento de Estado: niveles 1-2 al menos cada 12 meses,
+# niveles 3-4 al menos cada 6 meses. Pasado ese plazo, el aviso figura como "sin revisión reciente".
+REVIEW_DAYS = {1: 365, 2: 365, 3: 183, 4: 183}
+
 # Traducción de los 4 niveles estándar (el texto original se conserva en etiqueta_original)
 LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsiderar el viaje", 4: "No viajar"}
 
@@ -187,6 +191,7 @@ def parse_feed(xml_bytes: bytes, iso_idx: dict):
                 "etiqueta": LABELS_ES[nivel],
                 "etiqueta_original": original,
                 "fecha": fecha,
+                "vigencia_dias": REVIEW_DAYS[nivel],
                 "url": link,
             }],
         }
