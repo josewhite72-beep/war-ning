@@ -1,0 +1,44 @@
+name: Actualizar niveles (Departamento de Estado)
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-levels
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install "defusedxml==0.7.1" "pycountry>=24.6.1"
+
+      - name: Descargar y normalizar avisos
+        env:
+          COMMIT_MSG_FILE: ${{ runner.temp }}/commit_msg.txt
+        run: python scripts/update_levels.py
+
+      - name: Publicar si hay cambios
+        run: |
+          if git diff --quiet -- data/levels.json; then
+            echo "Sin cambios que publicar."
+            exit 0
+          fi
+          git config user.name  "${{ github.repository_owner }}"
+          git config user.email "${{ github.repository_owner }}@users.noreply.github.com"
+          git add data/levels.json
+          git commit -F "${{ runner.temp }}/commit_msg.txt"
+          git push
