@@ -36,7 +36,7 @@
       "desastres_naturales"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Afghanistan due to civil unrest, crime, terrorism, risk of wrongful detention, kidnapping, natural disasters, and limited health facilities."
+     "motivo_original": "Do not travel to Afghanistan due to civil unrest, crime, terrorism, risk of wrongful detention, kidnapping, natural disasters, and limited health facilities"
     }
    ]
   },
@@ -76,9 +76,13 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-25",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dza.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/algeria-travel-advisory.html",
+     "motivos": [
+      "terrorismo",
+      "secuestro"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Algeria due to terrorism and kidnapping"
     }
    ]
   },
@@ -126,7 +130,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Angola due to risk of crime, health, unrest, and landmines. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution in Angola due to risk of crime, health, unrest, and landmines"
     }
    ]
   },
@@ -169,7 +173,7 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/antarctica-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Antarctica due to environmental hazards posed by extreme and unpredictable weather and limited emergency services ."
+     "motivo_original": "Exercise increased caution in Antarctica due to environmental hazards posed by extreme and unpredictable weather and limited emergency services"
     }
    ]
   },
@@ -235,7 +239,7 @@
       "conflicto_armado"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise increased caution in Armenia due to areas of potential armed conflict. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Armenia due to areas of potential armed conflict"
     }
    ]
   },
@@ -317,9 +321,14 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-04-28",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.aze.html",
-     "motivos": [],
-     "menciona_conflicto": true
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/azerbajian-travel-advisory.html",
+     "motivos": [
+      "conflicto_armado",
+      "terrorismo",
+      "minas"
+     ],
+     "menciona_conflicto": true,
+     "motivo_original": "Reconsider Travel to Azerbaijan due to terrorism, armed conflict, and risk of landmines"
     }
    ]
   },
@@ -344,7 +353,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider Travel to Bahrain due to terrorism and armed conflict ."
+     "motivo_original": "Reconsider Travel to Bahrain due to terrorism and armed conflict"
     }
    ]
   },
@@ -371,7 +380,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Bangladesh due to kidnapping, unrest, crime, and terrorism . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Bangladesh due to kidnapping, unrest, crime, and terrorism"
     }
    ]
   },
@@ -412,9 +421,12 @@
      "fecha": "2025-12-22",
      "vigencia_dias": 183,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/belarus-travel-advisory.html",
-     "motivos": [],
-     "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Belarus due to:"
+     "motivos": [
+      "conflicto_armado",
+      "disturbios"
+     ],
+     "menciona_conflicto": true,
+     "motivo_original": "Do not travel to Belarus due to: The risk of harassment by Belarusian security officials. The arbitrary enforcement of local laws. The potential for civil unrest. Danger associated with its continued support of Russia’s war against Ukraine. The US government has extremely limited ability to help detained US citizens. You may not receive consular access. You could also face arbitrary detention with"
     }
    ]
   },
@@ -434,8 +446,13 @@
      "fecha": "2026-07-23",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bel.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "motivos": [
+      "terrorismo",
+      "crimen",
+      "disturbios"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Belgium due to crime , terrorism , and unrest"
     }
    ]
   },
@@ -459,7 +476,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Belize due to crime . Some areas have increased risk. Please read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Belize due to crime"
     }
    ]
   },
@@ -486,7 +503,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Benin due to unrest, crime, terrorism, and kidnapping. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution in Benin due to unrest, crime, terrorism, and kidnapping"
     }
    ]
   },
@@ -553,12 +570,12 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Bolivia due to crime and civil unrest . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Bolivia due to crime and civil unrest"
     }
    ]
   },
   {
-   "id": "destination.bes",
+   "id": "bonaire",
    "iso": null,
    "nombre": "Bonaire",
    "niveles": [
@@ -572,7 +589,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-20",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bes.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bonaire-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -600,7 +617,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Bosnia and Herzegovina due to risk of crime, landmines, and terrorism."
+     "motivo_original": "Exercise increased caution in Bosnia and Herzegovina due to risk of crime, landmines, and terrorism"
     }
    ]
   },
@@ -624,7 +641,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Botswana due to crime ."
+     "motivo_original": "Exercise increased caution in Botswana due to crime"
     }
    ]
   },
@@ -649,7 +666,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Brazil due to crime and kidnapping. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Brazil due to crime and kidnapping"
     }
    ]
   },
@@ -739,7 +756,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do Not Travel to Burkina Faso for any reason due to crime, kidnapping, terrorism, and health."
+     "motivo_original": "Do Not Travel to Burkina Faso for any reason due to crime, kidnapping, terrorism, and health"
     }
    ]
   },
@@ -767,7 +784,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Burma for any reason due to armed conflict , unrest , arbitrary enforcement of local laws , poor health infrastructure , landmines and unexploded ordnance , and crime ."
+     "motivo_original": "Do not travel to Burma for any reason due to armed conflict , unrest , arbitrary enforcement of local laws , poor health infrastructure , landmines and unexploded ordnance , and crime"
     }
    ]
   },
@@ -792,7 +809,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Burundi due to political violence, crime, and health . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Burundi due to political violence, crime, and health"
     }
    ]
   },
@@ -838,7 +855,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise increased caution in Cambodia due to crime and landmines . Some areas have increased risks. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Cambodia due to crime and landmines"
     }
    ]
   },
@@ -866,7 +883,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Cameroon due to risk of crime, terrorism, unrest, health, kidnapping, and improvised explosive devices (IEDs). Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution in Cameroon due to risk of crime, terrorism, unrest, health, kidnapping, and improvised explosive devices (IEDs)"
     }
    ]
   },
@@ -928,8 +945,16 @@
      "fecha": "2025-11-10",
      "vigencia_dias": 183,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/central-african-republic-travel-advisory.html",
-     "motivos": [],
-     "menciona_conflicto": true
+     "motivos": [
+      "terrorismo",
+      "crimen",
+      "disturbios",
+      "secuestro",
+      "salud",
+      "minas"
+     ],
+     "menciona_conflicto": true,
+     "motivo_original": "Do not travel to the Central African Republic due to risk of unrest, crime, kidnapping, landmines, health, and terrorism"
     }
    ]
   },
@@ -958,7 +983,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Chad for any reason due to risk of crime , terrorism , unrest , inadequate health infrastructure, kidnapping , and landmines ."
+     "motivo_original": "Do not travel to Chad for any reason due to risk of crime , terrorism , unrest , inadequate health infrastructure, kidnapping , and landmines"
     }
    ]
   },
@@ -983,7 +1008,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Chile due to crime and civil unrest."
+     "motivo_original": "Exercise increased caution in Chile due to crime and civil unrest"
     }
    ]
   },
@@ -1005,7 +1030,7 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/china-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution when traveling to the Hong Kong Special Administrative Region (SAR) due to the arbitrary enforcement of local laws."
+     "motivo_original": "Exercise increased caution when traveling to Mainland China due to arbitrary enforcement of local laws, including in relation to exit bans"
     }
    ]
   },
@@ -1032,7 +1057,7 @@
       "secuestro"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Colombia due to crime, terrorism, civil unrest, and kidnapping . Some areas have an increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Colombia due to crime, terrorism, civil unrest, and kidnapping"
     }
    ]
   },
@@ -1077,7 +1102,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Costa Rica due to crime ."
+     "motivo_original": "Exercise increased caution in Costa Rica due to crime"
     }
    ]
   },
@@ -1104,7 +1129,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Côte d’Ivoire due to crime, terrorism, unrest, health , and piracy in nearby waters. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Côte d’Ivoire due to crime, terrorism, unrest, health , and piracy in nearby waters"
     }
    ]
   },
@@ -1149,7 +1174,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Cuba due to crime and unreliable electrical power ."
+     "motivo_original": "Exercise increased caution in Cuba due to crime and unreliable electrical power"
     }
    ]
   },
@@ -1240,7 +1265,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do not travel to the Democratic Republic of the Congo (DRC) due to health , crime , unrest , terrorism, and kidnapping. Due to the Ebola outbreak in the DRC, the Department of Homeland Security has implemented new restrictions under Title 49 of the U.S. Code which prevent U.S. citizens and nationals who have been in the DRC within a 21-day period from boarding commercial flights into the United St"
+     "motivo_original": "Do not travel to the Democratic Republic of the Congo (DRC) due to health , crime , unrest , terrorism, and kidnapping"
     }
    ]
   },
@@ -1259,10 +1284,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2025-03-06",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dji.html",
-     "motivos": [],
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/djibouti-travel-advisory.html",
+     "motivos": [
+      "terrorismo"
+     ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to areas bordering Eritrea due to border tensions ."
+     "motivo_original": "Exercise increased caution in Djibouti due to terrorism"
     }
    ]
   },
@@ -1307,7 +1334,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Dominican Republic due to crime."
+     "motivo_original": "Exercise increased caution in the Dominican Republic due to crime"
     }
    ]
   },
@@ -1334,7 +1361,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Ecuador due to risk of crime , terrorism , unrest , and kidnapping . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Ecuador due to risk of crime , terrorism , unrest , and kidnapping"
     }
    ]
   },
@@ -1360,7 +1387,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Egypt due to terrorism, crime, and health. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Egypt due to terrorism, crime, and health"
     }
    ]
   },
@@ -1406,7 +1433,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Equatorial Guinea due to risk of crime , health , and arbitrary enforcement of laws ."
+     "motivo_original": "Exercise Increased Caution in Equatorial Guinea due to risk of crime , health , and arbitrary enforcement of laws"
     }
    ]
   },
@@ -1431,7 +1458,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Eritrea due to travel restrictions, limited consular assistance, landmines, and wrongful detentions."
+     "motivo_original": "Exercise increased caution in Eritrea due to travel restrictions, limited consular assistance, landmines, and wrongful detentions"
     }
    ]
   },
@@ -1477,7 +1504,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Eswatini due to crime and civil unrest ."
+     "motivo_original": "Exercise increased caution in Eswatini due to crime and civil unrest"
     }
    ]
   },
@@ -1505,7 +1532,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Ethiopia due to unrest, crime, kidnapping, terrorism, landmines, communications disruptions, and exit bans. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Ethiopia due to unrest, crime, kidnapping, terrorism, landmines, communications disruptions, and exit bans"
     }
    ]
   },
@@ -1593,7 +1620,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in France due to terrorism and civil unrest ."
+     "motivo_original": "Exercise increased caution in France due to terrorism and civil unrest"
     }
    ]
   },
@@ -1682,7 +1709,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Gabon due to unrest, crime , and health . Some areas have increased risk. Read the entire travel advisory."
+     "motivo_original": "Exercise increased caution in Gabon due to unrest, crime , and health"
     }
    ]
   },
@@ -1708,7 +1735,7 @@
       "salud"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do Not Travel to Gaza due to terrorism, unrest, and limited health infrastructure ."
+     "motivo_original": "Do Not Travel to Gaza due to terrorism, unrest, and limited health infrastructure"
     }
    ]
   },
@@ -1728,8 +1755,13 @@
      "fecha": "2025-03-13",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/georgia-travel-advisory.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "motivos": [
+      "crimen",
+      "disturbios",
+      "minas"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Do Not Travel To: The Russian-occupied Georgian regions of South Ossetia and Abkhazia due to risk of crime, civil unrest, and landmines"
     }
    ]
   },
@@ -1753,7 +1785,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Germany due to terrorism ."
+     "motivo_original": "Exercise increased caution in Germany due to terrorism"
     }
    ]
   },
@@ -1778,7 +1810,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution when traveling to Ghana due to crime, poor health infrastructure, violence against women, and violence against lesbian and gay travelers . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution when traveling to Ghana due to crime, poor health infrastructure, violence against women, and violence against lesbian and gay travelers"
     }
    ]
   },
@@ -1821,7 +1853,7 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/greenland-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Greenland due to environmental hazards posed by extreme weather conditions and limited emergency services."
+     "motivo_original": "Exercise increased caution in Greenland due to environmental hazards posed by extreme weather conditions and limited emergency services"
     }
    ]
   },
@@ -1841,29 +1873,11 @@
      "fecha": "2026-01-05",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grd.html",
-     "motivos": [],
-     "menciona_conflicto": false
-    }
-   ]
-  },
-  {
-   "id": "gp",
-   "iso": "GP",
-   "nombre": "Guadeloupe",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.glp.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "motivos": [
+      "crimen"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Grenada due to crime"
     }
    ]
   },
@@ -1888,7 +1902,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Guatemala due to crime and terrorism . Some areas have higher risks. Please read the full Travel Advisory."
+     "motivo_original": "Reconsider travel to Guatemala due to crime and terrorism"
     }
    ]
   },
@@ -1914,7 +1928,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Guinea due to crime , unrest , and inadequate health infrastructure."
+     "motivo_original": "Exercise increased caution in Guinea due to crime , unrest , and inadequate health infrastructure"
     }
    ]
   },
@@ -1940,7 +1954,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Guinea-Bissau due to unrest , inadequate health infrastructure, and landmines ."
+     "motivo_original": "Reconsider travel to Guinea-Bissau due to unrest , inadequate health infrastructure, and landmines"
     }
    ]
   },
@@ -1964,7 +1978,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Guyana due to crime ."
+     "motivo_original": "Reconsider travel to Guyana due to crime"
     }
    ]
   },
@@ -1992,7 +2006,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do Not Travel to Haiti due to the risk of crime , kidnapping , terrorism , unrest , and limited health care . Read the entire Travel Advisory."
+     "motivo_original": "Do Not Travel to Haiti due to the risk of crime , kidnapping , terrorism , unrest , and limited health care"
     }
    ]
   },
@@ -2016,7 +2030,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Honduras due to crime . Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Honduras due to crime"
     }
    ]
   },
@@ -2038,7 +2052,7 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/hong-kong-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution due to the arbitrary enforcement of local laws."
+     "motivo_original": "Exercise increased caution due to the arbitrary enforcement of local laws"
     }
    ]
   },
@@ -2105,7 +2119,7 @@
       "crimen"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise increased caution in India due to crime and terrorism . Some areas have increased risk."
+     "motivo_original": "Exercise increased caution in India due to crime and terrorism"
     }
    ]
   },
@@ -2131,7 +2145,7 @@
       "desastres_naturales"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Indonesia due to risk of natural disasters, unrest, and terrorism. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Indonesia due to risk of natural disasters, unrest, and terrorism"
     }
    ]
   },
@@ -2158,7 +2172,7 @@
       "detencion_injusta"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do Not Travel to Iran due to the risk of terrorism, civil unrest, kidnapping, arbitrary arrest of U.S. citizens, and wrongful detention . Read the entire Travel Advisory."
+     "motivo_original": "Do Not Travel to Iran due to the risk of terrorism, civil unrest, kidnapping, arbitrary arrest of US citizens, and wrongful detention"
     }
    ]
   },
@@ -2186,7 +2200,7 @@
       "salud"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Iraq due to terrorism, kidnapping, armed conflict, crime, health risks, and the U.S. government’s limited ability to provide emergency services to U.S. citizens in Iraq."
+     "motivo_original": "Do not travel to Iraq due to terrorism, kidnapping, armed conflict, crime, health risks, and the US government’s limited ability to provide emergency services to US citizens in Iraq"
     }
    ]
   },
@@ -2232,7 +2246,7 @@
       "disturbios"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider Travel to Israel due to terrorism and unrest . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider Travel to Israel due to terrorism and unrest"
     }
    ]
   },
@@ -2256,7 +2270,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Italy due to terrorism ."
+     "motivo_original": "Exercise increased caution in Italy due to terrorism"
     }
    ]
   },
@@ -2281,7 +2295,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution due to crime and health risks. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution due to crime and health risks"
     }
    ]
   },
@@ -2327,7 +2341,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider Travel to Jordan due to terrorism and armed conflict ."
+     "motivo_original": "Reconsider Travel to Jordan due to terrorism and armed conflict"
     }
    ]
   },
@@ -2368,8 +2382,15 @@
      "fecha": "2026-07-28",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "motivos": [
+      "terrorismo",
+      "crimen",
+      "disturbios",
+      "secuestro",
+      "salud"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Kenya due to risk of crime , kidnapping , terrorism , unrest , health , and traffic safety"
     }
    ]
   },
@@ -2393,7 +2414,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Kingdom of Denmark due to terrorism."
+     "motivo_original": "Exercise increased caution in the Kingdom of Denmark due to terrorism"
     }
    ]
   },
@@ -2439,7 +2460,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Kosovo due to risk of unrest and terrorism."
+     "motivo_original": "Exercise increased caution in Kosovo due to risk of unrest and terrorism"
     }
    ]
   },
@@ -2465,7 +2486,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider Travel to Kuwait due to the threat of armed conflict, landmines, and crime ."
+     "motivo_original": "Reconsider Travel to Kuwait due to the threat of armed conflict, landmines, and crime"
     }
    ]
   },
@@ -2491,7 +2512,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Laos due to crime, unrest, and unexploded ordnances . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Laos due to crime, unrest, and unexploded ordnances"
     }
    ]
   },
@@ -2541,7 +2562,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do Not Travel to Lebanon for any reason due to the risk of crime, terrorism, unrest, kidnapping, landmines, and armed conflict. Some areas, especially near the borders, have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Do Not Travel to Lebanon for any reason due to the risk of crime, terrorism, unrest, kidnapping, landmines, and armed conflict"
     }
    ]
   },
@@ -2566,7 +2587,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Lesotho due to crime and health ."
+     "motivo_original": "Exercise Increased Caution in Lesotho due to crime and health"
     }
    ]
   },
@@ -2592,7 +2613,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Liberia due to crime, unrest, and health."
+     "motivo_original": "Exercise increased caution in Liberia due to crime, unrest, and health"
     }
    ]
   },
@@ -2621,7 +2642,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Libya for any reason due to crime , terrorism , unexploded landmines , civil unrest , kidnapping , and armed conflict . Read entire Travel Advisory."
+     "motivo_original": "Do not travel to Libya for any reason due to crime , terrorism , unexploded landmines , civil unrest , kidnapping , and armed conflict"
     }
    ]
   },
@@ -2661,7 +2682,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-04-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ltu.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lithuania-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -2687,7 +2708,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the north and east parts of Luxembourg due to unexploded ordnance from World Wars I and II. These are especially present in areas where the Battle of the Bulge took place in 1944-45."
+     "motivo_original": "Exercise increased caution - Northern Luxembourg Exercise increased caution in the north and east parts of Luxembourg due to unexploded ordnance from World Wars I and II"
     }
    ]
   },
@@ -2709,7 +2730,7 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/macau-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Macau SAR due to a limited ability to provide emergency consular services and arbitrary enforcement of local laws."
+     "motivo_original": "Reconsider Travel to Macau Special Administrative Region (SAR) Reconsider travel to Macau SAR due to a limited ability to provide emergency consular services and arbitrary enforcement of local laws"
     }
    ]
   },
@@ -2735,7 +2756,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution when traveling to Madagascar due to crime, unrest, and health . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution when traveling to Madagascar due to crime, unrest, and health"
     }
    ]
   },
@@ -2760,7 +2781,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution to Malawi due to crime and unrest ."
+     "motivo_original": "Exercise increased caution to Malawi due to crime and unrest"
     }
    ]
   },
@@ -2784,7 +2805,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution on islands and maritime areas off the coast of Eastern Sabah from Kudat in the north to Tawau in the south due to risk of kidnapping."
+     "motivo_original": "Exercise increased caution on islands and maritime areas off the coast of Eastern Sabah from Kudat in the north to Tawau in the south due to risk of kidnapping"
     }
    ]
   },
@@ -2808,7 +2829,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Maldives due to terrorism ."
+     "motivo_original": "Exercise increased caution in Maldives due to terrorism"
     }
    ]
   },
@@ -2855,27 +2876,6 @@
    ]
   },
   {
-   "id": "mq",
-   "iso": "MQ",
-   "nombre": "Martinique",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mtq.html",
-     "motivos": [],
-     "menciona_conflicto": false
-    }
-   ]
-  },
-  {
    "id": "mr",
    "iso": "MR",
    "nombre": "Mauritania",
@@ -2890,12 +2890,14 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-08-18",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mrt.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mauritania-travel-advisory.html",
      "motivos": [
-      "terrorismo"
+      "terrorismo",
+      "crimen",
+      "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do Not Travel to areas marked off-limits by the Mauritanian military. These areas are unsafe due to security risks and terrorist activities."
+     "motivo_original": "Reconsider travel to Mauritania due to terrorism, crime, and limited health infrastructure"
     }
    ]
   },
@@ -2919,14 +2921,14 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution to Mauritius due to crime ."
+     "motivo_original": "Exercise increased caution to Mauritius due to crime"
     }
    ]
   },
   {
-   "id": "mexico",
-   "iso": null,
-   "nombre": "Mexico Travel Advisory",
+   "id": "mx",
+   "iso": "MX",
+   "nombre": "Mexico",
    "niveles": [
     {
      "fuente": "Departamento de Estado (EE.UU.)",
@@ -2945,7 +2947,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Mexico due to terrorism, crime, and kidnapping."
+     "motivo_original": "Exercise increased caution in Mexico due to terrorism, crime, and kidnapping"
     }
    ]
   },
@@ -2969,7 +2971,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise Increased Caution in Moldova due to risk of unexploded ordnance (UXO) . Some areas have increased risk. Read the entire travel advisory."
+     "motivo_original": "Exercise Increased Caution in Moldova due to risk of unexploded ordnance (UXO)"
     }
    ]
   },
@@ -3056,7 +3058,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Morocco due to terrorism ."
+     "motivo_original": "Exercise increased caution in Morocco due to terrorism"
     }
    ]
   },
@@ -3083,7 +3085,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution when traveling to Mozambique due to health issues , crime, civil unrest, and terrorism . Some areas have greater risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution when traveling to Mozambique due to health issues , crime, civil unrest, and terrorism"
     }
    ]
   },
@@ -3108,7 +3110,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Namibia due to crime and health ."
+     "motivo_original": "Exercise increased caution in Namibia due to crime and health"
     }
    ]
   },
@@ -3153,7 +3155,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Nepal due to civil unrest."
+     "motivo_original": "Exercise Increased Caution in Nepal due to civil unrest"
     }
    ]
   },
@@ -3177,7 +3179,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Netherlands due to terrorism."
+     "motivo_original": "Exercise increased caution in the Netherlands due to terrorism"
     }
    ]
   },
@@ -3201,7 +3203,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in New Caledonia due to risk of crime."
+     "motivo_original": "Exercise Increased Caution in New Caledonia due to risk of crime"
     }
    ]
   },
@@ -3248,7 +3250,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider Travel to Nicaragua due to risk of crime , health , wrongful detention , and arbitrary enforcement of local laws."
+     "motivo_original": "Reconsider Travel to Nicaragua due to risk of crime , health , wrongful detention , and arbitrary enforcement of local laws"
     }
    ]
   },
@@ -3276,7 +3278,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Niger for any reason due to crime, unrest, terrorism, health, and kidnapping."
+     "motivo_original": "Do not travel to Niger for any reason due to crime, unrest, terrorism, health, and kidnapping"
     }
    ]
   },
@@ -3304,7 +3306,31 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Nigeria due to crime , terrorism , unrest , kidnapping , and inconsistent availability of health care services . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Nigeria due to crime , terrorism , unrest , kidnapping , and inconsistent availability of health care services"
+    }
+   ]
+  },
+  {
+   "id": "kp",
+   "iso": "KP",
+   "nombre": "North Korea",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2025-04-29",
+     "vigencia_dias": 183,
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/north-korea-travel-advisory.html",
+     "motivos": [
+      "detencion_injusta"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Do not travel to North Korea due to the continuing serious risk of arrest, long-term detention, and the threat of wrongful detention of US nationals"
     }
    ]
   },
@@ -3371,7 +3397,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Oman due to the risk of terrorism and armed conflict . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Oman due to the risk of terrorism and armed conflict"
     }
    ]
   },
@@ -3398,7 +3424,7 @@
       "secuestro"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Pakistan due to armed conflict , terrorism, crime , and kidnapping . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Pakistan due to armed conflict , terrorism, crime , and kidnapping"
     }
    ]
   },
@@ -3438,9 +3464,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-19",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pan.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html",
+     "motivos": [
+      "crimen"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Panama due to crime"
     }
    ]
   },
@@ -3462,13 +3491,10 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/papua-new-guinea-travel-advisory.html",
      "motivos": [
       "crimen",
-      "disturbios",
-      "secuestro",
-      "desastres_naturales",
-      "minas"
+      "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Papua New Guinea due to crime, civil unrest, and piracy . Exercise increased caution due to kidnapping, unexploded ordnance, inconsistent availability of healthcare services, and potential for natural disasters. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Papua New Guinea due to crime, civil unrest, and piracy"
     }
    ]
   },
@@ -3492,7 +3518,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Departments of Alto Paraná, Amambay, Canindeyú, Concepcion, and San Pedro due to crime."
+     "motivo_original": "Exercise Increased Caution in Departments of Alto Paraná, Amambay, Canindeyú, Concepcion, and San Pedro due to crime"
     }
    ]
   },
@@ -3513,12 +3539,10 @@
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/peru-travel-advisory.html",
      "motivos": [
-      "crimen",
-      "disturbios",
-      "secuestro"
+      "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution due to crime, civil unrest, and the risk of kidnapping. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Do not travel to: The Colombia-Peru border area in the Loreto Region due to crime"
     }
    ]
   },
@@ -3545,7 +3569,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Philippines due to crime, terrorism, civil unrest, and kidnapping. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in the Philippines due to crime, terrorism, civil unrest, and kidnapping"
     }
    ]
   },
@@ -3611,7 +3635,7 @@
       "conflicto_armado"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Qatar due to risk of armed conflict."
+     "motivo_original": "Reconsider travel to Qatar due to risk of armed conflict"
     }
    ]
   },
@@ -3635,7 +3659,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Republic of the Congo due to crime ."
+     "motivo_original": "Exercise increased caution in the Republic of the Congo due to crime"
     }
    ]
   },
@@ -3676,9 +3700,13 @@
      "fecha": "2025-12-29",
      "vigencia_dias": 183,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/russia-travel-advisory.html",
-     "motivos": [],
-     "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Russia due to:"
+     "motivos": [
+      "conflicto_armado",
+      "terrorismo",
+      "detencion_injusta"
+     ],
+     "menciona_conflicto": true,
+     "motivo_original": "Do not travel to Russia due to: Danger associated with the continuing war between Russia and Ukraine. The risk of harassment or wrongful detention by Russian security officials. The arbitrary enforcement of local laws. The possibility of terrorism. US citizens in Russia should leave immediately The US government has limited ability to help US citizens in Russia, especially outside of Moscow. The U"
     }
    ]
   },
@@ -3703,14 +3731,14 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Rwanda due to crime and unrest . Some areas have increased risk. Read the entire Travel Advisory. Read the entire"
+     "motivo_original": "Exercise increased caution in Rwanda due to crime and unrest"
     }
    ]
   },
   {
-   "id": "destination.xqx",
+   "id": "saba",
    "iso": null,
-   "nombre": "Saba and Sint Eustatius",
+   "nombre": "Saba",
    "niveles": [
     {
      "fuente": "Departamento de Estado (EE.UU.)",
@@ -3722,28 +3750,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-20",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xqx.html",
-     "motivos": [],
-     "menciona_conflicto": false
-    }
-   ]
-  },
-  {
-   "id": "bl",
-   "iso": "BL",
-   "nombre": "Saint Barthelemy",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.blm.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saba-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -3764,7 +3771,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-07",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kn.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-kitts-and-nevis-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -3786,8 +3793,11 @@
      "fecha": "2026-07-10",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lca.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "motivos": [
+      "crimen"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Saint Lucia due to risk of crime"
     }
    ]
   },
@@ -3806,7 +3816,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-07",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vct.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-vincent-and-the-grenadines.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -3853,7 +3863,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in São Tomé and Príncipe due to health risks ."
+     "motivo_original": "Exercise Increased Caution in São Tomé and Príncipe due to health risks"
     }
    ]
   },
@@ -3878,7 +3888,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Saudi Arabia due to risk of Iranian drone and missile targeting of American interests, armed conflict , terrorism, exit bans, and local laws regarding social media activity. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Saudi Arabia due to risk of Iranian drone and missile targeting of American interests, armed conflict , terrorism, exit bans, and local laws regarding social media activity"
     }
    ]
   },
@@ -3903,7 +3913,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Casamance region due to crime and landmines . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in the Casamance region due to crime and landmines"
     }
    ]
   },
@@ -3922,9 +3932,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-27",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.srb.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/serbia-travel-advisory.html",
+     "motivos": [
+      "crimen"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Serbia due to crime"
     }
    ]
   },
@@ -3948,7 +3961,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Praslin , La Digue , and the outer islands due to health risks. Smaller islands like these lack medical infrastructure required to treat common traumas or illnesses. Patients must travel to the island of Mahé via boat or plane to receive care."
+     "motivo_original": "Exercise Increased Caution - Praslin , La Digue , and the outer islands Exercise Increased Caution in Praslin , La Digue , and the outer islands due to health risks"
     }
    ]
   },
@@ -3974,7 +3987,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Sierra Leone due to crime , civil unrest , and inadequate health infrastructure."
+     "motivo_original": "Exercise increased caution in Sierra Leone due to crime , civil unrest , and inadequate health infrastructure"
     }
    ]
   },
@@ -4000,8 +4013,29 @@
    ]
   },
   {
-   "id": "sint-maarten",
+   "id": "sint-eustatius",
    "iso": null,
+   "nombre": "Sint Eustatius",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "vigencia_dias": 365,
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sint-eustatius-travel-advisory.html",
+     "motivos": [],
+     "menciona_conflicto": false
+    }
+   ]
+  },
+  {
+   "id": "sx",
+   "iso": "SX",
    "nombre": "Sint Maarten",
    "niveles": [
     {
@@ -4078,8 +4112,13 @@
      "fecha": "2025-04-29",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/solomon-island-travel-advisory.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "motivos": [
+      "crimen",
+      "disturbios",
+      "salud"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution traveling to Solomon Islands due to risks to health, unexploded ordinance, crime and civil unrest"
     }
    ]
   },
@@ -4108,7 +4147,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do Not Travel to Somalia due to risk of crime, kidnapping, terrorism, unrest, health, landmines, systematic mistreatment of women, and systematic mistreatment of gay and lesbian individuals, piracy, abuse of residents in rehabilitation centers, and confiscation of passports by family members."
+     "motivo_original": "Do Not Travel to Somalia due to risk of crime, kidnapping, terrorism, unrest, health, landmines, systematic mistreatment of women, and systematic mistreatment of gay and lesbian individuals, piracy, abuse of residents in rehabilitation centers, and confiscation of passports by family members"
     }
    ]
   },
@@ -4135,7 +4174,7 @@
       "secuestro"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in South Africa due to crime, terrorism, civil unrest, and kidnapping ."
+     "motivo_original": "Exercise increased caution in South Africa due to crime, terrorism, civil unrest, and kidnapping"
     }
    ]
   },
@@ -4184,7 +4223,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to South Sudan due to risk of unrest, crime, kidnapping, landmines, and health threats ."
+     "motivo_original": "Do not travel to South Sudan due to risk of unrest, crime, kidnapping, landmines, and health threats"
     }
    ]
   },
@@ -4209,7 +4248,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Spain due to terrorism and civil unrest ."
+     "motivo_original": "Exercise increased caution in Spain due to terrorism and civil unrest"
     }
    ]
   },
@@ -4235,7 +4274,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Sri Lanka due to unrest , terrorism, and landmines. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Sri Lanka due to unrest , terrorism, and landmines"
     }
    ]
   },
@@ -4264,7 +4303,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Sudan due to risk of unrest, crime, kidnapping, terrorism, landmines, and health risks ."
+     "motivo_original": "Do not travel to Sudan due to risk of unrest, crime, kidnapping, terrorism, landmines, and health risks"
     }
    ]
   },
@@ -4309,7 +4348,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Sweden due to terrorism ."
+     "motivo_original": "Exercise increased caution in Sweden due to terrorism"
     }
    ]
   },
@@ -4358,7 +4397,7 @@
       "secuestro"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Syria for any reason due to the risk of terrorism, civil unrest, kidnapping, hostage taking, crime, and armed conflict ."
+     "motivo_original": "Do not travel to Syria for any reason due to the risk of terrorism, civil unrest, kidnapping, hostage taking, crime, and armed conflict"
     }
    ]
   },
@@ -4404,7 +4443,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise increased caution in Tajikistan due to the risk of terrorism, unexploded landmines, occasional violence near the border with the Kyrgyz Republic, and limited ability to assist U.S.-Tajik dual nationals . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Tajikistan due to the risk of terrorism, unexploded landmines, occasional violence near the border with the Kyrgyz Republic, and limited ability to assist US-Tajik dual nationals"
     }
    ]
   },
@@ -4423,9 +4462,14 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2025-10-31",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tza.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tanzania-travel-advisory.html",
+     "motivos": [
+      "terrorismo",
+      "crimen",
+      "disturbios"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Reconsider travel to Tanzania due to unrest , crime , terrorism , and targeting of gay and lesbian individuals"
     }
    ]
   },
@@ -4446,10 +4490,10 @@
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/thailand-travel-advisory.html",
      "motivos": [
-      "disturbios"
+      "conflicto_armado"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise increased caution in the Yala, Pattani, and Narathiwat provinces due to the risk of unrest. The potential for overall collateral risk is elevated for Americans in Thailand’s southernmost provinces due to low intensity conflict."
+     "motivo_original": "Exercise Increased Caution Thailand – Cambodia border Exercise increased caution in the Cambodia border region due to the risk of armed conflict"
     }
    ]
   },
@@ -4473,7 +4517,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in The Bahamas due to crime ."
+     "motivo_original": "Exercise increased caution in The Bahamas due to crime"
     }
    ]
   },
@@ -4499,7 +4543,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in The Gambia due to crime , unrest , and inadequate health infrastructure ."
+     "motivo_original": "Exercise increased caution in The Gambia due to crime , unrest , and inadequate health infrastructure"
     }
    ]
   },
@@ -4545,7 +4589,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Timor-Leste due to risk of unrest and crime . Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution in Timor-Leste due to risk of unrest and crime"
     }
    ]
   },
@@ -4573,7 +4617,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Togo due to risk of crime, terrorism, unrest, kidnapping, and health . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution in Togo due to risk of crime, terrorism, unrest, kidnapping, and health"
     }
    ]
   },
@@ -4615,11 +4659,10 @@
      "vigencia_dias": 183,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/trinidad-and-tobago-travel-advisory.html",
      "motivos": [
-      "terrorismo",
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Trinidad and Tobago due to crime. There is also a heightened risk of terrorism. Some areas have an increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Trinidad and Tobago due to crime"
     }
    ]
   },
@@ -4645,7 +4688,7 @@
       "disturbios"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise Increased Caution in Tunisia due to terrorism, crime, and unrest . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise Increased Caution in Tunisia due to terrorism, crime, and unrest"
     }
    ]
   },
@@ -4670,7 +4713,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Exercise increased caution in Türkiye due to terrorism , armed conflict , and arbitrary detentions . Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Exercise increased caution in Türkiye due to terrorism , armed conflict , and arbitrary detentions"
     }
    ]
   },
@@ -4689,7 +4732,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-21",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tkm.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turkmenistan-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -4715,7 +4758,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the Turks and Caicos Islands due to crime ."
+     "motivo_original": "Exercise increased caution in the Turks and Caicos Islands due to crime"
     }
    ]
   },
@@ -4781,7 +4824,7 @@
       "conflicto_armado"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Ukraine for any reason due to the Russia-Ukraine war."
+     "motivo_original": "Do not travel to Ukraine for any reason due to the Russia-Ukraine war"
     }
    ]
   },
@@ -4806,7 +4849,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider Travel to the United Arab Emirates due to terrorism and armed conflict."
+     "motivo_original": "Reconsider Travel to the United Arab Emirates due to terrorism and armed conflict"
     }
    ]
   },
@@ -4830,7 +4873,7 @@
       "terrorismo"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in the United Kingdom due to terrorism ."
+     "motivo_original": "Exercise increased caution in the United Kingdom due to terrorism"
     }
    ]
   },
@@ -4854,7 +4897,7 @@
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Uruguay due to crime ."
+     "motivo_original": "Exercise increased caution in Uruguay due to crime"
     }
    ]
   },
@@ -4923,7 +4966,7 @@
       "salud"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider travel to Venezuela due to risk of crime , kidnapping , terrorism , and poor health infrastructure. Some areas have increased risk. Read the entire Travel Advisory."
+     "motivo_original": "Reconsider travel to Venezuela due to risk of crime , kidnapping , terrorism , and poor health infrastructure"
     }
    ]
   },
@@ -4969,7 +5012,7 @@
       "disturbios"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Reconsider Travel to West Bank due to terrorism and unrest ."
+     "motivo_original": "Reconsider Travel to West Bank due to terrorism and unrest"
     }
    ]
   },
@@ -4998,7 +5041,7 @@
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Yemen due to risk of terrorism, unrest, crime, health risks, kidnapping, and landmines ."
+     "motivo_original": "Do not travel to Yemen due to risk of terrorism, unrest, crime, health risks, kidnapping, and landmines"
     }
    ]
   },
@@ -5017,7 +5060,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2023-07-31",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zmb.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zambia-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -5038,9 +5081,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2023-06-27",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html",
-     "motivos": [],
-     "menciona_conflicto": false
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zimbabwe-travel-advisory.html",
+     "motivos": [
+      "crimen"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Zimbabwe due to crime and official harassment of US citizens"
     }
    ]
   }
