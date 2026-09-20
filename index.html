@@ -159,6 +159,18 @@
     .nav-item.active { color: var(--accent); font-weight: bold; }
     .nav-icon { font-size: 1.4rem; line-height: 1.2; }
 
+    select {
+      width: 100%; padding: 12px; min-height: 48px; font-size: 1rem;
+      border: 1px solid var(--border-color); background: var(--card-bg);
+      color: var(--text-color); border-radius: 4px;
+    }
+    .filter-row { margin-bottom: 16px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .chip { border: 1px solid var(--muted); border-radius: 999px; padding: 2px 10px; font-size: 0.85rem; }
+    .motivos-note { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+    details.orig { margin-top: 10px; font-size: 0.85rem; color: var(--muted); }
+    details.orig summary { cursor: pointer; min-height: 32px; }
+    .row-tags { display: block; font-size: 0.85rem; margin-top: 4px; }
     .hidden { display: none !important; }
     .empty-state { text-align: center; padding: 40px 20px; color: var(--muted); }
     .schema-box { text-align: left; background: var(--card-bg); border: 1px solid var(--border-color); padding: 12px; border-radius: 4px; font-size: 0.85rem; color: var(--muted); margin-top: 16px; }
@@ -182,6 +194,19 @@
       <div class="controls">
         <input type="search" id="search-input" placeholder="Buscar país..." aria-label="Buscar país">
         <button id="sort-btn" class="secondary" type="button">Orden: Nombre</button>
+      </div>
+      <div id="filter-row" class="filter-row hidden">
+        <select id="motive-filter" aria-label="Filtrar por motivo del aviso">
+          <option value="">Todos los motivos</option>
+          <option value="conflicto">Menciona conflicto armado o guerra</option>
+          <option value="terrorismo">Terrorismo</option>
+          <option value="crimen">Crimen</option>
+          <option value="disturbios">Disturbios</option>
+          <option value="secuestro">Secuestro</option>
+          <option value="salud">Riesgo sanitario</option>
+          <option value="desastres_naturales">Desastres naturales</option>
+          <option value="minas">Minas terrestres</option>
+        </select>
       </div>
       <ul id="country-list" class="country-list"></ul>
       <div class="disclaimer">
@@ -232,9 +257,9 @@
       <div class="source-card">
         <h3>Acerca de</h3>
         <p class="source-meta" style="margin-top: 6px;">
-          War_ning v1.3 (MVP) · PanaMentorLabs.<br>
+          War_ning v1.4 (MVP) · PanaMentorLabs.<br>
           Visor de datos agregados. No genera alertas ni niveles propios y no usa geolocalización.<br>
-          Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel. «Sin revisión reciente» aparece cuando la fuente supera su propio ciclo de revisión (para el Departamento de Estado: 12 meses en niveles 1-2 y 6 meses en niveles 3-4).
+          Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. Los motivos y la mención de conflicto se extraen automáticamente del texto de cada aviso y pueden estar incompletos; "menciona" no significa que haya guerra en todo el país. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel. «Sin revisión reciente» aparece cuando la fuente supera su propio ciclo de revisión (para el Departamento de Estado: 12 meses en niveles 1-2 y 6 meses en niveles 3-4).
         </p>
         <p id="sources-list" class="source-meta" style="margin-top: 10px;"></p>
       </div>
@@ -287,6 +312,28 @@
         try { var n = regionNames.of(pais.iso); if (n && n !== pais.iso) return n; } catch (e) {}
       }
       return pais.nombre;
+    }
+
+    // ---------- Motivos del aviso (extraídos del texto de la fuente) ----------
+    var MOTIVO_ES = {
+      conflicto_armado: 'Conflicto armado', terrorismo: 'Terrorismo', crimen: 'Crimen',
+      disturbios: 'Disturbios', secuestro: 'Secuestro', detencion_injusta: 'Detención injusta',
+      salud: 'Riesgo sanitario', desastres_naturales: 'Desastres naturales',
+      minas: 'Minas terrestres', eventos_limitados: 'Evento de duración limitada'
+    };
+    function hasCode(n, c) { return Array.isArray(n.motivos) && n.motivos.indexOf(c) !== -1; }
+    function mencionaConflicto(n) { return n.menciona_conflicto === true || hasCode(n, 'conflicto_armado'); }
+    function tagsFor(n) {
+      var t = [];
+      if (n.menciona_conflicto === true && !hasCode(n, 'conflicto_armado')) t.push('Menciona conflicto armado o guerra');
+      (Array.isArray(n.motivos) ? n.motivos : []).forEach(function (c) { if (MOTIVO_ES[c]) t.push(MOTIVO_ES[c]); });
+      return t;
+    }
+    function matchesMotive(p, code) {
+      if (!code) return true;
+      return (p.niveles || []).some(function (n) {
+        return code === 'conflicto' ? mencionaConflicto(n) : hasCode(n, code);
+      });
     }
 
     // ---------- Escalas: cada fuente se interpreta con SU escala ----------
@@ -346,6 +393,7 @@
     var favoritesEmptyEl = document.getElementById('favorites-empty');
     var searchInput = document.getElementById('search-input');
     var sortBtn = document.getElementById('sort-btn');
+    var motiveFilter = document.getElementById('motive-filter');
     var lastUpdateEl = document.getElementById('last-update');
     var bannerOffline = document.getElementById('banner-offline');
     var bannerExample = document.getElementById('banner-example');
@@ -397,6 +445,8 @@
           '<span class="row-name">' + esc(displayName(pais)) + '</span>' +
           '<span class="row-sub">' + esc(sub) + '</span>' +
           (top ? meterHTML(top.n) : '') +
+          (top && tagsFor(top.n).length ? '<span class="row-tags">' + esc(tagsFor(top.n).slice(0, 3).join(' · ') +
+            (tagsFor(top.n).length > 3 ? ' · +' + (tagsFor(top.n).length - 3) : '')) + '</span>' : '') +
         '</button>' +
         '<button type="button" class="star-btn"></button>';
 
@@ -412,7 +462,9 @@
 
     function renderPanorama() {
       var term = norm(searchInput.value);
-      var list = appData.paises.filter(function (p) { return norm(displayName(p)).indexOf(term) !== -1 || norm(p.nombre).indexOf(term) !== -1; });
+      var list = appData.paises.filter(function (p) {
+        return (norm(displayName(p)).indexOf(term) !== -1 || norm(p.nombre).indexOf(term) !== -1) && matchesMotive(p, motiveFilter.value);
+      });
       list.sort(function (a, b) {
         if (sortByName) return displayName(a).localeCompare(displayName(b), 'es');
         var ta = topSource(a), tb = topSource(b);
@@ -431,6 +483,21 @@
       var favs = appData.paises.filter(function (p) { return isFav(keyOf(p)); });
       favoritesEmptyEl.classList.toggle('hidden', favs.length > 0);
       favs.forEach(function (p) { favoritesListEl.appendChild(makeRow(p)); });
+    }
+
+    function motivosHTML(n) {
+      var tags = tagsFor(n);
+      if (!tags.length && !n.motivo_original) return '';
+      var h = '';
+      if (tags.length) {
+        h += '<div class="chips" aria-label="Motivos según el aviso">' +
+             tags.map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>';
+      }
+      h += '<div class="motivos-note">Motivos según el aviso, extraídos automáticamente de su texto; pueden estar incompletos. Consulta la fuente original.</div>';
+      if (n.motivo_original) {
+        h += '<details class="orig"><summary>Frase principal del aviso (inglés)</summary><p>' + esc(n.motivo_original) + '</p></details>';
+      }
+      return h;
     }
 
     function renderDetail(pais) {
@@ -455,6 +522,7 @@
             '<div class="source-meta">Escala: ' + esc(n.escala) + ' · Actualizado: ' + esc(n.fecha) + badge + '</div>' +
             meterHTML(n) +
             '<div class="source-level">' + esc(levelText(n)) + ' — ' + esc(n.etiqueta) + '</div>' +
+            motivosHTML(n) +
             (url ? '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Ver fuente original ↗</a>' : '') +
           '</div>';
       });
@@ -469,6 +537,7 @@
 
     // ---------- Controles ----------
     searchInput.addEventListener('input', renderPanorama);
+    motiveFilter.addEventListener('change', renderPanorama);
     sortBtn.addEventListener('click', function () {
       sortByName = !sortByName;
       sortBtn.textContent = sortByName ? 'Orden: Nombre' : 'Orden: Posición en su escala';
@@ -514,6 +583,10 @@
         if (age !== null && age > 14) txt += ' (hace ' + age + ' días)';
         lastUpdateEl.innerHTML = txt;
         if (appData.ejemplo) bannerExample.style.display = 'block';
+        var hasMotivos = appData.paises.some(function (p) {
+          return (p.niveles || []).some(function (n) { return Array.isArray(n.motivos); });
+        });
+        document.getElementById('filter-row').classList.toggle('hidden', !hasMotivos);
         var src = (appData.fuentes || []).map(function (f) { return esc(f.nombre) + (f.nota ? ' — ' + esc(f.nota) : ''); });
         if (src.length) document.getElementById('sources-list').innerHTML = '<strong>Fuentes de datos:</strong><br>' + src.join('<br>');
         renderPanorama();
