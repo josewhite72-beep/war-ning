@@ -60,7 +60,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-25",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/algeria-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dza.html"
     }
    ]
   },
@@ -150,7 +150,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-05-20",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/antigua-and-barbuda-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.atg.html"
     }
    ]
   },
@@ -258,7 +258,7 @@
      "etiqueta": "Reconsiderar el viaje",
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-04-28",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/azerbajian-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.aze.html"
     }
    ]
   },
@@ -312,7 +312,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-04-10",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/barbados-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.brb.html"
     }
    ]
   },
@@ -348,7 +348,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-23",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/belgium-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bel.html"
     }
    ]
   },
@@ -443,7 +443,7 @@
    ]
   },
   {
-   "id": "bonaire",
+   "id": "destination.bes",
    "iso": null,
    "nombre": "Bonaire",
    "niveles": [
@@ -456,7 +456,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-20",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bonaire-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bes.html"
     }
    ]
   },
@@ -528,7 +528,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-05-22",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/british-virgin-islands-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vgb.html"
     }
    ]
   },
@@ -905,8 +905,8 @@
      "nivel": 1,
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/curacao-travel-advisory.html"
+     "fecha": "2026-09-09",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cuw.html"
     }
    ]
   },
@@ -924,7 +924,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-06-01",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cyprus-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cyp.html"
     }
    ]
   },
@@ -978,7 +978,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2025-03-06",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/djibouti-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dji.html"
     }
    ]
   },
@@ -1121,8 +1121,8 @@
      "nivel": 1,
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-03-31",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/estonia-travel-advisory.html"
+     "fecha": "2026-09-20",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.est.html"
     }
    ]
   },
@@ -1175,7 +1175,7 @@
      "nivel": 1,
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-09-20",
+     "fecha": "2026-07-07",
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.fsm.html"
     }
    ]
@@ -1428,7 +1428,25 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-01-05",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/grenada-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grd.html"
+    }
+   ]
+  },
+  {
+   "id": "gp",
+   "iso": "GP",
+   "nombre": "Guadeloupe",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.glp.html"
     }
    ]
   },
@@ -1806,7 +1824,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html"
     }
    ]
   },
@@ -2022,7 +2040,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-04-28",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lithuania-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ltu.html"
     }
    ]
   },
@@ -2135,24 +2153,6 @@
    ]
   },
   {
-   "id": "ml",
-   "iso": "ML",
-   "nombre": "Mali",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 4,
-     "etiqueta": "No viajar",
-     "etiqueta_original": "Do Not Travel",
-     "fecha": "2026-06-08",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mali-travel-advisory.html"
-    }
-   ]
-  },
-  {
    "id": "mt",
    "iso": "MT",
    "nombre": "Malta",
@@ -2166,7 +2166,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-09",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/malta-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mlt.html"
     }
    ]
   },
@@ -2189,6 +2189,24 @@
    ]
   },
   {
+   "id": "mq",
+   "iso": "MQ",
+   "nombre": "Martinique",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mtq.html"
+    }
+   ]
+  },
+  {
    "id": "mr",
    "iso": "MR",
    "nombre": "Mauritania",
@@ -2202,7 +2220,7 @@
      "etiqueta": "Reconsiderar el viaje",
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-08-18",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mauritania-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mrt.html"
     }
    ]
   },
@@ -2513,24 +2531,6 @@
    ]
   },
   {
-   "id": "kp",
-   "iso": "KP",
-   "nombre": "North Korea",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 4,
-     "etiqueta": "No viajar",
-     "etiqueta_original": "Do Not Travel",
-     "fecha": "2025-04-29",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/north-korea-travel-advisory.html"
-    }
-   ]
-  },
-  {
    "id": "mk",
    "iso": "MK",
    "nombre": "North Macedonia",
@@ -2634,7 +2634,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-19",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pan.html"
     }
    ]
   },
@@ -2837,9 +2837,9 @@
    ]
   },
   {
-   "id": "saba",
+   "id": "destination.xqx",
    "iso": null,
-   "nombre": "Saba",
+   "nombre": "Saba and Sint Eustatius",
    "niveles": [
     {
      "fuente": "Departamento de Estado (EE.UU.)",
@@ -2850,7 +2850,25 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-20",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saba-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xqx.html"
+    }
+   ]
+  },
+  {
+   "id": "bl",
+   "iso": "BL",
+   "nombre": "Saint Barthelemy",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.blm.html"
     }
    ]
   },
@@ -2868,7 +2886,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-07",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-kitts-and-nevis-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kn.html"
     }
    ]
   },
@@ -2886,7 +2904,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-10",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-lucia-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lca.html"
     }
    ]
   },
@@ -2904,7 +2922,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-07",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-vincent-and-the-grenadines.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vct.html"
     }
    ]
   },
@@ -2994,7 +3012,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-27",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/serbia-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.srb.html"
     }
    ]
   },
@@ -3049,24 +3067,6 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-03-09",
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/singapore-travel-advisory.html"
-    }
-   ]
-  },
-  {
-   "id": "sint-eustatius",
-   "iso": null,
-   "nombre": "Sint Eustatius",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/sint-eustatius-travel-advisory.html"
     }
    ]
   },
@@ -3390,7 +3390,7 @@
      "etiqueta": "Reconsiderar el viaje",
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2025-10-31",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tanzania-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tza.html"
     }
    ]
   },
@@ -3588,7 +3588,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-21",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turkmenistan-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tkm.html"
     }
    ]
   },
@@ -3714,7 +3714,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uruguay-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ury.html"
     }
    ]
   },
@@ -3840,7 +3840,7 @@
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2023-07-31",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zambia-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zmb.html"
     }
    ]
   },
@@ -3858,7 +3858,7 @@
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2023-06-27",
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zimbabwe-travel-advisory.html"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html"
     }
    ]
   }
