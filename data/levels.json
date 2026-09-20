@@ -457,6 +457,30 @@
    ]
   },
   {
+   "id": "bz",
+   "iso": "BZ",
+   "nombre": "Belize",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-03-12",
+     "vigencia_dias": 365,
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/belizetravel-advisory.html",
+     "motivos": [
+      "crimen"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Belize due to crime"
+    }
+   ]
+  },
+  {
    "id": "bj",
    "iso": "BJ",
    "nombre": "Benin",
@@ -1505,7 +1529,7 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-08-27",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.eth.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ethiopia-travel-advisory.html",
      "motivos": [
       "terrorismo",
       "crimen",
@@ -1736,14 +1760,14 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2025-03-13",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.geo.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/georgia-travel-advisory.html",
      "motivos": [
       "crimen",
       "disturbios",
       "minas"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do Not Travel To: The Russian-occupied Georgian regions of South Ossetia and Abkhazia due to risk of crime , unrest , and landmines"
+     "motivo_original": "Do Not Travel To: The Russian-occupied Georgian regions of South Ossetia and Abkhazia due to risk of crime, civil unrest, and landmines"
     }
    ]
   },
@@ -2050,12 +2074,12 @@
      "nivel": 2,
      "etiqueta": "Mayor precaución",
      "etiqueta_original": "Exercise Increased Caution",
-     "fecha": "2026-09-04",
+     "fecha": "2024-11-27",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.hkg.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/hong-kong-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution when traveling to the Hong Kong Special Administrative Region (SAR) due to the a rbitrary enforcement of local laws"
+     "motivo_original": "Exercise increased caution due to the arbitrary enforcement of local laws"
     }
    ]
   },
@@ -2940,12 +2964,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2025-12-08",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mus.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mauritius-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Mauritius due to crime"
+     "motivo_original": "Exercise increased caution to Mauritius due to crime"
     }
    ]
   },
@@ -3538,12 +3562,12 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-19",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pry.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/paraguay-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Departments of Alto Paraná , Amambay , Canindeyú , Concepcion , and San Pedro due to crime"
+     "motivo_original": "Exercise Increased Caution in Departments of Alto Paraná, Amambay, Canindeyú, Concepcion, and San Pedro due to crime"
     }
    ]
   },
@@ -3724,14 +3748,14 @@
      "etiqueta_original": "Do Not Travel",
      "fecha": "2025-12-29",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.rus.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/russia-travel-advisory.html",
      "motivos": [
+      "conflicto_armado",
       "terrorismo",
-      "disturbios",
       "detencion_injusta"
      ],
-     "menciona_conflicto": false,
-     "motivo_original": "Do not travel to Russia for any reason due to terrorism , unrest , wrongful detention and other risks"
+     "menciona_conflicto": true,
+     "motivo_original": "Do not travel to Russia due to: Danger associated with the continuing war between Russia and Ukraine. The risk of harassment or wrongful detention by Russian security officials. The arbitrary enforcement of local laws. The possibility of terrorism. US citizens in Russia should leave immediately The US government has limited ability to help US citizens in Russia, especially outside of Moscow. The U"
     }
    ]
   },
@@ -4237,9 +4261,9 @@
      "nivel": 4,
      "etiqueta": "No viajar",
      "etiqueta_original": "Do Not Travel",
-     "fecha": "2026-05-17",
+     "fecha": "2025-11-13",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ssd.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-sudan-travel-advisory.html",
      "motivos": [
       "crimen",
       "disturbios",
@@ -4248,7 +4272,7 @@
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to South Sudan due to risk of unrest , crime , kidnapping , landmines , and health risks"
+     "motivo_original": "Do not travel to South Sudan due to risk of unrest, crime, kidnapping, landmines, and health threats"
     }
    ]
   },
@@ -4537,7 +4561,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bhs.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/the-bahamas-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
@@ -4778,7 +4802,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-07",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tca.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turks-and-caicos-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
