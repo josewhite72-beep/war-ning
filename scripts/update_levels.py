@@ -14,6 +14,7 @@ Códigos de salida: 0 = correcto (con o sin cambios) · 1 = anomalía, no se esc
 """
 import argparse
 import datetime as dt
+import html as htmllib
 import json
 import os
 import re
@@ -41,6 +42,23 @@ MAX_DROP_RATIO = 0.15          # no se acepta perder >15 % de países respecto a
 # Ciclo oficial de revisión del Departamento de Estado: niveles 1-2 al menos cada 12 meses,
 # niveles 3-4 al menos cada 6 meses. Pasado ese plazo, el aviso figura como "sin revisión reciente".
 REVIEW_DAYS = {1: 365, 2: 365, 3: 183, 4: 183}
+
+# Motivos: se buscan SOLO en la frase principal del aviso ("... due to <motivos>"), con un vocabulario
+# cerrado. Lo que no reconoce se ignora: nunca se inventa un motivo.
+MOTIVOS = [
+    ("conflicto_armado", r"armed conflict|\bwar\b|hostilities"),
+    ("terrorismo", r"terroris"),
+    ("crimen", r"\bcrimes?\b|\bcriminal"),
+    ("disturbios", r"\bunrest\b"),
+    ("secuestro", r"kidnap|hostage"),
+    ("detencion_injusta", r"wrongful detention"),
+    ("salud", r"\bhealth\b|\bdisease|\boutbreak|\bepidemic|\bpandemic|\bebola\b|\bmarburg\b|\bcholera\b|\bmeasles\b|\bdengue\b|\bmalaria\b|\bmpox\b|\bzika\b"),
+    ("desastres_naturales", r"natural disaster|hurricane|earthquake|volcan|cyclone|typhoon|tsunami|flood|wildfire"),
+    ("minas", r"landmine|unexploded ordnance"),
+    ("eventos_limitados", r"time-limited event|limited-time event"),
+]
+MOTIVOS_RE = [(k, re.compile(p, re.I)) for k, p in MOTIVOS]
+HEADLINE_START_RE = re.compile(r"^\s*(do not travel|reconsider travel|exercise (increased caution|normal precautions|caution))", re.I)
 
 # Traducción de los 4 niveles estándar (el texto original se conserva en etiqueta_original)
 LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsiderar el viaje", 4: "No viajar"}
@@ -105,6 +123,40 @@ def parse_date(s: str):
         except ValueError:
             continue
     return None
+
+
+def _clean_text(raw: str) -> str:
+    txt = htmllib.unescape(re.sub(r"<[^>]+>", " ", raw or ""))
+    return re.sub(r"\s+", " ", txt.replace("\xa0", " ")).strip()
+
+
+def analyze_description(desc: str, name: str):
+    """Extrae motivos y mención de conflicto del texto del aviso. Devuelve None si no hay texto."""
+    if not desc or not desc.strip():
+        return None
+    paras = [t for t in (_clean_text(r) for r in re.findall(r"<p[^>]*>(.*?)</p>", desc, flags=re.S | re.I)) if t]
+    # Algunos avisos (p. ej. Ucrania) anteponen el rótulo "Advisory summary" a la frase principal
+    paras = [re.sub(r"^\s*advisory summary\s*:?\s*", "", t, flags=re.I) for t in paras]
+    full = _clean_text(desc)
+
+    cands = [p for p in paras if HEADLINE_START_RE.search(p) and re.search(r"\bdue to\b", p, re.I)]
+    headline = None
+    if cands:
+        nn = norm_name(name)
+        named = [p for p in cands if nn and nn in norm_name(p)]
+        headline = (named or cands)[0]
+
+    motivos = []
+    if headline:
+        tail = re.split(r"\bdue to\b", headline, maxsplit=1, flags=re.I)[1]
+        motivos = [k for k, rx in MOTIVOS_RE if rx.search(tail)]
+
+    # "Menciona": el aviso usa la expresión "armed conflict" en cualquier parte, o "war"/"hostilities"
+    # en su frase principal. No afirma que haya guerra en todo el país.
+    menciona = bool(re.search(r"armed conflict", full, re.I)) or bool(
+        headline and re.search(r"\bwar\b|hostilities", headline, re.I))
+    return {"motivos": motivos, "menciona_conflicto": menciona,
+            "motivo_original": headline[:400] if headline else None}
 
 
 def fetch(url: str, retries: int = 3) -> bytes:
@@ -180,6 +232,7 @@ def parse_feed(xml_bytes: bytes, iso_idx: dict):
             no_iso.append(name)
         cid = iso.lower() if iso else slug
 
+        analysis = analyze_description(item.findtext("description") or "", name)
         entry = {
             "id": cid,
             "iso": iso,
@@ -195,6 +248,12 @@ def parse_feed(xml_bytes: bytes, iso_idx: dict):
                 "url": link,
             }],
         }
+        if analysis is not None:
+            n0 = entry["niveles"][0]
+            n0["motivos"] = analysis["motivos"]
+            n0["menciona_conflicto"] = analysis["menciona_conflicto"]
+            if analysis["motivo_original"]:
+                n0["motivo_original"] = analysis["motivo_original"]
         # Duplicados: se prefiere la entrada no compuesta y, luego, la más reciente
         rank = (not composite, fecha)
         if cid not in candidates or rank > candidates[cid][0]:
@@ -225,6 +284,23 @@ def diff_levels(prev: dict, new: dict):
         if k not in b:
             changes.append(f"{name}: eliminado (era nivel {lvl})")
     return changes
+
+
+def audit_report(paises: dict):
+    """Resumen legible para revisar la extracción de motivos (log y resumen del workflow)."""
+    rows = sorted(paises.values(), key=lambda p: p["nombre"].casefold())
+    conflicto, sin_motivos, tabla = [], [], []
+    for p in rows:
+        n = p["niveles"][0]
+        if "motivos" not in n:
+            continue
+        if n["menciona_conflicto"]:
+            conflicto.append(p["nombre"])
+        if n["nivel"] >= 3:
+            tabla.append((p["nombre"], n["nivel"], ", ".join(n["motivos"]) or "—", "sí" if n["menciona_conflicto"] else "no"))
+            if not n["motivos"]:
+                sin_motivos.append((p["nombre"], (n.get("motivo_original") or "sin frase principal")[:90]))
+    return conflicto, sin_motivos, tabla
 
 
 def write_atomic(path: Path, data: dict):
@@ -306,6 +382,20 @@ def main() -> int:
     print(f"Escrito {out_path} con {n} países. Cambios de nivel: {len(changes)}")
     for c in changes[:40]:
         print("  •", c)
+
+    conflicto, sin_motivos, tabla = audit_report(paises)
+    print(f"Avisos que mencionan conflicto armado o guerra ({len(conflicto)}): {', '.join(conflicto)}")
+    print(f"Nivel 3-4 SIN motivos reconocidos ({len(sin_motivos)}):")
+    for nombre, frase in sin_motivos:
+        print(f"  - {nombre}: {frase}")
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        lines = ["## Revisión de motivos (niveles 3 y 4)", "",
+                 f"Países: {n} · mencionan conflicto: {len(conflicto)} · nivel 3-4 sin motivos reconocidos: {len(sin_motivos)}", "",
+                 "| País | Nivel | Motivos detectados | ¿Menciona conflicto? |", "|---|---|---|---|"]
+        lines += [f"| {a} | {b} | {c} | {d} |" for a, b, c, d in tabla]
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
 
     msg_file = os.environ.get("COMMIT_MSG_FILE")
     if msg_file:
