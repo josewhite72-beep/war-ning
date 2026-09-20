@@ -1,0 +1,2 @@
+defusedxml==0.7.1
+pycountry>=24.6.1

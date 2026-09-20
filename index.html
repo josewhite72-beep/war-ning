@@ -232,10 +232,11 @@
       <div class="source-card">
         <h3>Acerca de</h3>
         <p class="source-meta" style="margin-top: 6px;">
-          War_ning v1.1 (MVP) · PanaMentorLabs.<br>
+          War_ning v1.2 (MVP) · PanaMentorLabs.<br>
           Visor de datos agregados. No genera alertas ni niveles propios y no usa geolocalización.<br>
-          Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables.
+          Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel.
         </p>
+        <p id="sources-list" class="source-meta" style="margin-top: 10px;"></p>
       </div>
     </section>
 
@@ -276,6 +277,16 @@
       var t = Date.parse(dateStr);
       if (isNaN(t)) return null;
       return Math.floor((Date.now() - t) / 86400000);
+    }
+
+    // Nombre en español según el código ISO; si no hay ISO válido se usa el nombre de la fuente
+    var regionNames = null;
+    try { regionNames = new Intl.DisplayNames(['es'], { type: 'region' }); } catch (e) { regionNames = null; }
+    function displayName(pais) {
+      if (regionNames && /^[A-Z]{2}$/.test(pais.iso || '')) {
+        try { var n = regionNames.of(pais.iso); if (n && n !== pais.iso) return n; } catch (e) {}
+      }
+      return pais.nombre;
     }
 
     // ---------- Escalas: cada fuente se interpreta con SU escala ----------
@@ -359,16 +370,17 @@
     document.getElementById('back-btn').addEventListener('click', function () { goTab(currentTab); });
 
     // ---------- Favoritos ----------
-    function isFav(iso) { return favorites.indexOf(iso) !== -1; }
-    function toggleFavorite(iso) {
-      favorites = isFav(iso) ? favorites.filter(function (x) { return x !== iso; }) : favorites.concat([iso]);
+    function keyOf(pais) { return pais.id || pais.iso; }
+    function isFav(key) { return favorites.indexOf(key) !== -1; }
+    function toggleFavorite(key) {
+      favorites = isFav(key) ? favorites.filter(function (x) { return x !== key; }) : favorites.concat([key]);
       lsSet('warning_favorites', JSON.stringify(favorites));
     }
     function paintStar(btn, pais) {
-      var on = isFav(pais.iso);
+      var on = isFav(keyOf(pais));
       btn.textContent = on ? '★' : '☆';
       btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      btn.setAttribute('aria-label', (on ? 'Dejar de seguir ' : 'Seguir ') + pais.nombre);
+      btn.setAttribute('aria-label', (on ? 'Dejar de seguir ' : 'Seguir ') + displayName(pais));
     }
 
     // ---------- Render ----------
@@ -382,7 +394,7 @@
       li.className = 'country-item';
       li.innerHTML =
         '<button type="button" class="row-main">' +
-          '<span class="row-name">' + esc(pais.nombre) + '</span>' +
+          '<span class="row-name">' + esc(displayName(pais)) + '</span>' +
           '<span class="row-sub">' + esc(sub) + '</span>' +
           (top ? meterHTML(top.n) : '') +
         '</button>' +
@@ -392,7 +404,7 @@
       var star = li.querySelector('.star-btn');
       paintStar(star, pais);
       star.addEventListener('click', function () {
-        toggleFavorite(pais.iso);
+        toggleFavorite(keyOf(pais));
         if (currentTab === 'view-favorites') renderFavorites(); else paintStar(star, pais);
       });
       return li;
@@ -400,9 +412,9 @@
 
     function renderPanorama() {
       var term = norm(searchInput.value);
-      var list = appData.paises.filter(function (p) { return norm(p.nombre).indexOf(term) !== -1; });
+      var list = appData.paises.filter(function (p) { return norm(displayName(p)).indexOf(term) !== -1 || norm(p.nombre).indexOf(term) !== -1; });
       list.sort(function (a, b) {
-        if (sortByName) return a.nombre.localeCompare(b.nombre, 'es');
+        if (sortByName) return displayName(a).localeCompare(displayName(b), 'es');
         var ta = topSource(a), tb = topSource(b);
         return (tb ? tb.v : -2) - (ta ? ta.v : -2);
       });
@@ -416,14 +428,14 @@
 
     function renderFavorites() {
       favoritesListEl.innerHTML = '';
-      var favs = appData.paises.filter(function (p) { return isFav(p.iso); });
+      var favs = appData.paises.filter(function (p) { return isFav(keyOf(p)); });
       favoritesEmptyEl.classList.toggle('hidden', favs.length > 0);
       favs.forEach(function (p) { favoritesListEl.appendChild(makeRow(p)); });
     }
 
     function renderDetail(pais) {
       var html =
-        '<div class="detail-head"><h1>' + esc(pais.nombre) + '</h1>' +
+        '<div class="detail-head"><h1>' + esc(displayName(pais)) + '</h1>' +
         '<button type="button" class="star-btn" id="detail-fav-btn"></button></div>' +
         '<p class="detail-intro">Cada fuente usa su propia escala. Se muestran por separado, sin combinarlas.</p>';
 
@@ -440,7 +452,7 @@
         html +=
           '<div class="source-card">' +
             '<h3>' + esc(n.fuente) + '</h3>' +
-            '<div class="source-meta">Escala: ' + esc(n.escala) + ' · Fecha: ' + esc(n.fecha) + badge + '</div>' +
+            '<div class="source-meta">Escala: ' + esc(n.escala) + ' · Actualizado: ' + esc(n.fecha) + badge + '</div>' +
             meterHTML(n) +
             '<div class="source-level">' + esc(levelText(n)) + ' — ' + esc(n.etiqueta) + '</div>' +
             (url ? '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Ver fuente original ↗</a>' : '') +
@@ -451,7 +463,7 @@
       detailContent.innerHTML = html;
       var favBtn = document.getElementById('detail-fav-btn');
       paintStar(favBtn, pais);
-      favBtn.addEventListener('click', function () { toggleFavorite(pais.iso); paintStar(favBtn, pais); });
+      favBtn.addEventListener('click', function () { toggleFavorite(keyOf(pais)); paintStar(favBtn, pais); });
       showView('view-detail');
     }
 
@@ -502,6 +514,8 @@
         if (age !== null && age > 14) txt += ' (hace ' + age + ' días)';
         lastUpdateEl.innerHTML = txt;
         if (appData.ejemplo) bannerExample.style.display = 'block';
+        var src = (appData.fuentes || []).map(function (f) { return esc(f.nombre) + (f.nota ? ' — ' + esc(f.nota) : ''); });
+        if (src.length) document.getElementById('sources-list').innerHTML = '<strong>Fuentes de datos:</strong><br>' + src.join('<br>');
         renderPanorama();
         renderFavorites();
       } catch (err) {
