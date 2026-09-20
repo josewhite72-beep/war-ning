@@ -32,8 +32,6 @@ import pycountry
 FEED_URL = "https://travel.state.gov/_res/rss/TAsTWs.xml"
 ALLOWED_HOST = "travel.state.gov"
 USER_AGENT = "War_ning-data-bot/1.0 (proyecto educativo PanaMentorLabs)"
-API_URL = "https://cadataapi.state.gov/api/TravelAdvisory"
-API_HOST = "cadataapi.state.gov"
 SOURCE_ID = "us-state"
 SOURCE_NAME = "Departamento de Estado (EE.UU.)"
 SOURCE_URL = "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html"
@@ -66,6 +64,13 @@ HEAD_RE = re.compile(
     r"([^.]{0,140}?)\bdue to\b\s*(:?)\s*", re.I)
 END_LIST_RE = re.compile(r"read the entire|advisory summary|country summary|reissued|\blevel [1-4]\b", re.I)
 
+# Países que sin duda tienen aviso de nivel alto. Si el feed no los trae, se avisa en el registro
+# (el feed oficial ha mostrado omisiones y cambios de formato).
+CANARIOS = {"ML": "Mali", "KP": "North Korea", "IR": "Iran", "IQ": "Iraq", "UA": "Ukraine", "RU": "Russia",
+            "SY": "Syria", "SD": "Sudan", "YE": "Yemen", "AF": "Afghanistan", "LB": "Lebanon", "LY": "Libya",
+            "SS": "South Sudan", "CF": "Central African Republic", "SO": "Somalia", "HT": "Haiti",
+            "BF": "Burkina Faso", "NE": "Niger", "MM": "Burma", "BY": "Belarus"}
+
 # Traducción de los 4 niveles estándar (el texto original se conserva en etiqueta_original)
 LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsiderar el viaje", 4: "No viajar"}
 
@@ -73,7 +78,7 @@ LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsidera
 ALIASES = {
     "burma": "MM", "turkey": "TR", "russia": "RU", "brunei": "BN", "micronesia": "FM",
     "democratic republic of the congo": "CD", "kosovo": "XK", "macau": "MO", "cape verde": "CV",
-    "sint maarten": "SX", "vatican city": "VA", "holy see": "VA", "kyrgyz republic": "KG", "slovak republic": "SK",
+    "cote d ivoire": "CI", "sint maarten": "SX", "vatican city": "VA", "holy see": "VA", "kyrgyz republic": "KG", "slovak republic": "SK",
 }
 
 
@@ -162,6 +167,19 @@ def analyze_description(desc: str, name: str):
         motivos = [k for k, rx in MOTIVOS_RE if rx.search(tail)]
     else:
         motivos = []
+
+    # Respaldo: en algunos avisos la lista de motivos está en otra oración ("... are at risk due to crime, health...").
+    # Se acepta un "due to" de la parte alta del texto solo si su oración trae al menos 2 motivos del vocabulario.
+    if headline is None:
+        for m in re.finditer(r"\bdue to\b\s*:?\s*", full[:4000], re.I):
+            rest = full[m.end():m.end() + 500]
+            m_end = re.search(r"\.(?:\s|$)", rest)
+            tail = (rest[:m_end.start()] if m_end else rest).strip()
+            found = [k for k, rx in MOTIVOS_RE if rx.search(tail)]
+            if len(found) >= 2:
+                headline = re.sub(r"\s+", " ", full[max(0, m.start() - 80):m.end()] + tail).strip()
+                motivos = found
+                break
 
     # "Menciona": el aviso usa la expresión "armed conflict" en cualquier parte, o la frase principal
     # cita guerra/hostilidades/invasión. No afirma que haya guerra en todo el país.
@@ -344,45 +362,6 @@ def retain_missing(prev: dict, paises: dict, today: str):
     return kept
 
 
-def diagnose_api(rss_names, summary_path=None):
-    """Solo informativo: consulta el API oficial del Departamento de Estado y compara con el feed RSS.
-    Nunca modifica datos ni hace fallar el flujo."""
-    out = []
-    try:
-        raw = fetch(API_URL, retries=1, host=API_HOST)
-        out.append(f"API oficial respondió: {len(raw)} bytes")
-        data = json.loads(raw.decode("utf-8", "replace"))
-        if isinstance(data, dict):
-            recs = next((v for v in data.values() if isinstance(v, list)), [])
-        else:
-            recs = data if isinstance(data, list) else []
-        out.append(f"registros: {len(recs)}")
-        if recs and isinstance(recs[0], dict):
-            out.append("campos del primer registro: " + ", ".join(list(recs[0].keys())[:25]))
-            out.append("muestra: " + json.dumps(recs[0], ensure_ascii=False)[:400])
-        def rec_name(r):
-            for k in ("country_name", "countryName", "CountryName", "name", "Name", "title", "Title"):
-                if isinstance(r, dict) and isinstance(r.get(k), str):
-                    return re.split(r"\s+-\s+", r[k])[0]
-            return None
-        api_names = {norm_name(x): x for x in (rec_name(r) for r in recs) if x}
-        rss = {norm_name(x): x for x in rss_names}
-        solo_api = sorted(v for k, v in api_names.items() if k not in rss)
-        solo_rss = sorted(v for k, v in rss.items() if k not in api_names)
-        out.append(f"En el API y no en el RSS ({len(solo_api)}): {', '.join(solo_api[:40])}")
-        out.append(f"En el RSS y no en el API ({len(solo_rss)}): {', '.join(solo_rss[:40])}")
-        for buscado in ("mali", "north korea", "korea"):
-            hits = [v for k, v in api_names.items() if buscado in k]
-            out.append(f"'{buscado}' en API: {hits or 'no'} | en RSS: {[v for k, v in rss.items() if buscado in k] or 'no'}")
-    except Exception as e:                          # noqa: BLE001
-        out.append(f"API oficial no accesible o con formato inesperado: {e}")
-    for line in out:
-        print("DIAGNÓSTICO API:", line)
-    if summary_path:
-        with open(summary_path, "a", encoding="utf-8") as f:
-            f.write("\n## Diagnóstico del API oficial (solo informativo)\n\n" + "\n".join(f"- {l}" for l in out) + "\n")
-
-
 def write_atomic(path: Path, data: dict):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
@@ -444,11 +423,15 @@ def main() -> int:
             return 1
 
     today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    faltan = [nombre for iso, nombre in CANARIOS.items() if iso.lower() not in paises]
+    if faltan:
+        print(f"ALERTA: el feed NO trae países que sí tienen aviso: {', '.join(faltan)}", file=sys.stderr)
+        if os.environ.get("GITHUB_STEP_SUMMARY"):
+            with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+                f.write(f"\n## ALERTA: faltan en el feed\n\n{', '.join(faltan)}\n")
     retained = retain_missing(prev, paises, today)
     for nombre, desde in retained:
         print(f"RETENIDO (ya no figura en el feed desde {desde}; se conserva hasta {RETAIN_DAYS} días): {nombre}", file=sys.stderr)
-    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" or os.environ.get("DIAGNOSE_API") == "1":
-        diagnose_api([p["nombre"] for p in paises.values()], os.environ.get("GITHUB_STEP_SUMMARY"))
     new = {
         "generado": today,
         "ejemplo": False,
