@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +24,10 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar dependencias
-        run: pip install "defusedxml==0.7.1" "pycountry>=24.6.1"
+        run: pip install "defusedxml==0.7.1" "pycountry==26.2.16"
+
+      - name: Pruebas
+        run: python -m unittest discover -s tests
 
       - name: Descargar y normalizar avisos
         env:
