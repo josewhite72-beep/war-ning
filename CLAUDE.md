@@ -1,5 +1,7 @@
 # WAR-NING — instrucciones para Claude Code
 
+Estado actual y pendientes: ver ESTADO.md
+
 ## Qué es
 PWA estática (HTML + JavaScript sin frameworks) que muestra niveles de riesgo de viaje por país.
 Fuente actual: avisos de viaje del Departamento de Estado de EE.UU. Un flujo de GitHub Actions
