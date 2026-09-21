@@ -1920,28 +1920,6 @@
    ]
   },
   {
-   "id": "gp",
-   "iso": "GP",
-   "nombre": "Guadeloupe",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.glp.html",
-     "motivos": [],
-     "menciona_conflicto": false,
-     "retirado": "2026-09-21"
-    }
-   ]
-  },
-  {
    "id": "gt",
    "iso": "GT",
    "nombre": "Guatemala",
@@ -2918,8 +2896,7 @@
       "salud"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do Not Travel to Mali for any reason due to crime, terrorism, kidnapping , unrest and health",
-     "retirado": "2026-09-21"
+     "motivo_original": "Do Not Travel to Mali for any reason due to crime, terrorism, kidnapping , unrest and health"
     }
    ]
   },
@@ -2962,28 +2939,6 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/marshall-islands-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
-    }
-   ]
-  },
-  {
-   "id": "mq",
-   "iso": "MQ",
-   "nombre": "Martinique",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mtq.html",
-     "motivos": [],
-     "menciona_conflicto": false,
-     "retirado": "2026-09-21"
     }
    ]
   },
@@ -3869,28 +3824,6 @@
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.xqx.html",
      "motivos": [],
      "menciona_conflicto": false
-    }
-   ]
-  },
-  {
-   "id": "bl",
-   "iso": "BL",
-   "nombre": "Saint Barthelemy",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.blm.html",
-     "motivos": [],
-     "menciona_conflicto": false,
-     "retirado": "2026-09-21"
     }
    ]
   },
