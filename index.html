@@ -25,9 +25,6 @@
       --offline-bg: #b71c1c;
       --nav-height: 64px;
     }
-
-    /* Modo supervivencia: paleta en blanco y negro y cero animaciones.
-       No usa filter (un filter en <body> rompe los elementos position:fixed). */
     body.survival-mode {
       --bg-color: #000;
       --text-color: #fff;
@@ -46,9 +43,7 @@
     body.survival-mode * { transition: none !important; animation: none !important; }
     body.survival-mode .nav-icon { display: none; }
     body.survival-mode .banner-offline { border: 2px solid #fff; }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-color);
@@ -56,9 +51,7 @@
       padding-bottom: calc(var(--nav-height) + 20px);
       line-height: 1.5;
     }
-
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-
     header {
       padding: 16px;
       background-color: var(--card-bg);
@@ -71,17 +64,14 @@
     .brand span { color: var(--accent); }
     .brand small { font-size: 0.7em; opacity: 0.75; font-weight: normal; letter-spacing: 0; }
     #last-update { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
-
     .banner { padding: 12px 16px; font-size: 0.9rem; font-weight: bold; text-align: center; display: none; }
     .banner-offline { background-color: var(--offline-bg); color: #fff; }
     .banner-example { background-color: #ffbb33; color: #000; }
     body.survival-mode .banner-example { background: #fff; color: #000; }
-
     main { padding: 16px; min-height: 60vh; }
     .view { display: none; }
     .view.active { display: block; }
     h2 { margin-bottom: 16px; }
-
     .controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
     input[type="search"] {
       flex: 1; min-width: 140px; padding: 12px; min-height: 48px;
@@ -93,7 +83,6 @@
       border-radius: 4px; font-size: 1rem; cursor: pointer; min-height: 48px; min-width: 48px;
     }
     button.secondary { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
-
     .country-list { list-style: none; }
     .country-item {
       display: flex; align-items: stretch;
@@ -111,15 +100,11 @@
       background: none; border: none; color: var(--text-color);
       font-size: 1.5rem; padding: 8px; min-width: 56px; border-radius: 0 8px 8px 0;
     }
-
-    /* Barra: posición dentro de la escala de CADA fuente (no es un semáforo) */
     .meter { height: 10px; background: var(--meter-track); border-radius: 5px; margin-top: 8px; overflow: hidden; }
     .meter-fill { height: 100%; background: var(--meter-fill); }
-
     .detail-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
     .detail-head h1 { font-size: 1.5rem; }
     .detail-intro { color: var(--muted); margin-bottom: 16px; }
-
     .source-card {
       background: var(--card-bg); border: 1px solid var(--border-color);
       border-radius: 8px; padding: 16px; margin-bottom: 12px;
@@ -139,13 +124,15 @@
       margin-bottom: 12px; padding: 12px; border: 1px dashed var(--muted);
       border-radius: 8px; font-size: 0.9rem;
     }
-
+    .change-note {
+      margin-top: 10px; padding: 10px 12px; border: 1px solid var(--accent);
+      border-radius: 8px; font-size: 0.9rem;
+    }
     .disclaimer {
       margin-top: 24px; padding: 16px; background: var(--note-bg);
       border: 1px solid var(--note-line); border-radius: 8px;
       font-size: 0.85rem; color: var(--note-text); text-align: center;
     }
-
     .bottom-nav {
       position: fixed; bottom: 0; left: 0; right: 0; height: var(--nav-height);
       background: var(--card-bg); border-top: 1px solid var(--border-color);
@@ -153,18 +140,22 @@
     }
     .nav-item {
       flex: 1; background: none; border: none; border-radius: 0; color: var(--muted);
-      padding: 6px; font-size: 0.75rem; min-height: 48px;
+      padding: 6px 2px; font-size: 0.75rem; min-height: 48px; min-width: 0;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
     .nav-item.active { color: var(--accent); font-weight: bold; }
     .nav-icon { font-size: 1.4rem; line-height: 1.2; }
-
+    @media (max-width: 380px) {
+      .nav-item { font-size: 0.62rem; padding: 4px 1px; }
+      .nav-icon { font-size: 1.15rem; }
+    }
     select {
       width: 100%; padding: 12px; min-height: 48px; font-size: 1rem;
       border: 1px solid var(--border-color); background: var(--card-bg);
       color: var(--text-color); border-radius: 4px;
     }
     .filter-row { margin-bottom: 16px; }
+    .filter-row select + select { margin-top: 8px; }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
     .chip { border: 1px solid var(--muted); border-radius: 999px; padding: 2px 10px; font-size: 0.85rem; }
     .motivos-note { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
@@ -189,14 +180,18 @@
   <div id="banner-example" class="banner banner-example">DATOS DE EJEMPLO – no usar para decisiones reales</div>
 
   <main>
-    <!-- PANORAMA -->
     <section id="view-panorama" class="view active">
       <div class="controls">
         <input type="search" id="search-input" placeholder="Buscar país..." aria-label="Buscar país">
         <button id="sort-btn" class="secondary" type="button">Orden: Nombre</button>
       </div>
-      <div id="filter-row" class="filter-row hidden">
-        <select id="motive-filter" aria-label="Filtrar por motivo del aviso">
+      <div id="filter-row" class="filter-row">
+        <select id="level-filter" aria-label="Filtrar por posición en la escala de cada fuente">
+          <option value="">Todos los niveles</option>
+          <option value="max">Solo el nivel máximo de la escala</option>
+          <option value="top2">Los dos niveles más altos</option>
+        </select>
+        <select id="motive-filter" class="hidden" aria-label="Filtrar por motivo del aviso">
           <option value="">Todos los motivos</option>
           <option value="conflicto">Menciona conflicto armado o guerra</option>
           <option value="terrorismo">Terrorismo</option>
@@ -207,7 +202,7 @@
           <option value="desastres_naturales">Desastres naturales</option>
           <option value="minas">Minas terrestres</option>
         </select>
-        <p class="motivos-note">Según el texto de cada aviso. Un país puede estar en guerra y no aparecer en «conflicto armado» si su aviso no usa esa expresión.</p>
+        <p id="motivos-note" class="motivos-note hidden">Según el texto de cada aviso. Un país puede estar en guerra y no aparecer en «conflicto armado» si su aviso no usa esa expresión.</p>
       </div>
       <ul id="country-list" class="country-list"></ul>
       <div class="disclaimer">
@@ -215,7 +210,6 @@
       </div>
     </section>
 
-    <!-- MIS REGIONES -->
     <section id="view-favorites" class="view">
       <h2>Mis regiones seguidas</h2>
       <ul id="favorites-list" class="country-list"></ul>
@@ -224,7 +218,19 @@
       </div>
     </section>
 
-    <!-- ALERTAS (placeholder fase 2) -->
+    <section id="view-cambios" class="view">
+      <h2>Cambios de nivel</h2>
+      <label class="toggle-row" style="margin-top: 0; margin-bottom: 12px;">
+        <input type="checkbox" id="cambios-favs">
+        <span>Solo mis regiones</span>
+      </label>
+      <ul id="cambios-list" class="country-list"></ul>
+      <div id="cambios-empty" class="empty-state hidden"></div>
+      <div class="disclaimer">
+        Solo se muestran cambios detectados en los últimos 30 días. La comparación es contra los datos ya publicados, no contra el estado real del mundo.
+      </div>
+    </section>
+
     <section id="view-alerts" class="view">
       <div class="empty-state">
         <div style="font-size: 3rem; margin-bottom: 16px;" aria-hidden="true">🔔</div>
@@ -237,10 +243,8 @@
       </div>
     </section>
 
-    <!-- AJUSTES -->
     <section id="view-settings" class="view">
       <h2>Ajustes</h2>
-
       <div class="source-card">
         <h3>Apariencia</h3>
         <label class="toggle-row">
@@ -248,25 +252,23 @@
           <span>Modo Supervivencia (blanco y negro, sin animaciones, solo texto)</span>
         </label>
       </div>
-
       <div class="source-card">
         <h3>Datos y almacenamiento</h3>
         <p class="source-meta" style="margin-top: 6px;">Borra la copia guardada de la app y vuelve a descargarla. Tus regiones y ajustes se conservan.</p>
         <button id="clear-cache-btn" class="secondary" type="button" style="width: 100%; margin-top: 12px;">Limpiar caché y recargar</button>
       </div>
-
       <div class="source-card">
         <h3>Acerca de</h3>
         <p class="source-meta" style="margin-top: 6px;">
-          War_ning v1.5 (MVP) · PanaMentorLabs.<br>
+          War_ning v1.6 · PanaMentorLabs.<br>
           Visor de datos agregados. No genera alertas ni niveles propios y no usa geolocalización.<br>
+          La pestaña «Cambios» muestra un historial de los cambios de nivel detectados en los datos (conservado hasta 60 días, hasta 300 registros).<br>
           Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. El feed oficial puede omitir países que sí tienen aviso, por ejemplo mientras el Departamento de Estado cambia su sitio: comprueba siempre travel.state.gov. Los motivos y la mención de conflicto se extraen automáticamente del texto de cada aviso y pueden estar incompletos; "menciona" no significa que haya guerra en todo el país. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel. «Sin revisión reciente» aparece cuando la fuente supera su propio ciclo de revisión (para el Departamento de Estado: 12 meses en niveles 1-2 y 6 meses en niveles 3-4).
         </p>
         <p id="sources-list" class="source-meta" style="margin-top: 10px;"></p>
       </div>
     </section>
 
-    <!-- DETALLE -->
     <section id="view-detail" class="view">
       <button id="back-btn" class="secondary" type="button" style="margin-bottom: 16px;">← Volver</button>
       <div id="detail-content"></div>
@@ -276,18 +278,17 @@
   <nav class="bottom-nav" aria-label="Secciones">
     <button type="button" class="nav-item active" data-target="view-panorama"><span class="nav-icon" aria-hidden="true">🌍</span><span>Panorama</span></button>
     <button type="button" class="nav-item" data-target="view-favorites"><span class="nav-icon" aria-hidden="true">⭐</span><span>Mis regiones</span></button>
+    <button type="button" class="nav-item" data-target="view-cambios"><span class="nav-icon" aria-hidden="true">🕒</span><span>Cambios</span></button>
     <button type="button" class="nav-item" data-target="view-alerts"><span class="nav-icon" aria-hidden="true">🔔</span><span>Alertas</span></button>
     <button type="button" class="nav-item" data-target="view-settings"><span class="nav-icon" aria-hidden="true">⚙️</span><span>Ajustes</span></button>
   </nav>
 
   <script>
-    // ---------- Utilidades ----------
     function esc(s) {
       return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
         return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
       });
     }
-    // Solo enlaces http(s): evita javascript: y similares cuando los datos vengan de fuentes externas
     function safeUrl(u) {
       try {
         var x = new URL(u);
@@ -305,17 +306,25 @@
       return Math.floor((Date.now() - t) / 86400000);
     }
 
-    // Nombre en español según el código ISO; si no hay ISO válido se usa el nombre de la fuente
     var regionNames = null;
     try { regionNames = new Intl.DisplayNames(['es'], { type: 'region' }); } catch (e) { regionNames = null; }
+    var NOMBRES_ES = {
+      "Gaza": "Gaza",
+      "West Bank": "Cisjordania",
+      "Bonaire": "Bonaire",
+      "Saba": "Saba",
+      "Sint Eustatius": "San Eustaquio",
+      "Saba and Sint Eustatius": "Saba y San Eustaquio",
+      "French West Indies": "Antillas Francesas"
+    };
     function displayName(pais) {
       if (regionNames && /^[A-Z]{2}$/.test(pais.iso || '')) {
         try { var n = regionNames.of(pais.iso); if (n && n !== pais.iso) return n; } catch (e) {}
       }
+      if (NOMBRES_ES[pais.nombre]) return NOMBRES_ES[pais.nombre];
       return pais.nombre;
     }
 
-    // ---------- Motivos del aviso (extraídos del texto de la fuente) ----------
     var MOTIVO_ES = {
       conflicto_armado: 'Conflicto armado', terrorismo: 'Terrorismo', crimen: 'Crimen',
       disturbios: 'Disturbios', secuestro: 'Secuestro', detencion_injusta: 'Detención injusta',
@@ -342,8 +351,31 @@
         return code === 'conflicto' ? mencionaConflicto(n) : hasCode(n, code);
       });
     }
+    function matchesLevelFilter(p, mode) {
+      if (!mode) return true;
+      return (p.niveles || []).some(function (n) {
+        var s = scaleOf(n);
+        if (!s || typeof n.nivel !== 'number') return false;
+        var umbral = mode === 'max' ? s.max - 0.5 : s.max - 1.5;
+        return n.nivel >= umbral;
+      });
+    }
 
-    // ---------- Escalas: cada fuente se interpreta con SU escala ----------
+    function cambioEdad(n, maxDias) {
+      if (!n || !n.cambio || typeof n.nivel_anterior !== 'number' || typeof n.nivel !== 'number') return null;
+      var age = ageDays(n.cambio);
+      if (age === null || age < 0 || age > maxDias) return null;
+      return age;
+    }
+    function cambioDir(n) { return n.nivel > n.nivel_anterior ? 'Subió de nivel' : 'Bajó de nivel'; }
+    function findPaisById(id) {
+      for (var i = 0; i < appData.paises.length; i++) {
+        var p = appData.paises[i];
+        if (p.id === id || p.iso === id) return p;
+      }
+      return null;
+    }
+
     function scaleOf(n) {
       if (typeof n.min === 'number' && typeof n.max === 'number' && n.max > n.min) return { min: n.min, max: n.max };
       var m = /^\s*(\d+(?:\.\d+)?)\s*[-–]\s*(\d+(?:\.\d+)?)\s*$/.exec(n.escala || '');
@@ -351,7 +383,7 @@
         var a = parseFloat(m[1]), b = parseFloat(m[2]);
         if (b > a) return { min: a, max: b };
       }
-      return null; // escala desconocida: no se dibuja barra ni se ordena por ella
+      return null;
     }
     function position(n) {
       var s = scaleOf(n);
@@ -370,7 +402,6 @@
       var p = position(n);
       return p ? ('Nivel ' + n.nivel + ' de ' + p.max) : ('Nivel ' + n.nivel + ' (escala ' + n.escala + ')');
     }
-    // Fuente con mayor posición relativa dentro de su propia escala
     function topSource(pais) {
       var best = null, bestV = -2;
       (pais.niveles || []).forEach(function (n) {
@@ -386,7 +417,6 @@
       return (Math.max.apply(null, vals) - Math.min.apply(null, vals)) >= 0.34;
     }
 
-    // ---------- Estado ----------
     var appData = { generado: '', ejemplo: false, paises: [] };
     var favorites = [];
     try { favorites = JSON.parse(lsGet('warning_favorites', '[]')) || []; } catch (e) { favorites = []; }
@@ -398,9 +428,13 @@
     var countryListEl = document.getElementById('country-list');
     var favoritesListEl = document.getElementById('favorites-list');
     var favoritesEmptyEl = document.getElementById('favorites-empty');
+    var cambiosListEl = document.getElementById('cambios-list');
+    var cambiosEmptyEl = document.getElementById('cambios-empty');
+    var cambiosFavsEl = document.getElementById('cambios-favs');
     var searchInput = document.getElementById('search-input');
     var sortBtn = document.getElementById('sort-btn');
     var motiveFilter = document.getElementById('motive-filter');
+    var levelFilter = document.getElementById('level-filter');
     var lastUpdateEl = document.getElementById('last-update');
     var bannerOffline = document.getElementById('banner-offline');
     var bannerExample = document.getElementById('banner-example');
@@ -408,7 +442,6 @@
 
     var DISCLAIMER = 'Un país en alerta no significa que todo su territorio lo esté. War_ning es un agregador; las autoridades oficiales de tu país siempre tienen prioridad.';
 
-    // ---------- Navegación ----------
     function showView(id) {
       views.forEach(function (v) { v.classList.toggle('active', v.id === id); });
       window.scrollTo(0, 0);
@@ -418,13 +451,13 @@
       navItems.forEach(function (n) { n.classList.toggle('active', n.getAttribute('data-target') === id); });
       showView(id);
       if (id === 'view-favorites') renderFavorites();
+      if (id === 'view-cambios') renderCambios();
     }
     navItems.forEach(function (item) {
       item.addEventListener('click', function () { goTab(item.getAttribute('data-target')); });
     });
     document.getElementById('back-btn').addEventListener('click', function () { goTab(currentTab); });
 
-    // ---------- Favoritos ----------
     function keyOf(pais) { return pais.id || pais.iso; }
     function isFav(key) { return favorites.indexOf(key) !== -1; }
     function toggleFavorite(key) {
@@ -438,12 +471,18 @@
       btn.setAttribute('aria-label', (on ? 'Dejar de seguir ' : 'Seguir ') + displayName(pais));
     }
 
-    // ---------- Render ----------
     function makeRow(pais) {
       var top = topSource(pais);
       var n = (pais.niveles || []).length;
       var sub = n + (n === 1 ? ' fuente' : ' fuentes');
       if (top) sub += ' · mayor: ' + levelText(top.n) + ' · ' + top.n.fuente;
+
+      var cambioN = null;
+      (pais.niveles || []).forEach(function (nv) {
+        if (cambioN === null && cambioEdad(nv, 30) !== null) cambioN = nv;
+      });
+      var tags = top ? rowTags(top.n) : [];
+      if (cambioN) tags.unshift(cambioDir(cambioN));
 
       var li = document.createElement('li');
       li.className = 'country-item';
@@ -452,8 +491,8 @@
           '<span class="row-name">' + esc(displayName(pais)) + '</span>' +
           '<span class="row-sub">' + esc(sub) + '</span>' +
           (top ? meterHTML(top.n) : '') +
-          (top && rowTags(top.n).length ? '<span class="row-tags">' + esc(rowTags(top.n).slice(0, 3).join(' · ') +
-            (rowTags(top.n).length > 3 ? ' · +' + (rowTags(top.n).length - 3) : '')) + '</span>' : '') +
+          (tags.length ? '<span class="row-tags">' + esc(tags.slice(0, 3).join(' · ') +
+            (tags.length > 3 ? ' · +' + (tags.length - 3) : '')) + '</span>' : '') +
         '</button>' +
         '<button type="button" class="star-btn"></button>';
 
@@ -470,7 +509,8 @@
     function renderPanorama() {
       var term = norm(searchInput.value);
       var list = appData.paises.filter(function (p) {
-        return (norm(displayName(p)).indexOf(term) !== -1 || norm(p.nombre).indexOf(term) !== -1) && matchesMotive(p, motiveFilter.value);
+        return (norm(displayName(p)).indexOf(term) !== -1 || norm(p.nombre).indexOf(term) !== -1) &&
+               matchesMotive(p, motiveFilter.value) && matchesLevelFilter(p, levelFilter.value);
       });
       list.sort(function (a, b) {
         if (sortByName) return displayName(a).localeCompare(displayName(b), 'es');
@@ -490,6 +530,42 @@
       var favs = appData.paises.filter(function (p) { return isFav(keyOf(p)); });
       favoritesEmptyEl.classList.toggle('hidden', favs.length > 0);
       favs.forEach(function (p) { favoritesListEl.appendChild(makeRow(p)); });
+    }
+
+    function renderCambios() {
+      var solo = cambiosFavsEl.checked;
+      var limite = Date.now() - 30 * 86400000;
+      var cambios = (appData.cambios || []).filter(function (c) {
+        var t = Date.parse(c.fecha);
+        if (isNaN(t) || t < limite) return false;
+        return !solo || isFav(c.id);
+      });
+      cambiosListEl.innerHTML = '';
+      if (!cambios.length) {
+        cambiosEmptyEl.textContent = solo
+          ? 'No hay cambios recientes en tus regiones.'
+          : 'No hay cambios registrados desde ' + (appData.historial_desde || 'el inicio del historial') + '.';
+        cambiosEmptyEl.classList.remove('hidden');
+        return;
+      }
+      cambiosEmptyEl.classList.add('hidden');
+      cambios.forEach(function (c) {
+        var pais = findPaisById(c.id);
+        var nombre = pais ? displayName(pais) : (NOMBRES_ES[c.nombre] || c.nombre);
+        var dir = c.a > c.de ? 'subió' : 'bajó';
+        var li = document.createElement('li');
+        li.className = 'country-item';
+        li.innerHTML =
+          '<button type="button" class="row-main">' +
+            '<span class="row-name">' + esc(nombre) + '</span>' +
+            '<span class="row-sub">Nivel ' + esc(c.de) + ' → ' + esc(c.a) + ' (' + dir + ') · ' +
+              esc(c.fuente) + ' · ' + esc(c.fecha) + '</span>' +
+          '</button>';
+        if (pais) {
+          li.querySelector('.row-main').addEventListener('click', function () { renderDetail(pais); });
+        }
+        cambiosListEl.appendChild(li);
+      });
     }
 
     function motivosHTML(n) {
@@ -532,6 +608,9 @@
             retiradoHTML(n) +
             motivosHTML(n) +
             (url ? '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Ver fuente original ↗</a>' : '') +
+            (cambioEdad(n, 60) !== null
+              ? '<div class="change-note">Cambió de nivel ' + esc(n.nivel_anterior) + ' → ' + esc(n.nivel) +
+                ' el ' + esc(n.cambio) + '.</div>' : '') +
           '</div>';
       });
       html += '<div class="disclaimer">' + esc(DISCLAIMER) + '</div>';
@@ -543,9 +622,10 @@
       showView('view-detail');
     }
 
-    // ---------- Controles ----------
     searchInput.addEventListener('input', renderPanorama);
     motiveFilter.addEventListener('change', renderPanorama);
+    levelFilter.addEventListener('change', renderPanorama);
+    cambiosFavsEl.addEventListener('change', renderCambios);
     sortBtn.addEventListener('click', function () {
       sortByName = !sortByName;
       sortBtn.textContent = sortByName ? 'Orden: Nombre' : 'Orden: Posición en su escala';
@@ -572,12 +652,10 @@
       window.location.reload();
     });
 
-    // ---------- Estado de red ----------
     function updateOnlineStatus() {
       bannerOffline.style.display = navigator.onLine ? 'none' : 'block';
     }
 
-    // ---------- Datos ----------
     async function loadData() {
       try {
         var res = await fetch('data/levels.json');
@@ -594,7 +672,8 @@
         var hasMotivos = appData.paises.some(function (p) {
           return (p.niveles || []).some(function (n) { return Array.isArray(n.motivos); });
         });
-        document.getElementById('filter-row').classList.toggle('hidden', !hasMotivos);
+        motiveFilter.classList.toggle('hidden', !hasMotivos);
+        document.getElementById('motivos-note').classList.toggle('hidden', !hasMotivos);
         var src = (appData.fuentes || []).map(function (f) { return esc(f.nombre) + (f.nota ? ' — ' + esc(f.nota) : ''); });
         if (src.length) document.getElementById('sources-list').innerHTML = '<strong>Fuentes de datos:</strong><br>' + src.join('<br>');
         renderPanorama();
@@ -606,7 +685,6 @@
       }
     }
 
-    // ---------- Arranque ----------
     (function init() {
       if (lsGet('warning_survival_mode', 'false') === 'true') {
         document.body.classList.add('survival-mode');
