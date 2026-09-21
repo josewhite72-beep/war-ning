@@ -19,6 +19,15 @@
    "de": 2,
    "a": 1,
    "fecha": "2026-09-21"
+  },
+  {
+   "id": "iq",
+   "iso": "IQ",
+   "nombre": "Iraq",
+   "fuente": "Departamento de Estado (EE.UU.)",
+   "de": 4,
+   "a": 1,
+   "fecha": "2026-09-21"
   }
  ],
  "paises": [
@@ -2225,21 +2234,16 @@
      "escala": "1-4",
      "min": 1,
      "max": 4,
-     "nivel": 4,
-     "etiqueta": "No viajar",
-     "etiqueta_original": "Do Not Travel",
-     "fecha": "2026-08-29",
-     "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iraq-travel-advisory.html",
-     "motivos": [
-      "conflicto_armado",
-      "terrorismo",
-      "crimen",
-      "secuestro",
-      "salud"
-     ],
-     "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Iraq due to terrorism, kidnapping, armed conflict, crime, health risks, and the US government’s limited ability to provide emergency services to US citizens in Iraq"
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-09-21",
+     "vigencia_dias": 365,
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irq.html",
+     "motivos": [],
+     "menciona_conflicto": false,
+     "nivel_anterior": 4,
+     "cambio": "2026-09-21"
     }
    ]
   },
@@ -2896,7 +2900,8 @@
       "salud"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do Not Travel to Mali for any reason due to crime, terrorism, kidnapping , unrest and health"
+     "motivo_original": "Do Not Travel to Mali for any reason due to crime, terrorism, kidnapping , unrest and health",
+     "retirado": "2026-09-21"
     }
    ]
   },
@@ -3531,7 +3536,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-19",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pan.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
