@@ -204,7 +204,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-05-20",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/antigua-and-barbuda-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.atg.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -715,7 +715,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-05-22",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/british-virgin-islands-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vgb.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -1252,12 +1252,9 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-06-01",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cyprus-travel-advisory.html",
-     "motivos": [
-      "disturbios"
-     ],
-     "menciona_conflicto": true,
-     "motivo_original": "Exercise Increased Caution Turkish Cypriot Administered Area Exercise Increased Caution in the Turkish Cypriot-Administered Area due to unrest"
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cyp.html",
+     "motivos": [],
+     "menciona_conflicto": true
     }
    ]
   },
@@ -1913,12 +1910,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-01-05",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/grenada-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grd.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Grenada due to risk of crime"
+     "motivo_original": "Exercise increased caution in Grenada due to crime"
     }
    ]
   },
@@ -2445,13 +2442,16 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html",
      "motivos": [
+      "terrorismo",
       "crimen",
-      "secuestro"
+      "disturbios",
+      "secuestro",
+      "salud"
      ],
-     "menciona_conflicto": true,
-     "motivo_original": "Do Not Travel to the Nairobi neighborhoods of Eastleigh and Kibera due to risk of crime and kidnapping"
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Kenya due to risk of crime , kidnapping , terrorism , unrest , health , and traffic safety"
     }
    ]
   },
@@ -2918,7 +2918,8 @@
       "salud"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do Not Travel to Mali for any reason due to crime, terrorism, kidnapping , unrest and health"
+     "motivo_original": "Do Not Travel to Mali for any reason due to crime, terrorism, kidnapping , unrest and health",
+     "retirado": "2026-09-21"
     }
    ]
   },
@@ -2937,7 +2938,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-09",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/malta-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mlt.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -3575,7 +3576,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-19",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pan.html",
      "motivos": [
       "crimen"
      ],
@@ -3929,12 +3930,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-10",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-lucia-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lca.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise Increased Caution in Saint Lucia due to risk of crime"
+     "motivo_original": "Exercise increased caution in Saint Lucia due to risk of crime"
     }
    ]
   },
@@ -3977,6 +3978,30 @@
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/samoa-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
+    }
+   ]
+  },
+  {
+   "id": "st",
+   "iso": "ST",
+   "nombre": "Sao Tome and Principe",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-09-04",
+     "vigencia_dias": 365,
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.stp.html",
+     "motivos": [
+      "salud"
+     ],
+     "menciona_conflicto": false,
+     "motivo_original": "Exercise increased caution in Sao Tome and Principe due to health risks"
     }
    ]
   },
@@ -4494,30 +4519,6 @@
    ]
   },
   {
-   "id": "st",
-   "iso": "ST",
-   "nombre": "São Tomé and Príncipe",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 2,
-     "etiqueta": "Mayor precaución",
-     "etiqueta_original": "Exercise Increased Caution",
-     "fecha": "2026-09-04",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.stp.html",
-     "motivos": [
-      "salud"
-     ],
-     "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Sao Tome and Principe due to health risks"
-    }
-   ]
-  },
-  {
    "id": "tw",
    "iso": "TW",
    "nombre": "Taiwan",
@@ -5014,7 +5015,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uruguay-travel-advisory.html",
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ury.html",
      "motivos": [
       "crimen"
      ],
