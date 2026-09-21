@@ -10,26 +10,7 @@
   }
  ],
  "historial_desde": "2026-09-21",
- "cambios": [
-  {
-   "id": "be",
-   "iso": "BE",
-   "nombre": "Belgium",
-   "fuente": "Departamento de Estado (EE.UU.)",
-   "de": 2,
-   "a": 1,
-   "fecha": "2026-09-21"
-  },
-  {
-   "id": "iq",
-   "iso": "IQ",
-   "nombre": "Iraq",
-   "fuente": "Departamento de Estado (EE.UU.)",
-   "de": 4,
-   "a": 1,
-   "fecha": "2026-09-21"
-  }
- ],
+ "cambios": [],
  "paises": [
   {
    "id": "af",
@@ -460,16 +441,19 @@
      "escala": "1-4",
      "min": 1,
      "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-09-21",
+     "nivel": 2,
+     "etiqueta": "Mayor precaución",
+     "etiqueta_original": "Exercise Increased Caution",
+     "fecha": "2026-07-23",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bel.html",
-     "motivos": [],
+     "motivos": [
+      "terrorismo",
+      "crimen",
+      "disturbios"
+     ],
      "menciona_conflicto": false,
-     "nivel_anterior": 2,
-     "cambio": "2026-09-21"
+     "motivo_original": "Exercise increased caution in Belgium due to crime , terrorism , and unrest"
     }
    ]
   },
@@ -2234,16 +2218,21 @@
      "escala": "1-4",
      "min": 1,
      "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-09-21",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irq.html",
-     "motivos": [],
-     "menciona_conflicto": false,
-     "nivel_anterior": 4,
-     "cambio": "2026-09-21"
+     "nivel": 4,
+     "etiqueta": "No viajar",
+     "etiqueta_original": "Do Not Travel",
+     "fecha": "2026-08-29",
+     "vigencia_dias": 183,
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iraq-travel-advisory.html",
+     "motivos": [
+      "conflicto_armado",
+      "terrorismo",
+      "crimen",
+      "secuestro",
+      "salud"
+     ],
+     "menciona_conflicto": true,
+     "motivo_original": "Do not travel to Iraq due to terrorism, kidnapping, armed conflict, crime, health risks, and the US government’s limited ability to provide emergency services to US citizens in Iraq"
     }
    ]
   },
