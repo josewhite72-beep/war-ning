@@ -355,17 +355,22 @@ def audit_report(paises: dict):
     return conflicto, sin_motivos, tabla
 
 
-def retain_missing(prev: dict, paises: dict, today: str):
+def retain_missing(prev: dict, paises: dict, today: str, grupos_presentes: set = None):
     """Conserva (hasta RETAIN_DAYS) los países de nivel 3-4, o con código ISO, que dejaron de aparecer en el feed.
-    Un país de riesgo alto no debe desaparecer en silencio porque el feed falle o cambie de formato."""
+    Un país de riesgo alto no debe desaparecer en silencio porque el feed falle o cambie de formato.
+    `grupos_presentes` son los componentes (nombre normalizado) que la agrupación de territorios
+    eliminó a propósito: no son un fallo del feed y no deben retenerse."""
     kept = []
     if not prev or prev.get("ejemplo", False):
         return kept
     names = {p["nombre"].casefold() for p in paises.values()}
+    grupos_presentes = grupos_presentes or set()
     t = dt.date.fromisoformat(today)
     for old in prev.get("paises", []):
         oid = old.get("id") or old.get("iso")
         if not oid or oid in paises or old.get("nombre", "").casefold() in names:   # sigue en el feed o solo cambió de id
+            continue
+        if norm_name(old.get("nombre", "")) in grupos_presentes:   # lo absorbió una agrupación de territorios, no un fallo del feed
             continue
         niveles = old.get("niveles") or []
         if not (any((n.get("nivel") or 0) >= 3 for n in niveles) or old.get("iso")):
@@ -404,6 +409,18 @@ def agrupar_territorios(paises: dict) -> list:
                     f"(nivel {nivel}), componente eliminado")
                 del paises[cid]
     return acciones
+
+
+def componentes_de_grupos_presentes(paises: dict) -> set:
+    """Nombres normalizados de los componentes de cada grupo de GRUPOS_TERRITORIOS cuya entrada
+    agrupada está presente en `paises`. Sirve para que retain_missing no confunda un componente
+    absorbido a propósito por la agrupación con un país que el feed dejó de traer."""
+    por_nombre = {norm_name(p["nombre"]) for p in paises.values()}
+    presentes = set()
+    for grupo, componentes in GRUPOS_TERRITORIOS.items():
+        if grupo in por_nombre:
+            presentes.update(componentes)
+    return presentes
 
 
 def _prev_entry_map(prev: dict) -> dict:
@@ -582,7 +599,8 @@ def main() -> int:
         if os.environ.get("GITHUB_STEP_SUMMARY"):
             with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
                 f.write(f"\n## ALERTA: faltan en el feed\n\n{', '.join(faltan)}\n")
-    retained = retain_missing(prev, paises, today)
+    grupos_presentes = componentes_de_grupos_presentes(paises)
+    retained = retain_missing(prev, paises, today, grupos_presentes)
     for nombre, desde in retained:
         print(f"RETENIDO (ya no figura en el feed desde {desde}; se conserva hasta {RETAIN_DAYS} días): {nombre}", file=sys.stderr)
     cambios, cambios_nuevos = actualizar_historial_cambios(prev, paises, today)

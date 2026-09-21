@@ -204,6 +204,35 @@ class TestUnionYRetencion(unittest.TestCase):
         self.assertEqual(kept, [])
         self.assertEqual(paises, {})
 
+    def test_no_retiene_componente_de_grupo_presente(self):
+        # Guadeloupe tenía entrada propia en el levels.json anterior; ahora el feed solo trae
+        # la agrupada "French West Indies", así que agrupar_territorios ya la habría eliminado.
+        # retain_missing no debe resucitarla: no es un fallo del feed, es la agrupación.
+        prev = {"ejemplo": False, "paises": [
+            pais("gp", "Guadeloupe", 2, "2026-06-01", iso="GP"),
+            pais("sy", "Syria", 4, "2026-06-01", iso="SY"),   # país normal: sí debe retenerse
+        ]}
+        paises = union([feed_xml([item("French West Indies", 2, slug="french-west-indies")])])
+        grupos_presentes = ul.componentes_de_grupos_presentes(paises)
+        self.assertIn("guadeloupe", grupos_presentes)
+        kept = ul.retain_missing(prev, paises, TODAY, grupos_presentes)
+        self.assertNotIn("gp", paises)
+        self.assertIn("sy", paises)
+        self.assertEqual([k[0] for k in kept], ["Syria"])
+
+    def test_retiene_componente_si_el_grupo_ya_no_esta(self):
+        # Si el feed deja de traer la entrada agrupada, el componente vuelve a tratarse como
+        # un país normal: si desaparece del feed, sí se retiene.
+        prev = {"ejemplo": False, "paises": [
+            pais("gp", "Guadeloupe", 2, "2026-06-01", iso="GP"),
+        ]}
+        paises = union([feed_xml([item("Serbia", 2)])])
+        grupos_presentes = ul.componentes_de_grupos_presentes(paises)
+        self.assertEqual(grupos_presentes, set())
+        kept = ul.retain_missing(prev, paises, TODAY, grupos_presentes)
+        self.assertIn("gp", paises)
+        self.assertEqual([k[0] for k in kept], ["Guadeloupe"])
+
 
 class TestAgrupacionTerritorios(unittest.TestCase):
     def test_agrupacion_b(self):
