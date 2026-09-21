@@ -10,6 +10,11 @@ Principios:
   * Lo que no puede interpretar con certeza (nivel ausente, fecha inválida, enlace
     a otro dominio, nivel contradictorio) se omite y se informa en el log.
 
+Campos opcionales añadidos (la app funciona igual sin ellos):
+  * raíz "cambios": [{id, iso, nombre, fuente, de, a, fecha}] (máx. 60 días, 300 registros)
+  * raíz "historial_desde": fecha de inicio del historial
+  * por entrada: "nivel_anterior" + "cambio" (fecha ISO del día de la detección)
+
 Códigos de salida: 0 = correcto (con o sin cambios) · 1 = anomalía, no se escribió nada · 2 = fallo de descarga.
 """
 import argparse
@@ -39,6 +44,8 @@ MAX_BYTES = 50 * 1024 * 1024
 DEFAULT_MIN_ITEMS = 150        # el feed real trae ~200; por debajo de esto algo va mal
 FETCH_ROUNDS = 4              # el feed devuelve conjuntos distintos entre peticiones: se pide varias veces y se unen
 FETCH_PAUSE_S = 4
+CAMBIOS_MAX_AGE = 60         # días que se conserva una marca de cambio (entrada y historial)
+CAMBIOS_KEEP = 300           # máximo de registros en el historial raíz "cambios"
 RETAIN_DAYS = 30             # cuánto se conserva un país de nivel 3-4 que desaparece del feed
 MAX_DROP_RATIO = 0.15          # no se acepta perder >15 % de países respecto a la corrida anterior
 
@@ -72,6 +79,13 @@ CANARIOS = {"ML": "Mali", "KP": "North Korea", "IR": "Iran", "IQ": "Iraq", "UA":
             "SY": "Syria", "SD": "Sudan", "YE": "Yemen", "AF": "Afghanistan", "LB": "Lebanon", "LY": "Libya",
             "SS": "South Sudan", "CF": "Central African Republic", "SO": "Somalia", "HT": "Haiti",
             "BF": "Burkina Faso", "NE": "Niger", "MM": "Burma", "BY": "Belarus"}
+
+# Entradas agrupadas del feed: cuando aparece la entrada conjunta, se eliminan sus componentes
+# de nivel 1-2 (la agrupada los resume). Fácil de ampliar: nombre normalizado -> componentes normalizados.
+GRUPOS_TERRITORIOS = {
+    "saba and sint eustatius": ["saba", "sint eustatius"],
+    "french west indies": ["guadeloupe", "martinique", "saint barthelemy"],
+}
 
 # Traducción de los 4 niveles estándar (el texto original se conserva en etiqueta_original)
 LABELS_ES = {1: "Precauciones normales", 2: "Mayor precaución", 3: "Reconsiderar el viaje", 4: "No viajar"}
@@ -370,6 +384,107 @@ def retain_missing(prev: dict, paises: dict, today: str):
     return kept
 
 
+def agrupar_territorios(paises: dict) -> list:
+    """Si existe la entrada agrupada, elimina sus componentes de nivel 1-2.
+    Devuelve líneas de log describiendo lo hecho."""
+    acciones = []
+    por_nombre = {norm_name(p["nombre"]): pid for pid, p in paises.items()}
+    for grupo, componentes in GRUPOS_TERRITORIOS.items():
+        gid = por_nombre.get(grupo)
+        if not gid:
+            continue
+        for comp in componentes:
+            cid = por_nombre.get(comp)
+            if not cid or cid == gid:
+                continue
+            nivel = paises[cid]["niveles"][0].get("nivel")
+            if isinstance(nivel, int) and 1 <= nivel <= 2:
+                acciones.append(
+                    f"agrupación: '{paises[gid]['nombre']}' resume a '{paises[cid]['nombre']}' "
+                    f"(nivel {nivel}), componente eliminado")
+                del paises[cid]
+    return acciones
+
+
+def _prev_entry_map(prev: dict) -> dict:
+    """(id, fuente) -> (pais, nivel_entry) del archivo anterior."""
+    out = {}
+    for p in prev.get("paises", []):
+        key = p.get("id") or p.get("iso")
+        for n in p.get("niveles", []):
+            out[(key, n.get("fuente"))] = (p, n)
+    return out
+
+
+def restaurar_versiones_viejas(prev: dict, paises: dict) -> list:
+    """REGLA 'no retroceder en el tiempo': si para el mismo (id, fuente) la fecha del aviso
+    nuevo es ANTERIOR a la ya publicada, es una versión vieja del feed: se conserva la
+    entrada previa. Devuelve líneas de log."""
+    acciones = []
+    prev_map = _prev_entry_map(prev)
+    for pid, p in paises.items():
+        for n in p.get("niveles", []):
+            old = prev_map.get((pid, n.get("fuente")))
+            if not old:
+                continue
+            f_new, f_old = n.get("fecha"), old[1].get("fecha")
+            if f_new and f_old and f_new < f_old:
+                acciones.append(
+                    f"versión antigua ignorada: {p['nombre']} ({n.get('fuente')}): "
+                    f"el feed trae {f_new}, ya publicado {f_old}; se conserva la entrada previa")
+                n.clear()
+                n.update(json.loads(json.dumps(old[1])))
+    return acciones
+
+
+def actualizar_historial_cambios(prev: dict, paises: dict, today: str):
+    """Detecta cambios de nivel por (id, fuente) respecto al archivo anterior, marca las
+    entradas y arrastra el historial raíz 'cambios' (máx. CAMBIOS_MAX_AGE días, CAMBIOS_KEEP
+    registros, ordenado por fecha descendente). Devuelve (historial, cambios_nuevos)."""
+    t = dt.date.fromisoformat(today)
+    prev_map = _prev_entry_map(prev)
+    cambios_nuevos = []
+    for pid, p in paises.items():
+        for n in p.get("niveles", []):
+            old_pair = prev_map.get((pid, n.get("fuente")))
+            if old_pair:
+                _, n_old = old_pair
+                nivel_old, nivel_new = n_old.get("nivel"), n.get("nivel")
+                # No cuentan: entradas nuevas (sin par previo), retiradas ni renombradas
+                if (not n.get("retirado") and not n_old.get("retirado")
+                        and isinstance(nivel_old, int) and isinstance(nivel_new, int)
+                        and nivel_old != nivel_new):
+                    n["nivel_anterior"] = nivel_old
+                    n["cambio"] = today
+                    cambios_nuevos.append({
+                        "id": pid, "iso": p.get("iso"), "nombre": p.get("nombre"),
+                        "fuente": n.get("fuente"), "de": nivel_old, "a": nivel_new, "fecha": today,
+                    })
+                    continue
+                # Arrastrar la marca anterior mientras tenga menos de CAMBIOS_MAX_AGE días
+                marca, anterior = n_old.get("cambio"), n_old.get("nivel_anterior")
+                if marca and isinstance(anterior, int):
+                    try:
+                        if (t - dt.date.fromisoformat(marca)).days <= CAMBIOS_MAX_AGE:
+                            n["nivel_anterior"] = anterior
+                            n["cambio"] = marca
+                    except ValueError:
+                        pass
+    historial = []
+    prev_cambios = prev.get("cambios")
+    if isinstance(prev_cambios, list):
+        for c in prev_cambios:
+            try:
+                if (t - dt.date.fromisoformat(c.get("fecha", ""))).days > CAMBIOS_MAX_AGE:
+                    continue
+            except (ValueError, AttributeError):
+                continue
+            historial.append(c)
+    historial.extend(cambios_nuevos)
+    historial.sort(key=lambda c: c.get("fecha", ""), reverse=True)
+    return historial[:CAMBIOS_KEEP], cambios_nuevos
+
+
 def write_atomic(path: Path, data: dict):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
@@ -443,6 +558,13 @@ def main() -> int:
             prev = {}
     prev_real = bool(prev) and not prev.get("ejemplo", False)
 
+    # No retroceder en el tiempo: el feed puede reintroducir una versión vieja de un aviso
+    for line in restaurar_versiones_viejas(prev, paises):
+        print(line, file=sys.stderr)
+    # Territorios agrupados: la entrada conjunta resume a sus componentes de nivel 1-2
+    for line in agrupar_territorios(paises):
+        print(line)
+
     n = len(paises)
     if n < args.min_items:
         print(f"ERROR: solo {n} avisos válidos (mínimo {args.min_items}). No se escribió nada.", file=sys.stderr)
@@ -463,11 +585,18 @@ def main() -> int:
     retained = retain_missing(prev, paises, today)
     for nombre, desde in retained:
         print(f"RETENIDO (ya no figura en el feed desde {desde}; se conserva hasta {RETAIN_DAYS} días): {nombre}", file=sys.stderr)
+    cambios, cambios_nuevos = actualizar_historial_cambios(prev, paises, today)
+    for c in cambios_nuevos:
+        print(f"CAMBIO DE NIVEL: {c['nombre']}: {c['de']} → {c['a']} ({c['fuente']}, {today})")
+    historial_desde = prev.get("historial_desde") or today
+
     new = {
         "generado": today,
         "ejemplo": False,
         "fuentes": [{"id": SOURCE_ID, "nombre": SOURCE_NAME, "url": SOURCE_URL,
                      "nota": "Contenido oficial publicado por el Departamento de Estado de EE.UU. (travel.state.gov)."}],
+        "historial_desde": historial_desde,
+        "cambios": cambios,
         "paises": sorted(paises.values(), key=lambda p: p["nombre"].casefold()),
     }
 
