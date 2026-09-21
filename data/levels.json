@@ -88,7 +88,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-25",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dza.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/algeria-travel-advisory.html",
      "motivos": [
       "terrorismo",
       "secuestro"
@@ -204,7 +204,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-05-20",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.atg.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/antigua-and-barbuda-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -223,7 +223,7 @@
      "nivel": 1,
      "etiqueta": "Precauciones normales",
      "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-07-10",
+     "fecha": "2026-09-21",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.arg.html",
      "motivos": [],
@@ -333,14 +333,14 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-04-28",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.aze.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/azerbajian-travel-advisory.html",
      "motivos": [
       "conflicto_armado",
       "terrorismo",
       "minas"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Reconsider travel to Azerbaijan due to terrorism , armed conflict , and risk of landmines"
+     "motivo_original": "Reconsider Travel to Azerbaijan due to terrorism, armed conflict, and risk of landmines"
     }
    ]
   },
@@ -584,27 +584,6 @@
    ]
   },
   {
-   "id": "destination.bes",
-   "iso": null,
-   "nombre": "Bonaire",
-   "niveles": [
-    {
-     "fuente": "Departamento de Estado (EE.UU.)",
-     "escala": "1-4",
-     "min": 1,
-     "max": 4,
-     "nivel": 1,
-     "etiqueta": "Precauciones normales",
-     "etiqueta_original": "Exercise Normal Precautions",
-     "fecha": "2026-08-20",
-     "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bes.html",
-     "motivos": [],
-     "menciona_conflicto": false
-    }
-   ]
-  },
-  {
    "id": "bonaire",
    "iso": null,
    "nombre": "Bonaire",
@@ -620,6 +599,27 @@
      "fecha": "2026-08-20",
      "vigencia_dias": 365,
      "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/bonaire-travel-advisory.html",
+     "motivos": [],
+     "menciona_conflicto": false
+    }
+   ]
+  },
+  {
+   "id": "destination.bes",
+   "iso": null,
+   "nombre": "Bonaire",
+   "niveles": [
+    {
+     "fuente": "Departamento de Estado (EE.UU.)",
+     "escala": "1-4",
+     "min": 1,
+     "max": 4,
+     "nivel": 1,
+     "etiqueta": "Precauciones normales",
+     "etiqueta_original": "Exercise Normal Precautions",
+     "fecha": "2026-08-20",
+     "vigencia_dias": 365,
+     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.bes.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -715,7 +715,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-05-22",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vgb.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/british-virgin-islands-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -1252,9 +1252,12 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-06-01",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.cyp.html",
-     "motivos": [],
-     "menciona_conflicto": true
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cyprus-travel-advisory.html",
+     "motivos": [
+      "disturbios"
+     ],
+     "menciona_conflicto": true,
+     "motivo_original": "Exercise Increased Caution Turkish Cypriot Administered Area Exercise Increased Caution in the Turkish Cypriot-Administered Area due to unrest"
     }
    ]
   },
@@ -1322,7 +1325,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2025-03-06",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.dji.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/djibouti-travel-advisory.html",
      "motivos": [
       "terrorismo"
      ],
@@ -1515,7 +1518,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-03-31",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.est.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/estonia-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -1910,12 +1913,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-01-05",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.grd.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/grenada-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Grenada due to crime"
+     "motivo_original": "Exercise Increased Caution in Grenada due to risk of crime"
     }
    ]
   },
@@ -2252,7 +2255,7 @@
      "etiqueta_original": "Do Not Travel",
      "fecha": "2026-08-29",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.irq.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/iraq-travel-advisory.html",
      "motivos": [
       "conflicto_armado",
       "terrorismo",
@@ -2261,7 +2264,7 @@
       "salud"
      ],
      "menciona_conflicto": true,
-     "motivo_original": "Do not travel to Iraq due to terrorism, kidnapping, armed conflict, crime, health risks , and the US government’s limited ability to provide emergency services to US citizens in Iraq"
+     "motivo_original": "Do not travel to Iraq due to terrorism, kidnapping, armed conflict, crime, health risks, and the US government’s limited ability to provide emergency services to US citizens in Iraq"
     }
    ]
   },
@@ -2442,16 +2445,13 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ken.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html",
      "motivos": [
-      "terrorismo",
       "crimen",
-      "disturbios",
-      "secuestro",
-      "salud"
+      "secuestro"
      ],
-     "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Kenya due to risk of crime , kidnapping , terrorism , unrest , health , and traffic safety"
+     "menciona_conflicto": true,
+     "motivo_original": "Do Not Travel to the Nairobi neighborhoods of Eastleigh and Kibera due to risk of crime and kidnapping"
     }
    ]
   },
@@ -2743,7 +2743,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-04-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ltu.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/lithuania-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -2937,7 +2937,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-09",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mlt.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/malta-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -3001,7 +3001,7 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2026-08-18",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.mrt.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mauritania-travel-advisory.html",
      "motivos": [
       "terrorismo",
       "crimen",
@@ -3436,12 +3436,12 @@
      "etiqueta_original": "Do Not Travel",
      "fecha": "2025-04-29",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.prk.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/north-korea-travel-advisory.html",
      "motivos": [
       "detencion_injusta"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Do not travel to North Korea due to wrongful detention and other risks"
+     "motivo_original": "Do not travel to North Korea due to the continuing serious risk of arrest, long-term detention, and the threat of wrongful detention of US nationals"
     }
    ]
   },
@@ -3575,7 +3575,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-19",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.pan.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/panama-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
@@ -3908,7 +3908,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-07",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.kn.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-kitts-and-nevis-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -3929,12 +3929,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-10",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.lca.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-lucia-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Saint Lucia due to risk of crime"
+     "motivo_original": "Exercise Increased Caution in Saint Lucia due to risk of crime"
     }
    ]
   },
@@ -3953,7 +3953,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-07-07",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.vct.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/saint-vincent-and-the-grenadines.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -4045,7 +4045,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-08-27",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.srb.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/serbia-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
@@ -4578,7 +4578,7 @@
      "etiqueta_original": "Reconsider Travel",
      "fecha": "2025-10-31",
      "vigencia_dias": 183,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tza.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tanzania-travel-advisory.html",
      "motivos": [
       "terrorismo",
       "crimen",
@@ -4848,7 +4848,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2026-08-21",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.tkm.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/turkmenistan-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -5014,7 +5014,7 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2026-07-28",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.ury.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/uruguay-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
@@ -5183,7 +5183,7 @@
      "etiqueta_original": "Exercise Normal Precautions",
      "fecha": "2023-07-31",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zmb.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zambia-travel-advisory.html",
      "motivos": [],
      "menciona_conflicto": false
     }
@@ -5204,12 +5204,12 @@
      "etiqueta_original": "Exercise Increased Caution",
      "fecha": "2023-06-27",
      "vigencia_dias": 365,
-     "url": "https://travel.state.gov/content/tsg_aem/us/en/home/international-travel/travel-advisories/destination.zwe.html",
+     "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/zimbabwe-travel-advisory.html",
      "motivos": [
       "crimen"
      ],
      "menciona_conflicto": false,
-     "motivo_original": "Exercise increased caution in Zimbabwe due to crime and official harassment of US citizen s"
+     "motivo_original": "Exercise increased caution in Zimbabwe due to crime and official harassment of US citizens"
     }
    ]
   }
