@@ -358,8 +358,9 @@ def audit_report(paises: dict):
 def retain_missing(prev: dict, paises: dict, today: str, grupos_presentes: set = None):
     """Conserva (hasta RETAIN_DAYS) los países de nivel 3-4, o con código ISO, que dejaron de aparecer en el feed.
     Un país de riesgo alto no debe desaparecer en silencio porque el feed falle o cambie de formato.
-    `grupos_presentes` son los componentes (nombre normalizado) que la agrupación de territorios
-    eliminó a propósito: no son un fallo del feed y no deben retenerse."""
+    `grupos_presentes` son los componentes (nombre normalizado) de las agrupaciones presentes.
+    Solo los de nivel 1-2 los elimina agrupar_territorios a propósito y no deben retenerse; uno de
+    nivel 3-4 nunca se elimina así, de modo que si falta es un fallo del feed y sí se retiene."""
     kept = []
     if not prev or prev.get("ejemplo", False):
         return kept
@@ -370,9 +371,10 @@ def retain_missing(prev: dict, paises: dict, today: str, grupos_presentes: set =
         oid = old.get("id") or old.get("iso")
         if not oid or oid in paises or old.get("nombre", "").casefold() in names:   # sigue en el feed o solo cambió de id
             continue
-        if norm_name(old.get("nombre", "")) in grupos_presentes:   # lo absorbió una agrupación de territorios, no un fallo del feed
-            continue
         niveles = old.get("niveles") or []
+        solo_1_2 = bool(niveles) and all(isinstance(n.get("nivel"), int) and 1 <= n["nivel"] <= 2 for n in niveles)
+        if solo_1_2 and norm_name(old.get("nombre", "")) in grupos_presentes:   # lo absorbió una agrupación de territorios, no un fallo del feed
+            continue
         if not (any((n.get("nivel") or 0) >= 3 for n in niveles) or old.get("iso")):
             continue
         first = next((n["retirado"] for n in niveles if n.get("retirado")), today)

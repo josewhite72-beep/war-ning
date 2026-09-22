@@ -220,6 +220,35 @@ class TestUnionYRetencion(unittest.TestCase):
         self.assertIn("sy", paises)
         self.assertEqual([k[0] for k in kept], ["Syria"])
 
+    def test_retiene_componente_nivel_3_4_aunque_el_grupo_este(self):
+        # agrupar_territorios nunca elimina componentes de nivel 3-4: si uno falta del feed
+        # aunque la agrupada esté presente, es un fallo del feed y debe retenerse.
+        for nivel in (3, 4):
+            with self.subTest(nivel=nivel):
+                prev = {"ejemplo": False, "paises": [
+                    pais("gp", "Guadeloupe", nivel, "2026-06-01", iso="GP"),
+                    pais("bl", "Saint Barthelemy", 2, "2026-06-01", iso="BL"),   # nivel 2: lo absorbe la agrupada
+                ]}
+                paises = union([feed_xml([item("French West Indies", 2, slug="french-west-indies")])])
+                kept = ul.retain_missing(prev, paises, TODAY, ul.componentes_de_grupos_presentes(paises))
+                self.assertIn("gp", paises)
+                self.assertEqual(paises["gp"]["niveles"][0]["nivel"], nivel)
+                self.assertEqual(paises["gp"]["niveles"][0]["retirado"], TODAY)
+                self.assertNotIn("bl", paises)
+                self.assertEqual([k[0] for k in kept], ["Guadeloupe"])
+
+    def test_no_duplica_componente_nivel_3_presente(self):
+        # Si el componente de nivel 3 sigue en el feed junto a la agrupada, no se retiene
+        # una segunda copia: se queda la entrada de hoy.
+        prev = {"ejemplo": False, "paises": [pais("mq", "Martinique", 3, "2026-06-01", iso="MQ")]}
+        paises = union([feed_xml([item("French West Indies", 2, slug="french-west-indies"),
+                                  item("Martinique", 3)])])
+        ul.agrupar_territorios(paises)
+        kept = ul.retain_missing(prev, paises, TODAY, ul.componentes_de_grupos_presentes(paises))
+        self.assertEqual(kept, [])
+        self.assertNotIn("retirado", paises["mq"]["niveles"][0])
+        self.assertEqual(sum(1 for p in paises.values() if p["nombre"] == "Martinique"), 1)
+
     def test_retiene_componente_si_el_grupo_ya_no_esta(self):
         # Si el feed deja de traer la entrada agrupada, el componente vuelve a tratarse como
         # un país normal: si desaparece del feed, sí se retiene.
