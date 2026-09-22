@@ -104,3 +104,41 @@ motivos y una fecha "ganadora" que no traía el contenido esperado.
 7. Solo cuando el punto 1 de pendientes (revisión humana de cambios de nivel) y el punto 4
    (reactivar el flujo) estén resueltos y probados, considerar reactivar las actualizaciones
    automáticas y, después, compartir el enlace de la app.
+
+## 7. Investigación: segunda fuente (Reino Unido, FCDO)
+
+1. **Fuente candidata**: GOV.UK Content API, publica en
+   `https://www.gov.uk/api/content/foreign-travel-advice/<slug>` para 226 países, sin
+   autenticación, licencia Open Government Licence con atribución obligatoria.
+
+2. **Decisión de diseño ya tomada**: cada fuente conserva su propia forma de agrupar
+   territorios; la app muestra el bloque de cada fuente por separado en la fila del país,
+   nunca fusionados en un solo nivel o etiqueta.
+
+3. **Descalce de agrupaciones detectado entre EE. UU. y Reino Unido**: la agrupación
+   "French West Indies" de EE. UU. (Guadeloupe, Martinique, Saint Barthelemy) no tiene
+   equivalente limpio en el Reino Unido, que trae Guadeloupe y Martinique como entradas
+   separadas y junta St Martin con St Barthélemy en una sola entrada "St Martin and St
+   Barthélemy"; y que "Saba and Sint Eustatius" de EE. UU. tampoco calza con el Reino
+   Unido, que junta Bonaire, St Eustatius y Saba en una sola entrada "Bonaire/St
+   Eustatius/Saba".
+
+4. **Otros riesgos de mapeo de nombres** detectados en el índice completo de 226 países
+   del Reino Unido:
+   - Nombres con acentos o ñ: Côte d'Ivoire, São Tomé and Principe, Réunion, Curaçao,
+     St Martin and St Barthélemy.
+   - Nombres con alias entre paréntesis: Myanmar (Burma), Hong Kong (SAR of China),
+     Korea DPR (North Korea), East Timor (Timor-Leste).
+   - Nombres cortos que no calzan por texto exacto con el nombre que probablemente use
+     EE. UU.: USA, South Korea, Czechia, Eswatini, Congo vs Democratic Republic of the
+     Congo, North Macedonia.
+
+5. **`alert_status` del Reino Unido** usa solo 4 valores (`avoid_all`,
+   `avoid_all_but_essential`, `some_parts`, o vacío), y `some_parts` puede aplicar a
+   zonas muy específicas de un país grande (ejemplo real: Thailand solo en 4 provincias
+   del sur), así que la interfaz debe advertir cuando el aviso del Reino Unido es solo
+   por zonas y no por el país entero.
+
+6. **Pendiente antes de programar**: el identificador interno de cada país tendrá que
+   dejar de basarse solo en el ISO de EE. UU., porque las dos fuentes no siempre agrupan
+   los mismos territorios bajo el mismo país.
