@@ -167,6 +167,210 @@
     .schema-box { text-align: left; background: var(--card-bg); border: 1px solid var(--border-color); padding: 12px; border-radius: 4px; font-size: 0.85rem; color: var(--muted); margin-top: 16px; }
     .toggle-row { display: flex; align-items: center; gap: 12px; margin-top: 12px; min-height: 48px; cursor: pointer; }
     .toggle-row input { width: 24px; height: 24px; }
+
+    /* ============================================================
+       PESTAÑA ALERTAS — Focos de conflicto armado (investigación)
+       Usa las variables globales + añade 3 propias de "investigación"
+       ============================================================ */
+    :root {
+      --research-accent: #a78bfa;
+      --research-bg: rgba(167, 139, 250, 0.08);
+      --research-casualty: #ef5350;
+    }
+    body.survival-mode {
+      --research-accent: #fff;
+      --research-bg: transparent;
+      --research-casualty: #fff;
+    }
+
+    .alerts-header {
+      margin: 12px;
+      padding: 14px 16px;
+      background: var(--research-bg);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--research-accent);
+      border-radius: 8px;
+    }
+    .alerts-header h2 {
+      margin: 0 0 6px 0;
+      font-size: 1.15rem;
+      color: var(--text-color);
+    }
+    .alerts-example-badge {
+      display: block;
+      margin: 0 0 10px 0;
+      padding: 8px 12px;
+      background: var(--note-bg);
+      border-left: 3px solid var(--note-line);
+      color: var(--note-text);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      border-radius: 4px;
+    }
+    .alerts-example-badge[hidden] { display: none; }
+    .alerts-disclaimer {
+      margin: 0 0 10px 0;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .alerts-disclaimer strong { color: var(--text-color); }
+    .alerts-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .alerts-source { font-style: italic; }
+    .alerts-source-note { font-size: 0.72rem; }
+
+    .alerts-controls { padding: 0 12px 10px 12px; }
+    .alerts-filter {
+      width: 100%;
+      padding: 10px 36px 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      font-size: 0.95rem;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3e%3cpath fill='%23a0a0a0' d='M6 8L0 0h12z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+    }
+    .alerts-filter:focus {
+      outline: 2px solid var(--research-accent);
+      outline-offset: 1px;
+    }
+
+    .alerts-list {
+      list-style: none;
+      padding: 0 12px 24px 12px;
+      margin: 0;
+    }
+    .alerts-empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px 12px;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .alerts-country-group { margin-bottom: 18px; }
+    .alerts-country-header {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-color);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 2px solid var(--research-accent);
+      padding: 0 0 4px 0;
+      margin: 0 0 8px 0;
+    }
+
+    /* Tarjeta de evento: misma familia visual que .country-item */
+    .alerts-event {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--research-accent);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .alerts-event[open] { background: var(--card-press); }
+
+    .alerts-event > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 40px 12px 14px;
+      position: relative;
+      display: block;
+    }
+    .alerts-event > summary::-webkit-details-marker { display: none; }
+    .alerts-event > summary::after {
+      content: '▸';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: transform 0.18s ease;
+    }
+    .alerts-event[open] > summary::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+    .alerts-event > summary:active { background: var(--card-press); }
+
+    .alerts-ev-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+    }
+    .alerts-ev-date {
+      font-weight: 600;
+      color: var(--text-color);
+      font-variant-numeric: tabular-nums;
+    }
+    .alerts-ev-type {
+      background: var(--research-bg);
+      color: var(--research-accent);
+      border: 1px solid var(--research-accent);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    .alerts-ev-location {
+      font-weight: 500;
+      color: var(--text-color);
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+    }
+    .alerts-ev-short {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .alerts-ev-details {
+      padding: 10px 14px 14px 14px;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.88rem;
+      color: var(--text-color);
+      line-height: 1.5;
+    }
+    .alerts-ev-details p { margin: 6px 0; }
+    .alerts-ev-details p:first-child { margin-top: 0; }
+    .alerts-ev-details a {
+      color: var(--research-accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .alerts-ev-casualties {
+      color: var(--research-casualty);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -232,15 +436,33 @@
     </section>
 
     <section id="view-alerts" class="view">
-      <div class="empty-state">
-        <div style="font-size: 3rem; margin-bottom: 16px;" aria-hidden="true">🔔</div>
-        <h2>Próximamente</h2>
-        <p>El módulo de alertas inminentes por región estará disponible en la Fase 2.</p>
-        <div class="schema-box">
-          <strong>Esquema futuro:</strong><br>
-          {id, tipo, severidad, regiones:[iso], mensaje, fuente, fecha, instrucciones}
+      <header class="alerts-header">
+        <h2>Focos de conflicto armado</h2>
+        <div class="alerts-example-badge" id="alerts-example-badge" hidden>
+          ⚠ Datos de ejemplo — esta pestaña muestra contenido ficticio para desarrollo de interfaz.
         </div>
+        <p class="alerts-disclaimer">
+          Registros de hechos de violencia armada recopilados por investigadores independientes.
+          <strong>Esto no es un pronóstico de riesgo ni sustituye a los avisos oficiales de viaje.</strong>
+          Cada fuente se muestra por separado, sin interpretación propia.
+        </p>
+        <div class="alerts-meta">
+          <span id="alerts-generated">Última actualización de datos: …</span>
+          <span class="alerts-source">Fuente: <span id="alerts-source-name">—</span></span>
+          <span class="alerts-source-note" id="alerts-source-note"></span>
+        </div>
+      </header>
+
+      <div class="alerts-controls">
+        <label for="alerts-country-filter" class="sr-only">Filtrar por país</label>
+        <select id="alerts-country-filter" class="alerts-filter">
+          <option value="todos">Todos los países</option>
+        </select>
       </div>
+
+      <ul id="alerts-list" class="alerts-list" aria-live="polite">
+        <li class="alerts-empty">Cargando datos de investigación…</li>
+      </ul>
     </section>
 
     <section id="view-settings" class="view">
@@ -260,9 +482,10 @@
       <div class="source-card">
         <h3>Acerca de</h3>
         <p class="source-meta" style="margin-top: 6px;">
-          War_ning v1.6 · PanaMentorLabs.<br>
+          War_ning v1.7 · PanaMentorLabs.<br>
           Visor de datos agregados. No genera alertas ni niveles propios y no usa geolocalización.<br>
           La pestaña «Cambios» muestra un historial de los cambios de nivel detectados en los datos (conservado hasta 60 días, hasta 300 registros).<br>
+          La pestaña «Alertas» muestra datos de ejemplo de un futuro conjunto de datos de investigación de conflictos armados (UCDP), independientes de los avisos oficiales de viaje.<br>
           Cada fuente usa su propia escala: la barra muestra la posición dentro de la escala de esa fuente y las escalas distintas no son directamente comparables. El feed oficial puede omitir países que sí tienen aviso, por ejemplo mientras el Departamento de Estado cambia su sitio: comprueba siempre travel.state.gov. Los motivos y la mención de conflicto se extraen automáticamente del texto de cada aviso y pueden estar incompletos; "menciona" no significa que haya guerra en todo el país. La fecha indica la última publicación del aviso, no necesariamente el último cambio de nivel. «Sin revisión reciente» aparece cuando la fuente supera su propio ciclo de revisión (para el Departamento de Estado: 12 meses en niveles 1-2 y 6 meses en niveles 3-4).
         </p>
         <p id="sources-list" class="source-meta" style="margin-top: 10px;"></p>
@@ -452,6 +675,7 @@
       showView(id);
       if (id === 'view-favorites') renderFavorites();
       if (id === 'view-cambios') renderCambios();
+      if (id === 'view-alerts') renderAlerts();
     }
     navItems.forEach(function (item) {
       item.addEventListener('click', function () { goTab(item.getAttribute('data-target')); });
@@ -698,6 +922,190 @@
         navigator.serviceWorker.register('sw.js').catch(function (e) { console.log('SW no registrado', e); });
       }
     })();
+
+    /* ============================================================
+       PESTAÑA ALERTAS — Focos de conflicto armado
+       Carga diferida (solo al entrar a la pestaña).
+       Datos de ejemplo marcados con "ejemplo": true.
+       ============================================================ */
+    var alertsData = null;
+    var alertsLoading = false;
+    var alertsFilter = 'todos';
+    var alertsTipoLabels = {
+      'conflicto_estatal': 'Conflicto estatal',
+      'conflicto_no_estatal': 'Conflicto no estatal',
+      'violencia_unilateral': 'Violencia unilateral'
+    };
+
+    function renderAlerts() {
+      var listEl = document.getElementById('alerts-list');
+      var filterEl = document.getElementById('alerts-country-filter');
+
+      if (alertsLoading) return;
+
+      if (alertsData) {
+        alertsFilter = filterEl.value;
+        alertsRenderList();
+        return;
+      }
+
+      alertsLoading = true;
+      listEl.innerHTML = '<li class="alerts-empty">Cargando datos de investigación…</li>';
+
+      fetch('data/conflict-events.json')
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          if (!data || !Array.isArray(data.eventos)) throw new Error('Formato inválido');
+          alertsData = data;
+
+          var badge = document.getElementById('alerts-example-badge');
+          if (badge) badge.hidden = !data.ejemplo;
+
+          var genEl = document.getElementById('alerts-generated');
+          var srcEl = document.getElementById('alerts-source-name');
+          var noteEl = document.getElementById('alerts-source-note');
+
+          var genTxt = 'Última actualización de datos: ' + esc(data.generado);
+          var age = ageDays(data.generado);
+          if (age !== null && age > 14) genTxt += ' (hace ' + age + ' días)';
+          genEl.innerHTML = genTxt;
+
+          srcEl.textContent = data.fuente ? data.fuente.nombre : '—';
+          noteEl.textContent = (data.fuente && data.fuente.nota) ? data.fuente.nota : '';
+
+          alertsPopulateFilter(data.eventos);
+
+          alertsFilter = 'todos';
+          filterEl.value = 'todos';
+          alertsRenderList();
+
+          filterEl.addEventListener('change', function () {
+            alertsFilter = filterEl.value;
+            alertsRenderList();
+          });
+        })
+        .catch(function (err) {
+          console.error('Error cargando conflictos:', err);
+          listEl.innerHTML = '<li class="alerts-empty">No se pudieron cargar los datos de ejemplo. Verifica que <code>data/conflict-events.json</code> exista.</li>';
+        })
+        .finally(function () {
+          alertsLoading = false;
+        });
+    }
+
+    function alertsPopulateFilter(eventos) {
+      var filterEl = document.getElementById('alerts-country-filter');
+      filterEl.innerHTML = '<option value="todos">Todos los países</option>';
+
+      var paises = [];
+      eventos.forEach(function (e) {
+        if (paises.indexOf(e.pais) === -1) paises.push(e.pais);
+      });
+      paises.sort(function (a, b) { return a.localeCompare(b); });
+
+      paises.forEach(function (p) {
+        var opt = document.createElement('option');
+        opt.value = p;
+        opt.textContent = p;
+        filterEl.appendChild(opt);
+      });
+    }
+
+    function alertsRenderList() {
+      var listEl = document.getElementById('alerts-list');
+      listEl.innerHTML = '';
+
+      var eventos = alertsData.eventos;
+
+      var procesados = alertsFilter === 'todos'
+        ? eventos.slice()
+        : eventos.filter(function (e) { return e.pais === alertsFilter; });
+
+      procesados.sort(function (a, b) {
+        if (a.pais !== b.pais) return a.pais.localeCompare(b.pais);
+        return new Date(b.fecha).getTime() - new Date(a.fecha).getTime();
+      });
+
+      if (procesados.length === 0) {
+        listEl.innerHTML = '<li class="alerts-empty">No hay eventos registrados para este criterio.</li>';
+        return;
+      }
+
+      var grupos = [];
+      var actual = null;
+      procesados.forEach(function (evt) {
+        if (!actual || actual.pais !== evt.pais) {
+          actual = { pais: evt.pais, eventos: [] };
+          grupos.push(actual);
+        }
+        actual.eventos.push(evt);
+      });
+
+      grupos.forEach(function (g) {
+        var groupLi = document.createElement('li');
+        groupLi.className = 'alerts-country-group';
+
+        var h = document.createElement('h3');
+        h.className = 'alerts-country-header';
+        h.textContent = g.pais;
+        groupLi.appendChild(h);
+
+        g.eventos.forEach(function (evt) {
+          groupLi.appendChild(alertsBuildCard(evt));
+        });
+
+        listEl.appendChild(groupLi);
+      });
+    }
+
+    function alertsBuildCard(evt) {
+      var details = document.createElement('details');
+      details.className = 'alerts-event';
+
+      var summary = document.createElement('summary');
+
+      var tipoLabel = alertsTipoLabels[evt.tipo] || evt.tipo;
+      var descCorta = (evt.descripcion && evt.descripcion.length > 95)
+        ? evt.descripcion.substring(0, 95) + '…'
+        : (evt.descripcion || '');
+      var safeLink = safeUrl(evt.url);
+
+      summary.innerHTML =
+        '<div class="alerts-ev-meta">' +
+          '<span class="alerts-ev-date">' + esc(evt.fecha) + '</span>' +
+          '<span class="alerts-ev-type">' + esc(tipoLabel) + '</span>' +
+        '</div>' +
+        '<div class="alerts-ev-location">' + esc(evt.lugar || '') + '</div>' +
+        '<p class="alerts-ev-short">' + esc(descCorta) + '</p>';
+
+      var body = document.createElement('div');
+      body.className = 'alerts-ev-details';
+
+      var actores = Array.isArray(evt.actores) ? evt.actores.join(', ') : '—';
+      var html =
+        '<p><strong>Actores:</strong> ' + esc(actores) + '</p>' +
+        '<p><strong>Descripción:</strong> ' + esc(evt.descripcion || '') + '</p>';
+
+      if (typeof evt.muertes_reportadas === 'number' && evt.muertes_reportadas > 0) {
+        html += '<p class="alerts-ev-casualties">Muertes reportadas: ' + esc(evt.muertes_reportadas) + '</p>';
+      }
+
+      if (safeLink) {
+        html += '<p><strong>Fuente:</strong> <a href="' + safeLink + '" target="_blank" rel="noopener noreferrer">Ver registro original' +
+          (alertsData && alertsData.fuente ? ' en ' + esc(alertsData.fuente.nombre) : '') + '</a></p>';
+      } else {
+        html += '<p><strong>Fuente:</strong> sin enlace disponible</p>';
+      }
+
+      body.innerHTML = html;
+
+      details.appendChild(summary);
+      details.appendChild(body);
+      return details;
+    }
   </script>
 </body>
 </html>

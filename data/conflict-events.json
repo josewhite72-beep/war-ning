@@ -1,0 +1,116 @@
+{
+  "generado": "2026-09-22",
+  "ejemplo": true,
+  "fuente": {
+    "id": "ucdp-candidate",
+    "nombre": "UCDP Candidate Events Dataset",
+    "url": "https://ucdp.uu.se/",
+    "nota": "Datos mensuales preliminares, sujetos a revisión anual. Este archivo contiene únicamente datos de ejemplo (placeholder) para desarrollo de interfaz."
+  },
+  "eventos": [
+    {
+      "id": "evt-0001",
+      "fecha": "2026-09-18",
+      "pais": "Colombia",
+      "iso": "CO",
+      "lugar": "Zona rural del departamento de Cauca (Evento de ejemplo)",
+      "tipo": "conflicto_no_estatal",
+      "actores": ["Grupo armado no identificado A", "Grupo armado no identificado B"],
+      "descripcion": "Enfrentamiento armado por control de rutas de transporte local. Sin reporte de afectados civiles directos según fuentes preliminares.",
+      "muertes_reportadas": 2,
+      "url": "https://ucdp.uu.se/placeholder/evt-0001",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0002",
+      "fecha": "2026-09-15",
+      "pais": "República Democrática del Congo",
+      "iso": "CD",
+      "lugar": "Provincia de Ituri, zona norte (Evento de ejemplo)",
+      "tipo": "violencia_unilateral",
+      "actores": ["Milicia local X"],
+      "descripcion": "Ataque contra una aldea aislada. Las fuerzas de mantenimiento de la paz iniciaron investigación preliminar.",
+      "muertes_reportadas": 5,
+      "url": "https://ucdp.uu.se/placeholder/evt-0002",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0003",
+      "fecha": "2026-09-12",
+      "pais": "Myanmar",
+      "iso": "MM",
+      "lugar": "Región de Sagaing, área rural (Evento de ejemplo)",
+      "tipo": "conflicto_estatal",
+      "actores": ["Fuerzas estatales", "Grupos de oposición armada"],
+      "descripcion": "Intercambio de fuego en las afueras de un municipio. Acceso restringido para observadores independientes.",
+      "muertes_reportadas": 8,
+      "url": "https://ucdp.uu.se/placeholder/evt-0003",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0004",
+      "fecha": "2026-09-10",
+      "pais": "Haití",
+      "iso": "HT",
+      "lugar": "Comuna de Cité Soleil, Puerto Príncipe (Evento de ejemplo)",
+      "tipo": "conflicto_no_estatal",
+      "actores": ["Coalición de bandas Y", "Coalición de bandas Z"],
+      "descripcion": "Enfrentamientos por control territorial que resultaron en el cierre temporal de vías principales.",
+      "muertes_reportadas": 3,
+      "url": "https://ucdp.uu.se/placeholder/evt-0004",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0005",
+      "fecha": "2026-09-08",
+      "pais": "Sudán",
+      "iso": "SD",
+      "lugar": "Estado de Darfur del Norte, alrededores de la capital estatal (Evento de ejemplo)",
+      "tipo": "conflicto_estatal",
+      "actores": ["Fuerzas gubernamentales", "Milicias aliadas a la oposición"],
+      "descripcion": "Incursión armada en un puesto de control periférico. Reportes de desplazamiento local de población.",
+      "muertes_reportadas": 12,
+      "url": "https://ucdp.uu.se/placeholder/evt-0005",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0006",
+      "fecha": "2026-09-05",
+      "pais": "Nigeria",
+      "iso": "NG",
+      "lugar": "Estado de Borno, zona rural fronteriza (Evento de ejemplo)",
+      "tipo": "violencia_unilateral",
+      "actores": ["Grupo insurgente no identificado"],
+      "descripcion": "Emboscada a un convoy de suministro humanitario. No se reportaron heridos graves.",
+      "muertes_reportadas": 0,
+      "url": "https://ucdp.uu.se/placeholder/evt-0006",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0007",
+      "fecha": "2026-09-02",
+      "pais": "México",
+      "iso": "MX",
+      "lugar": "Municipio rural de la sierra norte, estado de Guerrero (Evento de ejemplo)",
+      "tipo": "conflicto_no_estatal",
+      "actores": ["Organización criminal A", "Organización criminal B"],
+      "descripcion": "Disputa por plazas que generó bloqueos intermitentes en carreteras secundarias.",
+      "muertes_reportadas": 1,
+      "url": "https://ucdp.uu.se/placeholder/evt-0007",
+      "ejemplo": true
+    },
+    {
+      "id": "evt-0008",
+      "fecha": "2026-08-28",
+      "pais": "Ucrania",
+      "iso": "UA",
+      "lugar": "Región fronteriza del noreste, área no especificada (Evento de ejemplo)",
+      "tipo": "conflicto_estatal",
+      "actores": ["Fuerzas estatales de Ucrania", "Fuerzas armadas de la Federación Rusa"],
+      "descripcion": "Bombardeo de artillería en zonas deshabitadas reportado por monitores locales.",
+      "muertes_reportadas": 0,
+      "url": "https://ucdp.uu.se/placeholder/evt-0008",
+      "ejemplo": true
+    }
+  ]
+}
