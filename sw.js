@@ -1,5 +1,5 @@
 // War_ning – Service Worker (red primero, con tiempo límite y respaldo en caché)
-const CACHE_NAME = 'warning-pwa-v2';
+const CACHE_NAME = 'warning-pwa-v3';
 const NETWORK_TIMEOUT_MS = 4000; // con red mala, tras 4 s se sirve lo cacheado
 const ASSETS_TO_CACHE = [
   './',
